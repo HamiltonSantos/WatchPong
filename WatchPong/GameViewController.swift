@@ -32,7 +32,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         
         let camerasNode = scene.rootNode.childNodeWithName("cameraNode", recursively: false)!
         
-        camerasNode.eulerAngles.x = degreesToRadians(90.0)
+        camerasNode.eulerAngles.y = degreesToRadians(180.0)
         
         leftSceneView?.scene = scene
         rightSceneView?.scene = scene
@@ -64,7 +64,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
             
             cameraRollNode!.eulerAngles.x = Float(currentAttitude.roll-90)
             cameraPitchNode!.eulerAngles.z = Float(currentAttitude.pitch)
-            cameraYawNode!.eulerAngles.y = Float(currentAttitude.yaw-90)
+            cameraYawNode!.eulerAngles.y = Float(currentAttitude.yaw)
         }
     }
     
