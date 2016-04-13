@@ -37,6 +37,7 @@ class PongSceneView: SCNView {
         motionManager?.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XArbitraryZVertical)
         
         self.delegate = self
+        self.antialiasingMode = .Multisampling4X
         
         self.playing = true
     }
