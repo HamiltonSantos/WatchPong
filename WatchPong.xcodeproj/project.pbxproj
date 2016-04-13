@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		258E7DA41CBD334A00C2D50C /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA31CBD334A00C2D50C /* PongSceneView.swift */; };
 		258E7DA61CBD39A300C2D50C /* AngleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA51CBD39A300C2D50C /* AngleUtils.swift */; };
+		258E7DA81CBE6C7200C2D50C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA71CBE6C7200C2D50C /* MenuViewController.swift */; };
+		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
+		258E7DAC1CBE76C900C2D50C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DAB1CBE76C800C2D50C /* ConfigViewController.swift */; };
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
 		25DC0C1D1CABFB2600F0661F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C1C1CABFB2600F0661F /* art.scnassets */; };
-		25DC0C1F1CABFB2600F0661F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1E1CABFB2600F0661F /* GameViewController.swift */; };
+		25DC0C1F1CABFB2600F0661F /* VRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1E1CABFB2600F0661F /* VRGameViewController.swift */; };
 		25DC0C221CABFB2600F0661F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C201CABFB2600F0661F /* Main.storyboard */; };
 		25DC0C241CABFB2600F0661F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C231CABFB2600F0661F /* Assets.xcassets */; };
 		25DC0C271CABFB2600F0661F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C251CABFB2600F0661F /* LaunchScreen.storyboard */; };
@@ -33,10 +36,13 @@
 /* Begin PBXFileReference section */
 		258E7DA31CBD334A00C2D50C /* PongSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongSceneView.swift; sourceTree = "<group>"; };
 		258E7DA51CBD39A300C2D50C /* AngleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleUtils.swift; sourceTree = "<group>"; };
+		258E7DA71CBE6C7200C2D50C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		258E7DAB1CBE76C800C2D50C /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DC0C1C1CABFB2600F0661F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		25DC0C1E1CABFB2600F0661F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		25DC0C1E1CABFB2600F0661F /* VRGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRGameViewController.swift; sourceTree = "<group>"; };
 		25DC0C211CABFB2600F0661F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25DC0C231CABFB2600F0661F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25DC0C261CABFB2600F0661F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,13 +81,16 @@
 			children = (
 				25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */,
 				25DC0C1C1CABFB2600F0661F /* art.scnassets */,
-				25DC0C1E1CABFB2600F0661F /* GameViewController.swift */,
+				25DC0C1E1CABFB2600F0661F /* VRGameViewController.swift */,
 				258E7DA31CBD334A00C2D50C /* PongSceneView.swift */,
 				25DC0C201CABFB2600F0661F /* Main.storyboard */,
 				25DC0C231CABFB2600F0661F /* Assets.xcassets */,
 				25DC0C251CABFB2600F0661F /* LaunchScreen.storyboard */,
 				25DC0C281CABFB2600F0661F /* Info.plist */,
 				258E7DA51CBD39A300C2D50C /* AngleUtils.swift */,
+				258E7DA71CBE6C7200C2D50C /* MenuViewController.swift */,
+				258E7DA91CBE6D3C00C2D50C /* Configuration.swift */,
+				258E7DAB1CBE76C800C2D50C /* ConfigViewController.swift */,
 			);
 			path = WatchPong;
 			sourceTree = "<group>";
@@ -160,8 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25DC0C1F1CABFB2600F0661F /* GameViewController.swift in Sources */,
+				258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */,
+				25DC0C1F1CABFB2600F0661F /* VRGameViewController.swift in Sources */,
+				258E7DA81CBE6C7200C2D50C /* MenuViewController.swift in Sources */,
 				25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */,
+				258E7DAC1CBE76C900C2D50C /* ConfigViewController.swift in Sources */,
 				258E7DA41CBD334A00C2D50C /* PongSceneView.swift in Sources */,
 				258E7DA61CBD39A300C2D50C /* AngleUtils.swift in Sources */,
 			);

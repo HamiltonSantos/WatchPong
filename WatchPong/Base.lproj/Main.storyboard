@@ -25,7 +25,7 @@
         <!--WatchPong-->
         <scene sceneID="J8B-Eb-1NS">
             <objects>
-                <viewController id="jTU-QP-uRW" sceneMemberID="viewController">
+                <viewController id="jTU-QP-uRW" customClass="MenuViewController" customModule="WatchPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e7C-jX-ceG"/>
                         <viewControllerLayoutGuide type="bottom" id="IZZ-gE-Rur"/>
@@ -40,6 +40,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
+                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALx-19-gsj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WNx-cc-Tuf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PY0-7j-YHq">
                                 <rect key="frame" x="40" y="490" width="250" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,26 +68,35 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <action selector="didPressStart:" destination="jTU-QP-uRW" eventType="touchUpInside" id="ILD-2y-Fab"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PY0-7j-YHq" firstAttribute="leading" secondItem="YKU-Ix-NJ3" secondAttribute="leadingMargin" constant="20" id="1JE-VF-QF7"/>
                             <constraint firstItem="IZZ-gE-Rur" firstAttribute="top" secondItem="PY0-7j-YHq" secondAttribute="bottom" constant="50" id="1av-L1-ona"/>
+                            <constraint firstItem="ALx-19-gsj" firstAttribute="leading" secondItem="YKU-Ix-NJ3" secondAttribute="leading" id="5Fm-ai-sCk"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="top" secondItem="e7C-jX-ceG" secondAttribute="bottom" id="9ON-HD-ZjN"/>
                             <constraint firstItem="PY0-7j-YHq" firstAttribute="width" secondItem="OlQ-GD-EDS" secondAttribute="width" id="CLR-Nx-3xz"/>
+                            <constraint firstItem="ALx-19-gsj" firstAttribute="top" secondItem="e7C-jX-ceG" secondAttribute="bottom" id="DCw-84-zG7"/>
                             <constraint firstItem="IZZ-gE-Rur" firstAttribute="top" secondItem="OlQ-GD-EDS" secondAttribute="bottom" constant="50" id="GgS-uT-iQ7"/>
+                            <constraint firstAttribute="trailing" secondItem="ALx-19-gsj" secondAttribute="trailing" id="Maz-B2-aCw"/>
                             <constraint firstAttribute="trailing" secondItem="9Ps-t2-76X" secondAttribute="trailing" id="UQe-Q8-RJ4"/>
                             <constraint firstItem="IZZ-gE-Rur" firstAttribute="top" secondItem="9Ps-t2-76X" secondAttribute="bottom" id="gyZ-7G-lNh"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="leading" secondItem="YKU-Ix-NJ3" secondAttribute="leading" id="lmW-2g-mdZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OlQ-GD-EDS" secondAttribute="trailing" constant="20" id="nu1-1x-Ke6"/>
+                            <constraint firstItem="IZZ-gE-Rur" firstAttribute="top" secondItem="ALx-19-gsj" secondAttribute="bottom" id="qn3-IO-338"/>
                             <constraint firstItem="OlQ-GD-EDS" firstAttribute="leading" secondItem="PY0-7j-YHq" secondAttribute="trailing" constant="20" id="xmD-17-w7k"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WatchPong" id="Wu9-Cd-KnE"/>
+                    <navigationItem key="navigationItem" title="WatchPong" id="Wu9-Cd-KnE">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uMm-10-0M4"/>
+                    </navigationItem>
                     <connections>
-                        <segue destination="ce6-0l-ro0" kind="show" id="7lR-Nq-Vv2"/>
-                        <segue destination="SVT-jZ-8e4" kind="show" id="XaR-lz-nXu"/>
+                        <segue destination="ce6-0l-ro0" kind="show" identifier="vrSegue" id="7lR-Nq-Vv2"/>
+                        <segue destination="SVT-jZ-8e4" kind="show" identifier="noVRSegue" id="XaR-lz-nXu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zi-cn-aST" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,7 +106,7 @@
         <!--Configuration-->
         <scene sceneID="Dxi-lP-aZR">
             <objects>
-                <viewController id="WYo-fi-aIS" sceneMemberID="viewController">
+                <viewController id="WYo-fi-aIS" customClass="ConfigViewController" customModule="WatchPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MsF-ZE-k8A"/>
                         <viewControllerLayoutGuide type="bottom" id="1Yi-UG-qso"/>
@@ -98,31 +115,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use VR gogles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIC-Se-ZxJ">
-                                <rect key="frame" x="40" y="386" width="451" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Apple Watch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-p3-5Ys">
-                                <rect key="frame" x="40" y="457" width="451" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use VR gogles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIC-Se-ZxJ">
+                                <rect key="frame" x="201" y="213" width="199" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-bS-cKr">
-                                <rect key="frame" x="511" y="386" width="51" height="31"/>
+                                <rect key="frame" x="420" y="213" width="51" height="31"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDL-31-XiA">
-                                <rect key="frame" x="511" y="457" width="51" height="31"/>
+                                <rect key="frame" x="420" y="284" width="51" height="31"/>
                             </switch>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-QB-QTk">
-                                <rect key="frame" x="511" y="528" width="69" height="32"/>
+                                <rect key="frame" x="420" y="355" width="69" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL9-Xo-VhJ">
-                                <rect key="frame" x="40" y="528" width="451" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Apple Watch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-p3-5Ys">
+                                <rect key="frame" x="201" y="284" width="199" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL9-Xo-VhJ">
+                                <rect key="frame" x="201" y="356" width="199" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,30 +147,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uIC-Se-ZxJ" firstAttribute="bottom" secondItem="7X5-bS-cKr" secondAttribute="bottom" id="2bT-VW-8oh"/>
-                            <constraint firstItem="7X5-bS-cKr" firstAttribute="leading" secondItem="uIC-Se-ZxJ" secondAttribute="trailing" constant="20" id="2du-U2-fMe"/>
-                            <constraint firstItem="1Yi-UG-qso" firstAttribute="top" secondItem="eL9-Xo-VhJ" secondAttribute="bottom" constant="40" id="3J0-jc-4oO"/>
-                            <constraint firstItem="uIC-Se-ZxJ" firstAttribute="leading" secondItem="cjK-fa-zCY" secondAttribute="leadingMargin" constant="20" id="4zc-L0-MKi"/>
-                            <constraint firstItem="bM2-QB-QTk" firstAttribute="leading" secondItem="eL9-Xo-VhJ" secondAttribute="trailing" constant="20" id="6bk-lb-RZt"/>
-                            <constraint firstItem="bM2-QB-QTk" firstAttribute="trailing" secondItem="wDL-31-XiA" secondAttribute="trailing" constant="20" id="8n4-Kv-7ee"/>
-                            <constraint firstItem="uIC-Se-ZxJ" firstAttribute="top" secondItem="7X5-bS-cKr" secondAttribute="top" id="BhV-Ky-Oy5"/>
-                            <constraint firstItem="wDL-31-XiA" firstAttribute="top" secondItem="7X5-bS-cKr" secondAttribute="bottom" constant="40" id="KJZ-SK-2RM"/>
-                            <constraint firstItem="1Yi-UG-qso" firstAttribute="top" secondItem="bM2-QB-QTk" secondAttribute="bottom" constant="40" id="Owu-qu-UyZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wDL-31-XiA" secondAttribute="trailing" constant="20" id="QDJ-Ue-tKz"/>
-                            <constraint firstItem="bM2-QB-QTk" firstAttribute="top" secondItem="wDL-31-XiA" secondAttribute="bottom" constant="40" id="SS4-FR-oy9"/>
-                            <constraint firstItem="eL9-Xo-VhJ" firstAttribute="top" secondItem="EfP-p3-5Ys" secondAttribute="bottom" constant="40" id="bCq-x4-fdW"/>
-                            <constraint firstItem="wDL-31-XiA" firstAttribute="leading" secondItem="EfP-p3-5Ys" secondAttribute="trailing" constant="20" id="eHi-kB-s6y"/>
-                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="leading" secondItem="cjK-fa-zCY" secondAttribute="leadingMargin" constant="20" id="fLl-wd-tvl"/>
-                            <constraint firstItem="bM2-QB-QTk" firstAttribute="leading" secondItem="wDL-31-XiA" secondAttribute="leading" id="frm-B9-4eT"/>
-                            <constraint firstItem="eL9-Xo-VhJ" firstAttribute="leading" secondItem="cjK-fa-zCY" secondAttribute="leadingMargin" constant="20" id="hFa-sZ-U9d"/>
-                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="bottom" secondItem="wDL-31-XiA" secondAttribute="bottom" id="lpN-kF-QPh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7X5-bS-cKr" secondAttribute="trailing" constant="20" id="ltd-GE-a9Y"/>
-                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="top" secondItem="wDL-31-XiA" secondAttribute="top" id="pNw-45-hGt"/>
+                            <constraint firstItem="7X5-bS-cKr" firstAttribute="leading" secondItem="uIC-Se-ZxJ" secondAttribute="trailing" constant="20" id="035-UV-MSd"/>
+                            <constraint firstItem="bM2-QB-QTk" firstAttribute="top" secondItem="wDL-31-XiA" secondAttribute="bottom" constant="40" id="5bF-PU-ax0"/>
+                            <constraint firstItem="uIC-Se-ZxJ" firstAttribute="leading" secondItem="EfP-p3-5Ys" secondAttribute="leading" id="6od-xL-pjV"/>
+                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="top" secondItem="uIC-Se-ZxJ" secondAttribute="bottom" constant="40" id="80n-2c-dZv"/>
+                            <constraint firstItem="wDL-31-XiA" firstAttribute="top" secondItem="7X5-bS-cKr" secondAttribute="bottom" constant="40" id="8Hv-fZ-xmG"/>
+                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="trailing" secondItem="uIC-Se-ZxJ" secondAttribute="trailing" id="G21-yB-gM9"/>
+                            <constraint firstItem="eL9-Xo-VhJ" firstAttribute="leading" secondItem="EfP-p3-5Ys" secondAttribute="leading" id="Kb5-kc-Rk3"/>
+                            <constraint firstItem="bM2-QB-QTk" firstAttribute="leading" secondItem="eL9-Xo-VhJ" secondAttribute="trailing" constant="20" id="UiH-dE-QL0"/>
+                            <constraint firstItem="wDL-31-XiA" firstAttribute="leading" secondItem="EfP-p3-5Ys" secondAttribute="trailing" constant="20" id="YSS-0u-4u9"/>
+                            <constraint firstItem="eL9-Xo-VhJ" firstAttribute="top" secondItem="EfP-p3-5Ys" secondAttribute="bottom" constant="40" id="bA5-ST-V76"/>
+                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="centerY" secondItem="cjK-fa-zCY" secondAttribute="centerY" id="dAq-Xu-6Vh"/>
+                            <constraint firstItem="bM2-QB-QTk" firstAttribute="trailing" secondItem="wDL-31-XiA" secondAttribute="trailing" constant="20" id="hu1-3R-94q"/>
+                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="centerX" secondItem="cjK-fa-zCY" secondAttribute="centerX" id="mIQ-QE-qBq"/>
+                            <constraint firstItem="EfP-p3-5Ys" firstAttribute="trailing" secondItem="eL9-Xo-VhJ" secondAttribute="trailing" id="rdl-ce-ZSE"/>
+                            <constraint firstItem="uIC-Se-ZxJ" firstAttribute="centerY" secondItem="7X5-bS-cKr" secondAttribute="centerY" id="uLp-UW-Rvy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Configuration" id="gpY-g6-QFq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KMR-hA-8C7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="KMR-hA-8C7">
+                            <connections>
+                                <action selector="didPressDone:" destination="WYo-fi-aIS" id="P9G-yE-wRx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scoreTextField" destination="bM2-QB-QTk" id="YBK-lA-P9D"/>
+                        <outlet property="vrSwitch" destination="7X5-bS-cKr" id="9e6-L1-0ty"/>
+                        <outlet property="watchSwitch" destination="wDL-31-XiA" id="Xps-2Z-RFl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8I-B5-PDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +184,7 @@
         <!--Game View Controller-->
         <scene sceneID="JF2-3f-7BM">
             <objects>
-                <viewController id="ce6-0l-ro0" customClass="GameViewController" customModule="WatchPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ce6-0l-ro0" customClass="VRGameViewController" customModule="WatchPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hw1-hk-aQQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Y9h-kW-szJ"/>
@@ -171,30 +193,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5q0-oy-7BV">
-                                <rect key="frame" x="300" y="20" width="300" height="580"/>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5q0-oy-7BV" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="rightCamera"/>
+                                </userDefinedRuntimeAttributes>
                             </sceneKitView>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-5u-ThW">
-                                <rect key="frame" x="0.0" y="20" width="300" height="580"/>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-5u-ThW" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="leftCamera"/>
+                                </userDefinedRuntimeAttributes>
                             </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aRt-5u-ThW" firstAttribute="top" secondItem="Hw1-hk-aQQ" secondAttribute="bottom" id="9TK-hV-tQn"/>
                             <constraint firstItem="5q0-oy-7BV" firstAttribute="leading" secondItem="aRt-5u-ThW" secondAttribute="trailing" id="Alp-ok-e9d"/>
-                            <constraint firstItem="5q0-oy-7BV" firstAttribute="top" secondItem="Hw1-hk-aQQ" secondAttribute="bottom" id="DNu-Am-MGs"/>
                             <constraint firstItem="5q0-oy-7BV" firstAttribute="width" secondItem="aRt-5u-ThW" secondAttribute="width" id="Dib-Mt-0Ca"/>
                             <constraint firstItem="Y9h-kW-szJ" firstAttribute="top" secondItem="aRt-5u-ThW" secondAttribute="bottom" id="EXH-oi-ibb"/>
                             <constraint firstItem="Y9h-kW-szJ" firstAttribute="top" secondItem="5q0-oy-7BV" secondAttribute="bottom" id="Ml7-s8-ZRS"/>
                             <constraint firstItem="aRt-5u-ThW" firstAttribute="leading" secondItem="cm6-7q-ksD" secondAttribute="leading" id="SgV-1I-D87"/>
+                            <constraint firstItem="aRt-5u-ThW" firstAttribute="top" secondItem="cm6-7q-ksD" secondAttribute="topMargin" id="UkI-7L-1MJ"/>
+                            <constraint firstItem="5q0-oy-7BV" firstAttribute="top" secondItem="cm6-7q-ksD" secondAttribute="topMargin" id="eT5-Wc-NHc"/>
                             <constraint firstAttribute="trailing" secondItem="5q0-oy-7BV" secondAttribute="trailing" id="i4L-Y4-e2Z"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="leftSceneView" destination="aRt-5u-ThW" id="zHz-FH-esG"/>
-                        <outlet property="rightSceneView" destination="5q0-oy-7BV" id="qFZ-UF-wev"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taB-qm-Mru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,8 +236,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                </userDefinedRuntimeAttributes>
                             </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
