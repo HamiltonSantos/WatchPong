@@ -33,10 +33,7 @@ class ConfigViewController: UIViewController {
     }
     
     @IBAction func didPressDone(sender: AnyObject) {
-        
-        
         config.updateConfig(vrSwitch.on, useWatch: watchSwitch.on, winningScore: Int(scoreTextField.text!) ?? 10)
         navigationController?.popViewControllerAnimated(true)
-        
     }
 }

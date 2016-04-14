@@ -7,19 +7,12 @@
 //
 
 import UIKit
-import QuartzCore
-import SceneKit
-import CoreMotion
 
-class VRGameViewController: UIViewController, SCNSceneRendererDelegate {
+class VRGameViewController: TransparenetBarViewController {
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+
     }
     
     override func prefersStatusBarHidden() -> Bool {

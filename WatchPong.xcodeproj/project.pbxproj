@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		258E7DA41CBD334A00C2D50C /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA31CBD334A00C2D50C /* PongSceneView.swift */; };
-		258E7DA61CBD39A300C2D50C /* AngleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA51CBD39A300C2D50C /* AngleUtils.swift */; };
-		258E7DA81CBE6C7200C2D50C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA71CBE6C7200C2D50C /* MenuViewController.swift */; };
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
-		258E7DAC1CBE76C900C2D50C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DAB1CBE76C800C2D50C /* ConfigViewController.swift */; };
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
-		25DC0C1D1CABFB2600F0661F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C1C1CABFB2600F0661F /* art.scnassets */; };
-		25DC0C1F1CABFB2600F0661F /* VRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1E1CABFB2600F0661F /* VRGameViewController.swift */; };
-		25DC0C221CABFB2600F0661F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C201CABFB2600F0661F /* Main.storyboard */; };
-		25DC0C241CABFB2600F0661F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C231CABFB2600F0661F /* Assets.xcassets */; };
-		25DC0C271CABFB2600F0661F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DC0C251CABFB2600F0661F /* LaunchScreen.storyboard */; };
+		3C2A216F4770189842C12C1F /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */; };
+		3C2A22711B92F16092C6A58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
+		3C2A239C67DCBEB6357582F9 /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
+		3C2A2408EB1D0EE98E40E7F8 /* AngleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2A9D7DC03393F7A34595 /* AngleUtils.swift */; };
+		3C2A253A90313A9C6DAF5193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A28549054E57895DD3237 /* Main.storyboard */; };
+		3C2A2761B4619DE70A5C84D4 /* TransparentBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A270D42BC1CCC0D5EFACE /* TransparentBarViewController.swift */; };
+		3C2A294B6449D07C9963A908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A2B0C9319C9AB4E38C33D /* LaunchScreen.storyboard */; };
+		3C2A296C27F03429902DBF18 /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */; };
+		3C2A2B00BBC5A064A4B3EE3B /* VRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2D0BB86732FFD56EE183 /* VRGameViewController.swift */; };
+		3C2A2CC7FD9E07EA4D6795F6 /* PongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2519C2E2505A6A2167CD /* PongController.swift */; };
+		3C2A2D2BCC9925C1FE99FA68 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2F22980C657ABC33E083 /* MenuViewController.swift */; };
+		3C2A2E448E13FF90DED59A1D /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
+		3C2A2FA732AA5CD7419AF088 /* SCSceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */; };
+		89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
+		89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,19 +40,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		258E7DA31CBD334A00C2D50C /* PongSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongSceneView.swift; sourceTree = "<group>"; };
-		258E7DA51CBD39A300C2D50C /* AngleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleUtils.swift; sourceTree = "<group>"; };
-		258E7DA71CBE6C7200C2D50C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		258E7DAB1CBE76C800C2D50C /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25DC0C1C1CABFB2600F0661F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		25DC0C1E1CABFB2600F0661F /* VRGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRGameViewController.swift; sourceTree = "<group>"; };
-		25DC0C211CABFB2600F0661F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		25DC0C231CABFB2600F0661F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		25DC0C261CABFB2600F0661F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		25DC0C281CABFB2600F0661F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C2A207638CA59CAC87FB683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		3C2A241ACB963E34047A666C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		3C2A2519C2E2505A6A2167CD /* PongController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongController.swift; sourceTree = "<group>"; };
+		3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongSceneView.swift; sourceTree = "<group>"; };
+		3C2A270D42BC1CCC0D5EFACE /* TransparentBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBarViewController.swift; sourceTree = "<group>"; };
+		3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSceneExtensions.swift; sourceTree = "<group>"; };
+		3C2A2A9D7DC03393F7A34595 /* AngleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleUtils.swift; sourceTree = "<group>"; };
+		3C2A2CCF3593A6699A0A7117 /* PongScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongScene.swift; sourceTree = "<group>"; };
+		3C2A2D0BB86732FFD56EE183 /* VRGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRGameViewController.swift; sourceTree = "<group>"; };
+		3C2A2DAE87C69ADF98458BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WatchPong/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3Extensions.swift; sourceTree = "<group>"; };
+		3C2A2F22980C657ABC33E083 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3C2A2F93EE5126AE2BE5F651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WatchPong/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		89C47E571CBECC6B00E889B0 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoVRGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,19 +92,73 @@
 			isa = PBXGroup;
 			children = (
 				25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */,
-				25DC0C1C1CABFB2600F0661F /* art.scnassets */,
-				25DC0C1E1CABFB2600F0661F /* VRGameViewController.swift */,
-				258E7DA31CBD334A00C2D50C /* PongSceneView.swift */,
-				25DC0C201CABFB2600F0661F /* Main.storyboard */,
-				25DC0C231CABFB2600F0661F /* Assets.xcassets */,
-				25DC0C251CABFB2600F0661F /* LaunchScreen.storyboard */,
-				25DC0C281CABFB2600F0661F /* Info.plist */,
-				258E7DA51CBD39A300C2D50C /* AngleUtils.swift */,
-				258E7DA71CBE6C7200C2D50C /* MenuViewController.swift */,
+				3C2A2519C2E2505A6A2167CD /* PongController.swift */,
+				3C2A2CCF3593A6699A0A7117 /* PongScene.swift */,
 				258E7DA91CBE6D3C00C2D50C /* Configuration.swift */,
-				258E7DAB1CBE76C800C2D50C /* ConfigViewController.swift */,
+				3C2A21EF624B192363BAAE25 /* Resources */,
+				3C2A29FB5CD4CFB517D137C4 /* Controllers */,
+				3C2A2269AA25DA54442B5011 /* Extensions */,
+				3C2A26A3889689AAA079695E /* Views */,
+				3C2A242ACFB335739ECF1680 /* Protocols */,
 			);
 			path = WatchPong;
+			sourceTree = "<group>";
+		};
+		3C2A20F3BBA9E48DEA4774B1 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A270D42BC1CCC0D5EFACE /* TransparentBarViewController.swift */,
+			);
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		3C2A21EF624B192363BAAE25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89C47E571CBECC6B00E889B0 /* art.scnassets */,
+				3C2A2B0C9319C9AB4E38C33D /* LaunchScreen.storyboard */,
+				3C2A28549054E57895DD3237 /* Main.storyboard */,
+				3C2A207638CA59CAC87FB683 /* Assets.xcassets */,
+				3C2A241ACB963E34047A666C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3C2A2269AA25DA54442B5011 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A2A9D7DC03393F7A34595 /* AngleUtils.swift */,
+				3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */,
+				3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3C2A242ACFB335739ECF1680 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3C2A26A3889689AAA079695E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C2A29FB5CD4CFB517D137C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A2D0BB86732FFD56EE183 /* VRGameViewController.swift */,
+				3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */,
+				3C2A2F22980C657ABC33E083 /* MenuViewController.swift */,
+				89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */,
+				3C2A20F3BBA9E48DEA4774B1 /* Generics */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +194,7 @@
 				TargetAttributes = {
 					25DC0C161CABFB2600F0661F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 				};
 			};
@@ -155,10 +221,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25DC0C1D1CABFB2600F0661F /* art.scnassets in Resources */,
-				25DC0C271CABFB2600F0661F /* LaunchScreen.storyboard in Resources */,
-				25DC0C241CABFB2600F0661F /* Assets.xcassets in Resources */,
-				25DC0C221CABFB2600F0661F /* Main.storyboard in Resources */,
+				3C2A294B6449D07C9963A908 /* LaunchScreen.storyboard in Resources */,
+				89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */,
+				3C2A253A90313A9C6DAF5193 /* Main.storyboard in Resources */,
+				3C2A22711B92F16092C6A58E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,30 +236,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */,
-				25DC0C1F1CABFB2600F0661F /* VRGameViewController.swift in Sources */,
-				258E7DA81CBE6C7200C2D50C /* MenuViewController.swift in Sources */,
 				25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */,
-				258E7DAC1CBE76C900C2D50C /* ConfigViewController.swift in Sources */,
-				258E7DA41CBD334A00C2D50C /* PongSceneView.swift in Sources */,
-				258E7DA61CBD39A300C2D50C /* AngleUtils.swift in Sources */,
+				89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */,
+				3C2A2408EB1D0EE98E40E7F8 /* AngleUtils.swift in Sources */,
+				3C2A239C67DCBEB6357582F9 /* PongSceneView.swift in Sources */,
+				3C2A2B00BBC5A064A4B3EE3B /* VRGameViewController.swift in Sources */,
+				3C2A216F4770189842C12C1F /* ConfigViewController.swift in Sources */,
+				3C2A2D2BCC9925C1FE99FA68 /* MenuViewController.swift in Sources */,
+				3C2A2CC7FD9E07EA4D6795F6 /* PongController.swift in Sources */,
+				3C2A2FA732AA5CD7419AF088 /* SCSceneExtensions.swift in Sources */,
+				3C2A2761B4619DE70A5C84D4 /* TransparentBarViewController.swift in Sources */,
+				3C2A296C27F03429902DBF18 /* SCNVector3Extensions.swift in Sources */,
+				3C2A2E448E13FF90DED59A1D /* PongScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		25DC0C201CABFB2600F0661F /* Main.storyboard */ = {
+		3C2A28549054E57895DD3237 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				25DC0C211CABFB2600F0661F /* Base */,
+				3C2A2DAE87C69ADF98458BAB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		25DC0C251CABFB2600F0661F /* LaunchScreen.storyboard */ = {
+		3C2A2B0C9319C9AB4E38C33D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				25DC0C261CABFB2600F0661F /* Base */,
+				3C2A2F93EE5126AE2BE5F651 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -290,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = WatchPong/Info.plist;
+				INFOPLIST_FILE = WatchPong/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,7 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = WatchPong/Info.plist;
+				INFOPLIST_FILE = WatchPong/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

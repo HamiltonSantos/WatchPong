@@ -14,18 +14,15 @@ class PongSceneView: SCNView {
     
     var motionManager : CMMotionManager?
     var cameraNode : SCNNode?
-    static let myScene = SCNScene(named: "art.scnassets/TableTennis.scn")!
     
     @IBInspectable var cameraName:String = "centerCamera"
     
     override func awakeFromNib() {
         // create a new scene
+        self.scene = PongScene.sharedInstance.sharedScene
         
-        cameraNode = PongSceneView.myScene.rootNode.childNodeWithName("cameraNode", recursively: false)!
-        
-        cameraNode!.eulerAngles.y = degreesToRadians(180.0)
-        
-        self.scene = PongSceneView.myScene
+        cameraNode = scene!.rootNode.childNodeWithName("cameraNode", recursively: false)!
+//        cameraNode!.eulerAngles.y = degreesToRadians(180.0)
         
         
         // retrieve the SCNView
@@ -38,6 +35,7 @@ class PongSceneView: SCNView {
         
         self.delegate = self
         self.antialiasingMode = .Multisampling4X
+        self.allowsCameraControl = true
         
         self.playing = true
     }
