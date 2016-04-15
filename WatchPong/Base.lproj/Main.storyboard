@@ -247,14 +247,14 @@
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn9-yW-lHh">
                                 <rect key="frame" x="300" y="0.0" width="300" height="600"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="rightPressed:" destination="SVT-jZ-8e4" eventType="touchUpInside" id="cBx-Ac-vlC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-pk-Rwt">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
-                                <color key="backgroundColor" red="1" green="0.0077197126939999999" blue="0.016699943740000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="leftPressed:" destination="SVT-jZ-8e4" eventType="touchUpInside" id="2as-mC-cr9"/>
                                 </connections>
