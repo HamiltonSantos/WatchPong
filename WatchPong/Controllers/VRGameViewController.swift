@@ -45,7 +45,8 @@ class VRGameViewController: TransparenetBarViewController {
 }
 
 extension VRGameViewController: WCSessionDelegate {
-    @available(iOS 9.0, *) func session(session: WCSession, didReceiveMessage message: [String:AnyObject], replyHandler: ([String:AnyObject]) -> Void) {
+
+    @available(iOS 9.0, *) func session(session: WCSession, didReceiveMessage message: [String:AnyObject]) {
         print(message)
 
         guard let side = message["side"] as? String else {
@@ -61,9 +62,6 @@ extension VRGameViewController: WCSessionDelegate {
             break
         default:break
         }
-
-
-        replyHandler(["message":"foi"])
-
     }
+
 }

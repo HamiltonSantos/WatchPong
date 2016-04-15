@@ -10,6 +10,8 @@ import WatchKit
 import CoreMotion
 import WatchConnectivity
 
+let treshould = Double(3)
+
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     var mgr: CMMotionManager?
@@ -46,17 +48,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 }
 
 
-                let force = data.getForce()
-
-                let treshould = 1.0
+//                let force = data.getForce()
 
                 // Se meu ultimo lancamento + 1 segundos for maior q o tempo atual
-                if force > 2.0 {
+                if self.isValidMoviment(data) {
                     if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
                         print("novo")
-                        self.lastDate = NSDate()
-
-
                         let sendMessage: (String) -> () = { side in
                             let dict = ["x" : data.acceleration.x,
                                         "y" : data.acceleration.y ,
@@ -65,23 +62,23 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                                         "side" : side]
 
                             session.sendMessage(dict as! [String : AnyObject],
-                                    replyHandler: { (reply) in
-                                        print(reply)
-                                    }, errorHandler: { (error) in
+                                    replyHandler:nil, errorHandler: { (error) in
                                 print(error)
                             })
 
                         }
 
-                        if data.acceleration.x > treshould {
+                        if data.acceleration.y > treshould {
                             print("esquerda")
                             print(data)
                             sendMessage("left")
+                            self.lastDate = NSDate()
 
                         }else if data.acceleration.x < -treshould {
                             print("direita")
                             print(data)
                             sendMessage("right")
+                            self.lastDate = NSDate()
                         }
                     }
                 }
@@ -100,6 +97,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationWillResignActive() {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, etc.
+    }
+
+    func isValidMoviment(data : CMAccelerometerData) -> Bool{
+
+        if data.acceleration.x < -treshould || data.acceleration.y > treshould{
+            return true
+        }
+        
+        return false
     }
 
 }
