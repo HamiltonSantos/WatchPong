@@ -21,11 +21,11 @@ class NoVRGameViewController: TransparenetBarViewController {
 
 
     @IBAction func leftPressed(sender: AnyObject) {
-        gameController.applyBallFoce(SCNVector3Make(0,1,-1))
+        gameController.processLeftAction()
     }
     
     @IBAction func rightPressed(sender: AnyObject) {
-        gameController.applyBallFoce(SCNVector3Make(0,1,-1))
+        gameController.processRightAction()
     }
     
 }

@@ -35,7 +35,7 @@ class PongSceneView: SCNView {
         
         self.delegate = self
         self.antialiasingMode = .Multisampling4X
-        self.allowsCameraControl = true
+//        self.allowsCameraControl = true
         
         self.playing = true
     }

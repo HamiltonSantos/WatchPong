@@ -17,10 +17,18 @@ class PongScene : NSObject {
     let mySide: SCNNode
     let otherSide: SCNNode
     let centerPoint: SCNNode
+    let floor : SCNNode
     var points = [SCNNode]()
+    let textPoints : SCNText
 
-    // Utils
-    let ballInitalPosition : SCNVector3
+    // Initial Posiitons
+    let mySideInitialLeftPosition : SCNVector3
+    let mySideInitialRightPosition : SCNVector3
+    let mySideInitialCenterPosition : SCNVector3
+
+    let otherSideInitialLeftPosition : SCNVector3
+    let otherSideInitialRightPosition : SCNVector3
+    let otherSideInitialCenterPosition : SCNVector3
 
     override init() {
         // ball
@@ -33,13 +41,24 @@ class PongScene : NSObject {
         // mySide points
         self.points.append(sharedScene.childNode("point1"))
         self.points.append(sharedScene.childNode("point2"))
+        // floor
+        self.floor = sharedScene.childNode("floor")
+        // textPoints
+        self.textPoints = sharedScene.childNode("textPoints").geometry as! SCNText
 
         // Contacts
         self.mySide.physicsBody!.contactTestBitMask = 1
         self.otherSide.physicsBody!.contactTestBitMask = 1
+        self.floor.physicsBody!.contactTestBitMask = 1
 
-        // Utils
-        self.ballInitalPosition = ball.position
+        // Initial Positions
+        self.mySideInitialLeftPosition = sharedScene.childNode("mySideStartPointLeft").position
+        self.mySideInitialRightPosition = sharedScene.childNode("mySideStartPointRight").position
+        self.mySideInitialCenterPosition = sharedScene.childNode("mySideStartPointCenter").position
+
+        self.otherSideInitialLeftPosition = sharedScene.childNode("otherSideStartPointLeft").position
+        self.otherSideInitialRightPosition = sharedScene.childNode("otherSideStartPointRight").position
+        self.otherSideInitialCenterPosition = sharedScene.childNode("otherSideStartPointCenter").position
     }
     
 

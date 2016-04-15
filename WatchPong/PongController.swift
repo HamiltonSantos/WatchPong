@@ -6,63 +6,171 @@
 import Foundation
 import SceneKit
 
-class PongController : NSObject{
+// Constants
+let force = Float(5.5)
+let defaultForceVector = SCNVector3Make(0, 1, -1)
+
+class PongController: NSObject {
 
     // Scene
     var pongScene = PongScene.sharedInstance
-    // Foce
-    let force = Float(5.0)
-    
+    // Utils
+    var myTurn = true
+    var myPoints = 0 {
+        didSet {
+            updatePointsText()
+        }
+    }
+    var otherPoints = 0 {
+        didSet {
+            updatePointsText()
+        }
+    }
+
     // Contact
-    var lastNodeContact : SCNNode?{
-        didSet{
-            if oldValue != nil && oldValue == lastNodeContact{
-                resetBall()
-                lastNodeContact = nil
+    var lastSideContact: SCNNode? {
+        didSet {
+            if oldValue != nil && oldValue == lastSideContact {
+
+                if lastSideContact == pongScene.mySide {
+                    otherPoints += 1
+                    myTurn = false
+                } else {
+                    myPoints += 1
+                    myTurn = true
+                }
+
+                resetGamePositions()
             }
         }
     }
-    
+
     override init() {
         super.init()
         pongScene.sharedScene.physicsWorld.contactDelegate = self
+        resetGamePositions()
     }
 }
 
 
-// Ball Foce
+// Ball Force
+
 extension PongController {
+
+    func applyOtherBallForce() {
+        let force = pongScene.points.randomItem().position.normalized() - pongScene.ball.presentationNode.position.normalized()
+        applyBallFoce(SCNVector3Make(force.x, 1, 1))
+    }
+
     func applyBallFoce(vectorForce: SCNVector3) {
-        resetPhysics(pongScene.ball)
-        applyForce(pongScene.ball,force: vectorForce * force)
+        resetVelocity(pongScene.ball)
+        applyForce(pongScene.ball, force: vectorForce * force)
     }
 
     func applyForce(node: SCNNode, force: SCNVector3) {
+        node.physicsBody?.affectedByGravity = true
         node.physicsBody?.applyForce(force, impulse: true)
     }
 }
 
 // Resets
-extension PongController{
-    func resetPhysics(node: SCNNode) {
+
+extension PongController {
+    func resetVelocity(node: SCNNode) {
         node.physicsBody?.velocity = SCNVector3Zero
         node.physicsBody?.angularVelocity = SCNVector4Zero
     }
 
-    func resetBall(){
-        resetPhysics(pongScene.ball)
-        pongScene.ball.position = pongScene.ballInitalPosition
+    func resetGamePositions() {
+        resetBall()
+        lastSideContact = nil
+        pongScene.ball.physicsBody!.affectedByGravity = false
+    }
+
+    func resetBall() {
+        resetVelocity(pongScene.ball)
+        if (myTurn) {
+            changeBallPosition(pongScene.mySideInitialCenterPosition)
+        } else {
+            changeBallPosition(pongScene.otherSideInitialCenterPosition)
+            delay(1) {
+                self.applyOtherBallForce()
+            }
+        }
+    }
+
+    func changeBallPosition(position: SCNVector3) {
+        pongScene.ball.position = position
     }
 }
 
-extension PongController : SCNPhysicsContactDelegate {
+// Process Actions
+
+extension PongController {
+
+    func processLeftAction(force: SCNVector3 = defaultForceVector) {
+        let x = pongScene.ball.presentationNode.position.x
+        guard x <= 0 else {
+            resetGamePositions()
+            otherPoints += 1
+            myTurn = false
+            print("lado errado")
+            return
+        }
+
+        processAction(pongScene.mySideInitialLeftPosition, force: force)
+    }
+
+    func processRightAction(force: SCNVector3 = defaultForceVector) {
+        let x = pongScene.ball.presentationNode.position.x
+        guard x >= 0 else {
+            resetGamePositions()
+            otherPoints += 1
+            myTurn = false
+            print("lado errado")
+            return
+        }
+
+        processAction(pongScene.mySideInitialRightPosition, force: force)
+    }
+
+    func processAction(position: SCNVector3, force: SCNVector3 = defaultForceVector) {
+        let x = pongScene.ball.presentationNode.position.x
+
+        if x == 0 {
+            changeBallPosition(position)
+        }
+
+        let forceToApply = pongScene.centerPoint.position.normalized() - pongScene.ball.presentationNode.position.normalized()
+
+        applyBallFoce(SCNVector3Make(forceToApply.x, 1, -1))
+    }
+
+}
+
+// Contact Delegate
+
+extension PongController: SCNPhysicsContactDelegate {
 
     func physicsWorld(world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact) {
 
         if contact.nodeB == pongScene.mySide || contact.nodeB == pongScene.otherSide {
-            lastNodeContact = contact.nodeB
-        }else if contact.nodeA == pongScene.mySide || contact.nodeA == pongScene.otherSide {
-            lastNodeContact = contact.nodeA
+            lastSideContact = contact.nodeB
+        } else if contact.nodeA == pongScene.mySide || contact.nodeA == pongScene.otherSide {
+            lastSideContact = contact.nodeA
+        }
+
+
+        if (contact.nodeB == pongScene.floor) {
+            if lastSideContact == pongScene.mySide {
+                otherPoints += 1
+                myTurn = false
+                resetGamePositions()
+            } else {
+                myPoints += 1
+                myTurn = true
+                resetGamePositions()
+            }
         }
 
     }
@@ -70,10 +178,18 @@ extension PongController : SCNPhysicsContactDelegate {
 
     func physicsWorld(world: SCNPhysicsWorld, didEndContact contact: SCNPhysicsContact) {
         print(contact)
-        
-        if contact.nodeB == pongScene.otherSide{
-            applyBallFoce(SCNVector3Make(0,1,1))
+
+        if contact.nodeB == pongScene.otherSide {
+            applyOtherBallForce()
         }
     }
-    
+
+}
+
+// Points
+
+extension PongController {
+    func updatePointsText() {
+        pongScene.textPoints.string = "\(myPoints) - \(otherPoints)"
+    }
 }
