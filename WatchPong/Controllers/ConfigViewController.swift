@@ -36,4 +36,11 @@ class ConfigViewController: UIViewController {
         config.updateConfig(vrSwitch.on, useWatch: watchSwitch.on, winningScore: Int(scoreTextField.text!) ?? 10)
         navigationController?.popViewControllerAnimated(true)
     }
+    @IBAction func didChangeVRConfig(sender: UISwitch) {
+        
+        if vrSwitch.on {
+            watchSwitch.setOn(true, animated: true)
+        }
+        
+    }
 }
