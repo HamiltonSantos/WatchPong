@@ -11,6 +11,9 @@ let force = Float(5.5)
 let defaultForceVector = SCNVector3Make(0, 1, -1)
 
 class PongController: NSObject {
+    
+    let tableSound = SCNAudioSource(fileNamed: "ping.mp3")
+    let racketSound = SCNAudioSource(fileNamed: "pong.mp3")
 
     // Scene
     var pongScene = PongScene.sharedInstance
@@ -48,6 +51,11 @@ class PongController: NSObject {
     override init() {
         super.init()
         pongScene.sharedScene.physicsWorld.contactDelegate = self
+        tableSound!.volume = 3
+        tableSound!.positional = true
+        tableSound!.shouldStream = true
+        tableSound!.load()
+        racketSound!.load()
         resetGamePositions()
     }
 }
@@ -60,17 +68,31 @@ extension PongController {
     func applyOtherBallForce() {
         let force = pongScene.points.randomItem().position.normalized() - pongScene.ball.presentationNode.position.normalized()
         applyBallFoce(SCNVector3Make(force.x, 1, 1))
+        playRacketSound()
     }
 
     func applyBallFoce(vectorForce: SCNVector3) {
         resetVelocity(pongScene.ball)
         applyForce(pongScene.ball, force: vectorForce * force)
+        playRacketSound()
     }
 
     func applyForce(node: SCNNode, force: SCNVector3) {
         node.physicsBody?.affectedByGravity = true
         node.physicsBody?.applyForce(force, impulse: true)
     }
+}
+
+extension PongController {
+    
+    func playRacketSound() {
+        pongScene.ball.runAction(.playAudioSource(racketSound!, waitForCompletion: false))
+    }
+    
+    func playTableSound() {
+        pongScene.ball.runAction(.playAudioSource(tableSound!, waitForCompletion: false))
+    }
+    
 }
 
 // Resets
@@ -172,6 +194,7 @@ extension PongController: SCNPhysicsContactDelegate {
                 resetGamePositions()
             }
         }
+        playTableSound()
 
     }
 
@@ -181,6 +204,7 @@ extension PongController: SCNPhysicsContactDelegate {
 
         if contact.nodeB == pongScene.otherSide {
             applyOtherBallForce()
+            
         }
     }
 
