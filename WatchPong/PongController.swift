@@ -12,8 +12,10 @@ let defaultForceVector = SCNVector3Make(0, 1, -1)
 
 class PongController: NSObject {
     
-    let tableSound = SCNAudioSource(fileNamed: "ping.mp3")
-    let racketSound = SCNAudioSource(fileNamed: "pong.mp3")
+    let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ping.mp3")
+    let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
+    let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
+    let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clap.mp3")
 
     // Scene
     var pongScene = PongScene.sharedInstance
@@ -51,11 +53,11 @@ class PongController: NSObject {
     override init() {
         super.init()
         pongScene.sharedScene.physicsWorld.contactDelegate = self
-        tableSound!.volume = 3
-        tableSound!.positional = true
-        tableSound!.shouldStream = true
-        tableSound!.load()
-        racketSound!.load()
+        tableSound?.load()
+        racketSound?.load()
+        clapSound?.loops = true
+        clapSound?.load()
+        endGameSound?.load()
         resetGamePositions()
     }
 }
@@ -91,6 +93,10 @@ extension PongController {
     
     func playTableSound() {
         pongScene.ball.runAction(.playAudioSource(tableSound!, waitForCompletion: false))
+    }
+    
+    func playClapSound() {
+        pongScene.ball.runAction(.playAudioSource(clapSound!, waitForCompletion: false))
     }
     
 }
@@ -193,6 +199,7 @@ extension PongController: SCNPhysicsContactDelegate {
                 myTurn = true
                 resetGamePositions()
             }
+            playClapSound()
         }
         playTableSound()
 

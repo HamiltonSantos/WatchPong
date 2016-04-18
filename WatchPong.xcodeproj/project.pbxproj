@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
-		258E7DB01CC4698A00C2D50C /* pong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 258E7DAE1CC4698A00C2D50C /* pong.mp3 */; };
-		258E7DB21CC46A3600C2D50C /* ping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 258E7DB11CC46A3600C2D50C /* ping.mp3 */; };
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
 		3C2A20364C5F5382B75D393E /* DispatchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */; };
 		3C2A216F4770189842C12C1F /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */; };
@@ -83,8 +81,6 @@
 
 /* Begin PBXFileReference section */
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		258E7DAE1CC4698A00C2D50C /* pong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pong.mp3; path = Resources/art.scnassets/pong.mp3; sourceTree = "<group>"; };
-		258E7DB11CC46A3600C2D50C /* ping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ping.mp3; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C2A207638CA59CAC87FB683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,8 +154,6 @@
 		25DC0C191CABFB2600F0661F /* WatchPong */ = {
 			isa = PBXGroup;
 			children = (
-				258E7DB11CC46A3600C2D50C /* ping.mp3 */,
-				258E7DAE1CC4698A00C2D50C /* pong.mp3 */,
 				25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */,
 				3C2A2519C2E2505A6A2167CD /* PongController.swift */,
 				3C2A2CCF3593A6699A0A7117 /* PongScene.swift */,
@@ -368,8 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C2A294B6449D07C9963A908 /* LaunchScreen.storyboard in Resources */,
-				258E7DB01CC4698A00C2D50C /* pong.mp3 in Resources */,
-				258E7DB21CC46A3600C2D50C /* ping.mp3 in Resources */,
 				89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */,
 				3C2A253A90313A9C6DAF5193 /* Main.storyboard in Resources */,
 				3C2A22711B92F16092C6A58E /* Assets.xcassets in Resources */,
