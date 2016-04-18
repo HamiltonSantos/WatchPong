@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: TransparenetBarViewController {
     
     var configuration = Configuration.sharedConfig
 
