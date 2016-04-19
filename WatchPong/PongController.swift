@@ -15,7 +15,7 @@ class PongController: NSObject {
     let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ping.mp3")
     let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
     let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
-    let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clap.mp3")
+    let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clapping.mp3")
 
     // Scene
     var pongScene = PongScene.sharedInstance
@@ -44,7 +44,7 @@ class PongController: NSObject {
                     myPoints += 1
                     myTurn = true
                 }
-
+                playClapSound()
                 resetGamePositions()
             }
         }
@@ -55,7 +55,6 @@ class PongController: NSObject {
         pongScene.sharedScene.physicsWorld.contactDelegate = self
         tableSound?.load()
         racketSound?.load()
-        clapSound?.loops = true
         clapSound?.load()
         endGameSound?.load()
         resetGamePositions()
@@ -139,10 +138,6 @@ extension PongController {
     func processLeftAction(force: SCNVector3 = defaultForceVector) {
         let x = pongScene.ball.presentationNode.position.x
         guard x <= 0 else {
-            resetGamePositions()
-            otherPoints += 1
-            myTurn = false
-            print("lado errado")
             return
         }
 
@@ -152,10 +147,6 @@ extension PongController {
     func processRightAction(force: SCNVector3 = defaultForceVector) {
         let x = pongScene.ball.presentationNode.position.x
         guard x >= 0 else {
-            resetGamePositions()
-            otherPoints += 1
-            myTurn = false
-            print("lado errado")
             return
         }
 
