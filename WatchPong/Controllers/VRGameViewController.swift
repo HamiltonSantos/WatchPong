@@ -13,6 +13,9 @@ class VRGameViewController: TransparenetBarViewController {
 
     let gameController = PongController()
 
+    @IBOutlet weak var sceneViewLeft: PongSceneView!
+    @IBOutlet weak var sceneViewRight: PongSceneView!
+    
     var session: WCSession?
 
     override func viewDidLoad() {
@@ -31,6 +34,7 @@ class VRGameViewController: TransparenetBarViewController {
         session.delegate = self
         session.activateSession()
 
+        sceneViewLeft.scene!.paused = false
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -40,6 +44,11 @@ class VRGameViewController: TransparenetBarViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        sceneViewLeft.scene!.paused = true
     }
 
 }
@@ -65,3 +74,4 @@ extension VRGameViewController: WCSessionDelegate {
     }
 
 }
+

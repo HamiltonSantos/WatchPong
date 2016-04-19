@@ -262,6 +262,10 @@
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="sceneViewLeft" destination="aRt-5u-ThW" id="PSs-bm-scR"/>
+                        <outlet property="sceneViewRight" destination="5q0-oy-7BV" id="Qgs-yO-Odl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taB-qm-Mru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

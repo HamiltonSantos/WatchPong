@@ -16,7 +16,8 @@ class NoVRGameViewController: TransparenetBarViewController {
     let gameController = PongController()
 
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        sceneView.scene!.paused = false
     }
 
 
@@ -27,5 +28,10 @@ class NoVRGameViewController: TransparenetBarViewController {
     @IBAction func rightPressed(sender: AnyObject) {
         gameController.processRightAction()
     }
-    
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        sceneView.scene!.paused = true
+    }
+
 }
