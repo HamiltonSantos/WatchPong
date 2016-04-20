@@ -35,6 +35,8 @@ class VRGameViewController: TransparenetBarViewController {
         session.activateSession()
 
         sceneViewLeft.scene!.paused = false
+        
+        gameController.viewControllerDelegate = self
     }
     
     override func prefersStatusBarHidden() -> Bool {

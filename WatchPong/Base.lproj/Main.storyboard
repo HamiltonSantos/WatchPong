@@ -271,6 +271,57 @@
             </objects>
             <point key="canvasLocation" x="47" y="344"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="4ow-jQ-0JX">
+            <objects>
+                <viewController storyboardIdentifier="finalizedVC" id="i3E-ru-KL4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fi4-Qd-gJI"/>
+                        <viewControllerLayoutGuide type="bottom" id="pv3-zS-Y9v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7wS-28-FEE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="aIK-bh-Xwg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placar final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK9-Dq-asD">
+                                <rect key="frame" x="195" y="270" width="209" height="59"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="43"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-mN-7i3">
+                                <rect key="frame" x="268.5" y="337" width="63.5" height="42.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aIK-bh-Xwg" firstAttribute="height" secondItem="7wS-28-FEE" secondAttribute="height" id="7kb-T2-K16"/>
+                            <constraint firstItem="n6Y-mN-7i3" firstAttribute="top" secondItem="mK9-Dq-asD" secondAttribute="bottom" constant="8" id="8Aw-Kd-5gK"/>
+                            <constraint firstItem="mK9-Dq-asD" firstAttribute="centerY" secondItem="7wS-28-FEE" secondAttribute="centerY" id="9vD-pf-LdC"/>
+                            <constraint firstItem="mK9-Dq-asD" firstAttribute="centerX" secondItem="7wS-28-FEE" secondAttribute="centerX" id="JlV-lM-jra"/>
+                            <constraint firstItem="n6Y-mN-7i3" firstAttribute="centerX" secondItem="mK9-Dq-asD" secondAttribute="centerX" id="PZL-gM-VYa"/>
+                            <constraint firstItem="aIK-bh-Xwg" firstAttribute="centerX" secondItem="7wS-28-FEE" secondAttribute="centerX" id="YAw-qa-43W"/>
+                            <constraint firstItem="aIK-bh-Xwg" firstAttribute="top" secondItem="fi4-Qd-gJI" secondAttribute="bottom" id="ZZs-v0-BfD"/>
+                            <constraint firstItem="aIK-bh-Xwg" firstAttribute="centerY" secondItem="7wS-28-FEE" secondAttribute="centerY" id="biC-Pu-tOf"/>
+                            <constraint firstItem="aIK-bh-Xwg" firstAttribute="width" secondItem="7wS-28-FEE" secondAttribute="width" id="zn4-It-ZF5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZZs-v0-BfD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ml-Cj-5N3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="344"/>
+        </scene>
         <!--NoVR Game View Controller-->
         <scene sceneID="i4A-Fu-HCK">
             <objects>
@@ -333,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBj-PD-oyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="1227"/>
+            <point key="canvasLocation" x="47" y="1159"/>
         </scene>
     </scenes>
     <resources>

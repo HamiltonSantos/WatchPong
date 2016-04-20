@@ -24,6 +24,7 @@
 		3C2A2CC7FD9E07EA4D6795F6 /* PongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2519C2E2505A6A2167CD /* PongController.swift */; };
 		3C2A2D2BCC9925C1FE99FA68 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2F22980C657ABC33E083 /* MenuViewController.swift */; };
 		3C2A2E448E13FF90DED59A1D /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
+		3C2A2ED313C2E2AA402B72BA /* InstantiateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2AA4D9A4785E10CC4FB6 /* InstantiateViewController.swift */; };
 		3C2A2FA732AA5CD7419AF088 /* SCSceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */; };
 		3C2A2FAD3684D5E031DA849A /* CMAccelerometerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A275A73827B44C05E69F3 /* CMAccelerometerExtensions.swift */; };
 		895C71DD1CC0649F001BDA8E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895C71DB1CC0649F001BDA8E /* Interface.storyboard */; };
@@ -35,6 +36,7 @@
 		895C71F31CC0649F001BDA8E /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 895C71D91CC0649F001BDA8E /* WatchApp.app */; };
 		89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
 		89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */; };
+		89F5AB7B1CC68350004A35D1 /* FinalizedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,7 @@
 		3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchHelpers.swift; sourceTree = "<group>"; };
 		3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSceneExtensions.swift; sourceTree = "<group>"; };
 		3C2A2A9D7DC03393F7A34595 /* AngleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleUtils.swift; sourceTree = "<group>"; };
+		3C2A2AA4D9A4785E10CC4FB6 /* InstantiateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantiateViewController.swift; sourceTree = "<group>"; };
 		3C2A2CCF3593A6699A0A7117 /* PongScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongScene.swift; sourceTree = "<group>"; };
 		3C2A2D0BB86732FFD56EE183 /* VRGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRGameViewController.swift; sourceTree = "<group>"; };
 		3C2A2DAE87C69ADF98458BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WatchPong/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -111,6 +114,7 @@
 		895C71F01CC0649F001BDA8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89C47E571CBECC6B00E889B0 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoVRGameViewController.swift; sourceTree = "<group>"; };
+		89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalizedGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 		3C2A242ACFB335739ECF1680 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3C2A2AA4D9A4785E10CC4FB6 /* InstantiateViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */,
 				3C2A2F22980C657ABC33E083 /* MenuViewController.swift */,
 				89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */,
+				89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */,
 				3C2A20F3BBA9E48DEA4774B1 /* Generics */,
 			);
 			path = Controllers;
@@ -324,15 +330,15 @@
 				TargetAttributes = {
 					25DC0C161CABFB2600F0661F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 					895C71D81CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 					895C71E41CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 				};
 			};
@@ -403,11 +409,13 @@
 				3C2A2CC7FD9E07EA4D6795F6 /* PongController.swift in Sources */,
 				3C2A2FA732AA5CD7419AF088 /* SCSceneExtensions.swift in Sources */,
 				3C2A2761B4619DE70A5C84D4 /* TransparentBarViewController.swift in Sources */,
+				89F5AB7B1CC68350004A35D1 /* FinalizedGameViewController.swift in Sources */,
 				3C2A296C27F03429902DBF18 /* SCNVector3Extensions.swift in Sources */,
 				3C2A2E448E13FF90DED59A1D /* PongScene.swift in Sources */,
 				3C2A24AEFBCF50EEDC177259 /* ArrayExtensions.swift in Sources */,
 				3C2A20364C5F5382B75D393E /* DispatchHelpers.swift in Sources */,
 				3C2A24AD66848F110548C814 /* CMAccelerometerExtensions.swift in Sources */,
+				3C2A2ED313C2E2AA402B72BA /* InstantiateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +490,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -527,6 +536,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -557,7 +567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 			};
 			name = Debug;
 		};
@@ -571,7 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 			};
 			name = Release;
 		};
@@ -588,7 +598,7 @@
 				INFOPLIST_FILE = WatchApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -608,7 +618,7 @@
 				INFOPLIST_FILE = WatchApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

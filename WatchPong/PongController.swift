@@ -12,6 +12,8 @@ let defaultForceVector = SCNVector3Make(0, 1, -1)
 
 class PongController: NSObject {
     
+    weak var viewControllerDelegate : UIViewController?
+    
     let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ping.mp3")
     let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
     let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
@@ -24,11 +26,21 @@ class PongController: NSObject {
     var myPoints = 0 {
         didSet {
             updatePointsText()
+            if (otherPoints > maxPoints()){
+                let vc = FinalizedGameViewController.instantiateViewController()
+                vc.userWinner = true
+                viewControllerDelegate?.presentViewController(vc, animated: true, completion: nil)
+            }
         }
     }
     var otherPoints = 0 {
         didSet {
             updatePointsText()
+            if (otherPoints > maxPoints()){
+                let vc = FinalizedGameViewController.instantiateViewController()
+                vc.userWinner = false
+                viewControllerDelegate?.presentViewController(vc, animated: true, completion: nil)
+            }
         }
     }
 
@@ -213,5 +225,9 @@ extension PongController: SCNPhysicsContactDelegate {
 extension PongController {
     func updatePointsText() {
         pongScene.textPoints.string = "\(myPoints) - \(otherPoints)"
+    }
+
+    func maxPoints() -> Int{
+        return 7
     }
 }

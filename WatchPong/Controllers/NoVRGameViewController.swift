@@ -18,6 +18,7 @@ class NoVRGameViewController: TransparenetBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.scene!.paused = false
+        gameController.viewControllerDelegate = self
     }
 
 
