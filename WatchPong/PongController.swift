@@ -88,6 +88,7 @@ extension PongController {
         resetVelocity(pongScene.ball)
         applyForce(pongScene.ball, force: vectorForce * force)
         playRacketSound()
+        myTurn = false
     }
 
     func applyForce(node: SCNNode, force: SCNVector3) {
@@ -95,6 +96,8 @@ extension PongController {
         node.physicsBody?.applyForce(force, impulse: true)
     }
 }
+
+// Sounds
 
 extension PongController {
     
@@ -149,7 +152,7 @@ extension PongController {
 
     func processLeftAction(force: SCNVector3 = defaultForceVector) {
         let x = pongScene.ball.presentationNode.position.x
-        guard x <= 0 else {
+        guard x <= 0 && myTurn else {
             return
         }
 
@@ -158,7 +161,7 @@ extension PongController {
 
     func processRightAction(force: SCNVector3 = defaultForceVector) {
         let x = pongScene.ball.presentationNode.position.x
-        guard x >= 0 else {
+        guard x >= 0 && myTurn else {
             return
         }
 
@@ -191,6 +194,9 @@ extension PongController: SCNPhysicsContactDelegate {
             lastSideContact = contact.nodeA
         }
 
+        if (contact.nodeA == pongScene.mySide || contact.nodeB == pongScene.mySide){
+            myTurn = true
+        }
 
         if (contact.nodeB == pongScene.floor) {
             if lastSideContact == pongScene.mySide {
@@ -214,7 +220,7 @@ extension PongController: SCNPhysicsContactDelegate {
 
         if contact.nodeB == pongScene.otherSide {
             applyOtherBallForce()
-            
+            myTurn = false
         }
     }
 
