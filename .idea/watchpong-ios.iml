@@ -25,6 +25,7 @@
       <sourceFolder url="file://$MODULE_DIR$/WatchPong/Views/PongSceneView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WatchPong/Protocols/InstantiateViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WatchPong/Configuration.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WatchPong/PongWCSessionController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WatchPong/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WatchPong/Base.lproj/Main.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WatchApp/Base.lproj/Interface.storyboard" isTestSource="false" />

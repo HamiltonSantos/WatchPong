@@ -15,10 +15,21 @@ class NoVRGameViewController: TransparenetBarViewController {
 
     let gameController = PongController()
 
+    var sessionController : PongWCSessionController?
+
+    @IBOutlet weak var buttonLeft: UIButton!
+    @IBOutlet weak var buttonRight: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.scene!.paused = false
         gameController.viewControllerDelegate = self
+
+        if Configuration.sharedConfig.useWatch {
+            buttonLeft.enabled = false
+            buttonRight.enabled = false
+            sessionController = PongWCSessionController(pongController: gameController)
+        }
     }
 
 
