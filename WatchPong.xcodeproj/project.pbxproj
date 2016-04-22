@@ -11,8 +11,10 @@
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
 		3C2A20364C5F5382B75D393E /* DispatchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */; };
 		3C2A216F4770189842C12C1F /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */; };
+		3C2A226AF622A721FCD9A3A8 /* UIViewControllerAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2517EFA88CE08ADFB1C0 /* UIViewControllerAdditions.swift */; };
 		3C2A22711B92F16092C6A58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
 		3C2A239C67DCBEB6357582F9 /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
+		3C2A23B240BD4146E5414CF5 /* PongWCSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A22A65DB0F389D9F0B969 /* PongWCSessionController.swift */; };
 		3C2A2408EB1D0EE98E40E7F8 /* AngleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2A9D7DC03393F7A34595 /* AngleUtils.swift */; };
 		3C2A24AD66848F110548C814 /* CMAccelerometerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A275A73827B44C05E69F3 /* CMAccelerometerExtensions.swift */; };
 		3C2A24AEFBCF50EEDC177259 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25B697E1E3282C2DFC11 /* ArrayExtensions.swift */; };
@@ -22,6 +24,7 @@
 		3C2A296C27F03429902DBF18 /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */; };
 		3C2A2B00BBC5A064A4B3EE3B /* VRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2D0BB86732FFD56EE183 /* VRGameViewController.swift */; };
 		3C2A2CC7FD9E07EA4D6795F6 /* PongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2519C2E2505A6A2167CD /* PongController.swift */; };
+		3C2A2CE29E0DAC9DEB0B87DC /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A282067463E962777DBF2 /* UIStoryboardExtensions.swift */; };
 		3C2A2D2BCC9925C1FE99FA68 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2F22980C657ABC33E083 /* MenuViewController.swift */; };
 		3C2A2E448E13FF90DED59A1D /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
 		3C2A2ED313C2E2AA402B72BA /* InstantiateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2AA4D9A4785E10CC4FB6 /* InstantiateViewController.swift */; };
@@ -86,13 +89,16 @@
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C2A207638CA59CAC87FB683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C2A22A65DB0F389D9F0B969 /* PongWCSessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongWCSessionController.swift; sourceTree = "<group>"; };
 		3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		3C2A241ACB963E34047A666C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		3C2A2517EFA88CE08ADFB1C0 /* UIViewControllerAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerAdditions.swift; sourceTree = "<group>"; };
 		3C2A2519C2E2505A6A2167CD /* PongController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongController.swift; sourceTree = "<group>"; };
 		3C2A25B697E1E3282C2DFC11 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongSceneView.swift; sourceTree = "<group>"; };
 		3C2A270D42BC1CCC0D5EFACE /* TransparentBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBarViewController.swift; sourceTree = "<group>"; };
 		3C2A275A73827B44C05E69F3 /* CMAccelerometerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAccelerometerExtensions.swift; sourceTree = "<group>"; };
+		3C2A282067463E962777DBF2 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchHelpers.swift; sourceTree = "<group>"; };
 		3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSceneExtensions.swift; sourceTree = "<group>"; };
 		3C2A2A9D7DC03393F7A34595 /* AngleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleUtils.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				3C2A26A3889689AAA079695E /* Views */,
 				3C2A242ACFB335739ECF1680 /* Protocols */,
 				3C2A2120602D6B2DF2065238 /* Helpers */,
+				3C2A22A65DB0F389D9F0B969 /* PongWCSessionController.swift */,
 			);
 			path = WatchPong;
 			sourceTree = "<group>";
@@ -208,6 +215,8 @@
 				3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */,
 				3C2A25B697E1E3282C2DFC11 /* ArrayExtensions.swift */,
 				3C2A275A73827B44C05E69F3 /* CMAccelerometerExtensions.swift */,
+				3C2A282067463E962777DBF2 /* UIStoryboardExtensions.swift */,
+				3C2A2517EFA88CE08ADFB1C0 /* UIViewControllerAdditions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,6 +425,9 @@
 				3C2A20364C5F5382B75D393E /* DispatchHelpers.swift in Sources */,
 				3C2A24AD66848F110548C814 /* CMAccelerometerExtensions.swift in Sources */,
 				3C2A2ED313C2E2AA402B72BA /* InstantiateViewController.swift in Sources */,
+				3C2A2CE29E0DAC9DEB0B87DC /* UIStoryboardExtensions.swift in Sources */,
+				3C2A226AF622A721FCD9A3A8 /* UIViewControllerAdditions.swift in Sources */,
+				3C2A23B240BD4146E5414CF5 /* PongWCSessionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 			};
 			name = Debug;
 		};
@@ -581,7 +593,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 			};
 			name = Release;
 		};
@@ -598,7 +610,7 @@
 				INFOPLIST_FILE = WatchApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -618,7 +630,7 @@
 				INFOPLIST_FILE = WatchApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -636,7 +648,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -653,7 +665,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongTest.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a1d34bac-210e-4080-9e2b-a4a557638116";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

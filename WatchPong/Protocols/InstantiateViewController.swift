@@ -21,8 +21,7 @@ protocol InstantiateViewController {
 extension InstantiateViewController {
 
     static func instantiateViewController() -> T {
-        let storyboard = UIStoryboard(name: storyboardName,bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier(identifierName) as! T
+        let vc = UIViewController.instantiate(storyboardName, viewIdentifier: identifierName) as! T
         return vc
     }
     
