@@ -299,6 +299,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você Venceu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVB-zg-EHU">
+                                <rect key="frame" x="156" y="181" width="287" height="69"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -306,17 +312,13 @@
                             <constraint firstItem="n6Y-mN-7i3" firstAttribute="top" secondItem="mK9-Dq-asD" secondAttribute="bottom" constant="8" id="8Aw-Kd-5gK"/>
                             <constraint firstItem="mK9-Dq-asD" firstAttribute="centerY" secondItem="7wS-28-FEE" secondAttribute="centerY" id="9vD-pf-LdC"/>
                             <constraint firstItem="mK9-Dq-asD" firstAttribute="centerX" secondItem="7wS-28-FEE" secondAttribute="centerX" id="JlV-lM-jra"/>
+                            <constraint firstItem="ZVB-zg-EHU" firstAttribute="centerX" secondItem="7wS-28-FEE" secondAttribute="centerX" id="KFg-K8-qMR"/>
                             <constraint firstItem="n6Y-mN-7i3" firstAttribute="centerX" secondItem="mK9-Dq-asD" secondAttribute="centerX" id="PZL-gM-VYa"/>
                             <constraint firstItem="aIK-bh-Xwg" firstAttribute="centerX" secondItem="7wS-28-FEE" secondAttribute="centerX" id="YAw-qa-43W"/>
-                            <constraint firstItem="aIK-bh-Xwg" firstAttribute="top" secondItem="fi4-Qd-gJI" secondAttribute="bottom" id="ZZs-v0-BfD"/>
+                            <constraint firstItem="mK9-Dq-asD" firstAttribute="top" secondItem="ZVB-zg-EHU" secondAttribute="bottom" constant="20" id="aYj-MO-YIA"/>
                             <constraint firstItem="aIK-bh-Xwg" firstAttribute="centerY" secondItem="7wS-28-FEE" secondAttribute="centerY" id="biC-Pu-tOf"/>
                             <constraint firstItem="aIK-bh-Xwg" firstAttribute="width" secondItem="7wS-28-FEE" secondAttribute="width" id="zn4-It-ZF5"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="ZZs-v0-BfD"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="Smv-cs-jDY">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="FXD-ki-sVU">
@@ -327,6 +329,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scoreLabel" destination="n6Y-mN-7i3" id="AI0-9s-NC9"/>
+                        <outlet property="winnerLabel" destination="ZVB-zg-EHU" id="KLC-IX-5c4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ml-Cj-5N3" userLabel="First Responder" sceneMemberID="firstResponder"/>

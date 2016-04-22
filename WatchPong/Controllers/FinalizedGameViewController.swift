@@ -15,6 +15,7 @@ class FinalizedGameViewController: UIViewController,InstantiateViewController {
     static var identifierName = "finalizedVC"
 
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var winnerLabel: UILabel!
     
     var userWinner : Bool = false
     var score:String = "0 - 0"
@@ -25,6 +26,7 @@ class FinalizedGameViewController: UIViewController,InstantiateViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        winnerLabel.text = userWinner ? "Você Venceu" : "Você Perdeu"
         scoreLabel.text = score
     }
 

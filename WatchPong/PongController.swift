@@ -76,6 +76,7 @@ class PongController: NSObject {
         clapSound?.load()
         endGameSound?.load()
         resetGamePositions()
+        updatePointsText()
     }
 }
 
