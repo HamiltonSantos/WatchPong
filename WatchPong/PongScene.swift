@@ -59,6 +59,8 @@ class PongScene : NSObject {
         self.otherSideInitialLeftPosition = sharedScene.childNode("otherSideStartPointLeft").position
         self.otherSideInitialRightPosition = sharedScene.childNode("otherSideStartPointRight").position
         self.otherSideInitialCenterPosition = sharedScene.childNode("otherSideStartPointCenter").position
+        sharedScene.background.contents = UIImage(named: "sky")
+        
     }
     
 

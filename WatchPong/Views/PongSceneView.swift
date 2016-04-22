@@ -22,8 +22,6 @@ class PongSceneView: SCNView {
         self.scene = PongScene.sharedInstance.sharedScene
         
         cameraNode = scene!.rootNode.childNodeWithName("cameraNode", recursively: false)!
-//        cameraNode!.eulerAngles.y = degreesToRadians(180.0)
-        
         
         // retrieve the SCNView
         self.pointOfView = scene!.rootNode.childNodeWithName(cameraName, recursively: true)
@@ -35,7 +33,6 @@ class PongSceneView: SCNView {
         
         self.delegate = self
         self.antialiasingMode = .Multisampling4X
-        self.showsStatistics = true
         
         self.playing = true
     }
