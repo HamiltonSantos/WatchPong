@@ -18,6 +18,7 @@ class PongController: NSObject {
     let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
     let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
     let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clapping.mp3")
+    let winningScore = Configuration.sharedConfig.winningScore
 
     // Scene
     var pongScene = PongScene.sharedInstance
@@ -26,20 +27,25 @@ class PongController: NSObject {
     var myPoints = 0 {
         didSet {
             updatePointsText()
-            if (otherPoints > maxPoints()){
-                let vc = FinalizedGameViewController.instantiateViewController()
-                vc.userWinner = true
-                viewControllerDelegate?.presentViewController(vc, animated: true, completion: nil)
+            if (myPoints >= winningScore){
+                dispatch_async(dispatch_get_main_queue(), { 
+                    self.viewControllerDelegate?.performSegueWithIdentifier("endGame", sender: nil)
+                })
+                
             }
         }
     }
     var otherPoints = 0 {
         didSet {
             updatePointsText()
-            if (otherPoints > maxPoints()){
-                let vc = FinalizedGameViewController.instantiateViewController()
-                vc.userWinner = false
-                viewControllerDelegate?.presentViewController(vc, animated: true, completion: nil)
+            if (otherPoints >= winningScore){
+                dispatch_async(dispatch_get_main_queue(), {
+                    let vc = FinalizedGameViewController.instantiateViewController()
+                    vc.userWinner = false
+                    vc.score = "\(self.myPoints) - \(self.otherPoints)"
+                    self.viewControllerDelegate?.navigationController?.pushViewController(vc, animated: true)
+                })
+                
             }
         }
     }
@@ -225,9 +231,5 @@ extension PongController: SCNPhysicsContactDelegate {
 extension PongController {
     func updatePointsText() {
         pongScene.textPoints.string = "\(myPoints) - \(otherPoints)"
-    }
-
-    func maxPoints() -> Int{
-        return 7
     }
 }

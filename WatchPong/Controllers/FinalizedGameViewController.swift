@@ -14,12 +14,18 @@ class FinalizedGameViewController: UIViewController,InstantiateViewController {
     static var storyboardName = "Main"
     static var identifierName = "finalizedVC"
 
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     var userWinner : Bool = false
+    var score:String = "0 - 0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        scoreLabel.text = score
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,4 +33,7 @@ class FinalizedGameViewController: UIViewController,InstantiateViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func didTouchDone(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 }
