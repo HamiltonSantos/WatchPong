@@ -26,6 +26,14 @@
             </objects>
             <point key="canvasLocation" x="-1423" y="344"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="lIs-3S-XwH">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="wz2-8M-yDM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9L-h5-29P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-748" y="-377"/>
+        </scene>
         <!-- -->
         <scene sceneID="J8B-Eb-1NS">
             <objects>
@@ -74,15 +82,28 @@
                                             <action selector="didPressStart:" destination="jTU-QP-uRW" eventType="touchUpInside" id="ILD-2y-Fab"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da7-Sc-b6G">
+                                        <rect key="frame" x="20" y="20" width="54" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="IFi-pz-JJk"/>
+                                            <constraint firstAttribute="width" constant="54" id="uk9-qz-CNE"/>
+                                        </constraints>
+                                        <state key="normal" image="logo"/>
+                                        <connections>
+                                            <segue destination="wz2-8M-yDM" kind="presentation" id="3eQ-kB-5Of"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" id="9SU-C8-fKC"/>
+                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="leading" secondItem="rwf-LT-edQ" secondAttribute="leading" constant="20" id="BvT-IU-ple"/>
                                     <constraint firstItem="PY0-7j-YHq" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" constant="20" id="Foh-4T-x9Z"/>
                                     <constraint firstItem="OlQ-GD-EDS" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="NgK-mP-pyd"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="T2D-Dw-LiA"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerY" secondItem="rwf-LT-edQ" secondAttribute="centerY" id="cun-a7-Bak"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="height" secondItem="rwf-LT-edQ" secondAttribute="height" id="w42-FK-qOr"/>
+                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" constant="20" id="xuO-VS-Yf7"/>
                                     <constraint firstAttribute="trailing" secondItem="PY0-7j-YHq" secondAttribute="trailing" constant="20" id="yhb-gW-rjO"/>
                                 </constraints>
                             </view>
