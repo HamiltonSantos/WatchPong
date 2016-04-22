@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
                     <items>
-                        <imageView height="151" alignment="left" image="racket" contentMode="scaleAspectFit" id="BjG-K7-szA"/>
+                        <imageView width="1" height="1" alignment="left" image="racket" contentMode="scaleAspectFit" id="BjG-K7-szA"/>
                     </items>
                 </controller>
             </objects>

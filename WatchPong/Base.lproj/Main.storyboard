@@ -328,6 +328,43 @@
             </objects>
             <point key="canvasLocation" x="794" y="344"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="L9c-Cm-amh">
+            <objects>
+                <viewController storyboardIdentifier="openWatchVC" id="7im-m2-uFQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LQm-tu-OaH"/>
+                        <viewControllerLayoutGuide type="bottom" id="w9K-pc-ZUZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yZQ-Kn-D1l">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="lLI-yd-g1x">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abra o app no watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvy-ce-8I1">
+                                <rect key="frame" x="222" y="289" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qvy-ce-8I1" firstAttribute="centerX" secondItem="yZQ-Kn-D1l" secondAttribute="centerX" id="Q4w-BI-yko"/>
+                            <constraint firstItem="lLI-yd-g1x" firstAttribute="height" secondItem="yZQ-Kn-D1l" secondAttribute="height" id="QCh-3L-8pI"/>
+                            <constraint firstItem="lLI-yd-g1x" firstAttribute="centerX" secondItem="yZQ-Kn-D1l" secondAttribute="centerX" id="hul-LP-QbI"/>
+                            <constraint firstItem="lLI-yd-g1x" firstAttribute="centerY" secondItem="yZQ-Kn-D1l" secondAttribute="centerY" id="lt2-om-Rp6"/>
+                            <constraint firstItem="qvy-ce-8I1" firstAttribute="centerY" secondItem="yZQ-Kn-D1l" secondAttribute="centerY" id="nMg-Na-Bsb"/>
+                            <constraint firstItem="lLI-yd-g1x" firstAttribute="width" secondItem="yZQ-Kn-D1l" secondAttribute="width" id="ulo-Va-3lg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGJ-0r-cK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="1159"/>
+        </scene>
         <!--NoVR Game View Controller-->
         <scene sceneID="i4A-Fu-HCK">
             <objects>

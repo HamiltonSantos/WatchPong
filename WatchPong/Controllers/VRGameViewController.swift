@@ -18,9 +18,11 @@ class VRGameViewController: TransparenetBarViewController {
     
     var session: WCSession?
 
+    var vc : UIViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        vc = UIViewController.instantiate(viewIdentifier: "openWatchVC")
         UIApplication.sharedApplication().idleTimerDisabled = true
 
         // Session
@@ -37,6 +39,8 @@ class VRGameViewController: TransparenetBarViewController {
         sceneViewLeft.scene!.paused = false
         
         gameController.viewControllerDelegate = self
+
+        updateActive()
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -72,6 +76,47 @@ extension VRGameViewController: WCSessionDelegate {
             gameController.processRightAction()
             break
         default:break
+        }
+    }
+
+    @available(iOS 9.3, *) func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+        updateActive()
+        print(session)
+    }
+
+    @available(iOS 9.0, *) func sessionReachabilityDidChange(session: WCSession) {
+        updateActive()
+        print(session)
+    }
+
+    @available(iOS 9.0, *) func sessionWatchStateDidChange(session: WCSession) {
+        updateActive()
+        print(session)
+    }
+
+
+    func sessionIsActive() -> Bool{
+        guard let session = session else {
+            return false
+        }
+
+        guard session.activationState == .Activated && session.reachable == true else {
+            return false
+        }
+
+        return true
+    }
+
+    func updateActive(){
+        if sessionIsActive(){
+            if self.presentedViewController == vc {
+                vc!.dismissViewControllerAnimated(true,completion: nil)
+            }
+
+        }else {
+            if self.presentedViewController == nil {
+                self.presentViewController(vc!,animated: true,completion: nil)
+            }
         }
     }
 
