@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
+		25F8D1801CCE589200400427 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */; };
+		25F8D1821CCE59ED00400427 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8D1811CCE59ED00400427 /* TutorialContentViewController.swift */; };
 		3C2A20364C5F5382B75D393E /* DispatchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */; };
 		3C2A216F4770189842C12C1F /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */; };
 		3C2A22711B92F16092C6A58E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		25F8D1811CCE59ED00400427 /* TutorialContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContentViewController.swift; sourceTree = "<group>"; };
 		3C2A207638CA59CAC87FB683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2A23D9F2616DA3F35EC2E7 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		3C2A241ACB963E34047A666C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 				89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */,
 				89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */,
 				3C2A20F3BBA9E48DEA4774B1 /* Generics */,
+				25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */,
+				25F8D1811CCE59ED00400427 /* TutorialContentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,7 +410,9 @@
 				3C2A2408EB1D0EE98E40E7F8 /* AngleUtils.swift in Sources */,
 				3C2A239C67DCBEB6357582F9 /* PongSceneView.swift in Sources */,
 				3C2A2B00BBC5A064A4B3EE3B /* VRGameViewController.swift in Sources */,
+				25F8D1801CCE589200400427 /* TutorialPageViewController.swift in Sources */,
 				3C2A216F4770189842C12C1F /* ConfigViewController.swift in Sources */,
+				25F8D1821CCE59ED00400427 /* TutorialContentViewController.swift in Sources */,
 				3C2A2D2BCC9925C1FE99FA68 /* MenuViewController.swift in Sources */,
 				3C2A2CC7FD9E07EA4D6795F6 /* PongController.swift in Sources */,
 				3C2A2FA732AA5CD7419AF088 /* SCSceneExtensions.swift in Sources */,
