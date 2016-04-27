@@ -1,23 +1,17 @@
 //
-//  TutorialContentViewController.swift
+//  TutorialContainerViewController.swift
 //  WatchPong
 //
-//  Created by Hamilton Carlos da Silva Santos on 4/25/16.
+//  Created by Hamilton Carlos da Silva Santos on 4/27/16.
 //  Copyright © 2016 Hamilton Santos. All rights reserved.
 //
 
 import UIKit
 
-class TutorialContentViewController: UIViewController {
-    
-    var index = 0
-    var imageName = ""
-    
-    @IBOutlet weak var contentImageView: UIImageView!
-    
+class TutorialContainerViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.contentImageView.image = UIImage(named: imageName)
 
         // Do any additional setup after loading the view.
     }
@@ -26,4 +20,12 @@ class TutorialContentViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func dismissTutorial(sender: AnyObject) {
+        Configuration.sharedConfig.seeTutorial()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+
 }

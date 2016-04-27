@@ -13,7 +13,9 @@ class Configuration: NSObject {
     var isVR: Bool
     var winningScore: Int
     var useWatch: Bool
+    var seenTutorial = false
     let defaults = NSUserDefaults.standardUserDefaults()
+    
     
     static let sharedConfig = Configuration()
     
@@ -21,6 +23,7 @@ class Configuration: NSObject {
         self.isVR = defaults.boolForKey("isVR")
         self.useWatch = defaults.boolForKey("useWatch")
         self.winningScore = defaults.integerForKey("winningScore")
+        self.seenTutorial = defaults.boolForKey("seenTutorial")
     }
     
     func updateConfig(isVR:Bool, useWatch:Bool, winningScore:Int) {
@@ -32,6 +35,12 @@ class Configuration: NSObject {
         defaults.setBool(useWatch, forKey: "useWatch")
         defaults.setInteger(winningScore, forKey: "winningScore")
         
+    }
+    
+    func seeTutorial() {
+        
+        seenTutorial = true
+        defaults.setBool(seenTutorial, forKey: "seenTutorial")
     }
 
 }
