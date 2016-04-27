@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    var pageImageNames = ["btn_config","btn_config","btn_config","btn_config"]
+    var pageImageNames = ["tuto1","tuto2","tuto3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
