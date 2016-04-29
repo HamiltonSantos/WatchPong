@@ -20,6 +20,7 @@ class PongScene : NSObject {
     let floor : SCNNode
     var points = [SCNNode]()
     let textPoints : SCNText
+    let racket : SCNNode
 
     // Initial Posiitons
     let mySideInitialLeftPosition : SCNVector3
@@ -50,6 +51,17 @@ class PongScene : NSObject {
         self.mySide.physicsBody!.contactTestBitMask = 1
         self.otherSide.physicsBody!.contactTestBitMask = 1
         self.floor.physicsBody!.contactTestBitMask = 1
+
+        // racket
+        let racketScene = SCNScene(named: "art.scnassets/racket.scn")
+        self.racket = racketScene!.childNode("Raquete")
+        sharedScene.rootNode.addChildNode(racket)
+        self.racket.position = SCNVector3Make(0,5,-6)
+        self.racket.rotation = SCNVector4Make(90,0,0,1)
+//        self.racket.physicsBody = SCNPhysicsBody(type: .Kinematic,shape: SCNPhysicsShape(node: self.racket, options: nil))
+//        self.racket.physicsBody!.affectedByGravity = false
+//        self.racket.physicsBody!.contactTestBitMask = 1
+
 
         // Initial Positions
         self.mySideInitialLeftPosition = sharedScene.childNode("mySideStartPointLeft").position
