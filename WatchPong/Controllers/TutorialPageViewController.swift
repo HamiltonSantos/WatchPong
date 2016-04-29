@@ -10,7 +10,9 @@ import UIKit
 
 class TutorialPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    var pageImageNames = ["tuto1","tuto2","tuto3"]
+    var pageImageNames = ["bigHand","tuto2","table"]
+    var pageTitles = ["Hold the Apple Watch","Connection Error?","Movement"]
+    var pageSubtitles = ["Now the watch is your Racket","Check if the Watch is connected with the iPhone","Move the Watch to the side where the ball goes"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,8 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
             
             if let contentVC = self.storyboard?.instantiateViewControllerWithIdentifier("tutorialContent") as? TutorialContentViewController {
                 contentVC.imageName = pageImageNames[index]
+                contentVC.tutoTitle = pageTitles[index]
+                contentVC.tutoSubtitle = pageSubtitles[index]
                 contentVC.index = index
                 return contentVC
             }
