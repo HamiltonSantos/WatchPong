@@ -435,10 +435,10 @@
             </objects>
             <point key="canvasLocation" x="794" y="344"/>
         </scene>
-        <!--View Controller-->
+        <!--Detect Watch View Controller-->
         <scene sceneID="L9c-Cm-amh">
             <objects>
-                <viewController storyboardIdentifier="openWatchVC" id="7im-m2-uFQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="openWatchVC" id="7im-m2-uFQ" customClass="DetectWatchViewController" customModule="WatchPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LQm-tu-OaH"/>
                         <viewControllerLayoutGuide type="bottom" id="w9K-pc-ZUZ"/>
@@ -456,9 +456,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqX-Un-Irl">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="7im-m2-uFQ" eventType="touchUpInside" id="kTw-bI-tLU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xqX-Un-Irl" firstAttribute="top" secondItem="LQm-tu-OaH" secondAttribute="bottom" id="4f9-6D-Wge"/>
+                            <constraint firstItem="xqX-Un-Irl" firstAttribute="leading" secondItem="yZQ-Kn-D1l" secondAttribute="leadingMargin" id="7qp-Oo-6QS"/>
                             <constraint firstItem="qvy-ce-8I1" firstAttribute="centerX" secondItem="yZQ-Kn-D1l" secondAttribute="centerX" id="Q4w-BI-yko"/>
                             <constraint firstItem="lLI-yd-g1x" firstAttribute="height" secondItem="yZQ-Kn-D1l" secondAttribute="height" id="QCh-3L-8pI"/>
                             <constraint firstItem="lLI-yd-g1x" firstAttribute="centerX" secondItem="yZQ-Kn-D1l" secondAttribute="centerX" id="hul-LP-QbI"/>

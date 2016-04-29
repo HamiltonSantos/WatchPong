@@ -11,9 +11,9 @@ let force = Float(5.5)
 let defaultForceVector = SCNVector3Make(0, 1, -1)
 
 class PongController: NSObject {
-    
-    weak var viewControllerDelegate : UIViewController?
-    
+
+    weak var viewControllerDelegate: UIViewController?
+
     let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ping.mp3")
     let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
     let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
@@ -27,25 +27,25 @@ class PongController: NSObject {
     var myPoints = 0 {
         didSet {
             updatePointsText()
-            if (myPoints >= winningScore){
-                dispatch_async(dispatch_get_main_queue(), { 
+            if (myPoints >= winningScore) {
+                dispatch_async(dispatch_get_main_queue(), {
                     self.viewControllerDelegate?.performSegueWithIdentifier("endGame", sender: nil)
                 })
-                
+
             }
         }
     }
     var otherPoints = 0 {
         didSet {
             updatePointsText()
-            if (otherPoints >= winningScore){
+            if (otherPoints >= winningScore) {
                 dispatch_async(dispatch_get_main_queue(), {
                     let vc = FinalizedGameViewController.instantiateViewController()
                     vc.userWinner = false
                     vc.score = "\(self.myPoints) - \(self.otherPoints)"
                     self.viewControllerDelegate?.navigationController?.pushViewController(vc, animated: true)
                 })
-                
+
             }
         }
     }
@@ -107,19 +107,19 @@ extension PongController {
 // Sounds
 
 extension PongController {
-    
+
     func playRacketSound() {
         pongScene.ball.runAction(.playAudioSource(racketSound!, waitForCompletion: false))
     }
-    
+
     func playTableSound() {
         pongScene.ball.runAction(.playAudioSource(tableSound!, waitForCompletion: false))
     }
-    
+
     func playClapSound() {
         pongScene.ball.runAction(.playAudioSource(clapSound!, waitForCompletion: false))
     }
-    
+
 }
 
 // Resets
@@ -201,7 +201,7 @@ extension PongController: SCNPhysicsContactDelegate {
             lastSideContact = contact.nodeA
         }
 
-        if (contact.nodeA == pongScene.mySide || contact.nodeB == pongScene.mySide){
+        if (contact.nodeA == pongScene.mySide || contact.nodeB == pongScene.mySide) {
             myTurn = true
         }
 
@@ -226,8 +226,10 @@ extension PongController: SCNPhysicsContactDelegate {
         print(contact)
 
         if contact.nodeB == pongScene.otherSide {
-            applyOtherBallForce()
-            myTurn = false
+            delay(0.5) {
+                self.applyOtherBallForce()
+                self.myTurn = false
+            }
         }
     }
 
