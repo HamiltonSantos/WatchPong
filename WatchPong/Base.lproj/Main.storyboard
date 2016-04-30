@@ -102,8 +102,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigHand" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-kT-vPQ">
-                                <rect key="frame" x="234" y="219" width="132" height="242"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-kT-vPQ">
+                                <rect key="frame" x="113.5" y="266" width="373" height="148"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold the Apple Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-nb-0qi">
                                 <rect key="frame" x="132" y="20" width="337" height="38"/>
@@ -127,24 +127,33 @@
                                 <rect key="frame" x="252" y="483" width="96" height="177"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9A-rL-GPv">
-                                <rect key="frame" x="300" y="469" width="0.0" height="123"/>
+                                <rect key="frame" x="300" y="422" width="0.0" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="P4Y-dg-9GM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1o8-Mt-bDo">
-                                <rect key="frame" x="300" y="88" width="0.0" height="123"/>
+                                <rect key="frame" x="300" y="88" width="0.0" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="QQz-Sx-A0v"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="PBN-KX-bXG">
+                                <rect key="frame" x="295" y="295" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PBN-KX-bXG" secondAttribute="height" id="Q6C-1W-QaF"/>
+                                    <constraint firstAttribute="height" constant="10" id="WOL-7c-DEV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PBN-KX-bXG" firstAttribute="centerX" secondItem="vXD-Zz-gSd" secondAttribute="centerX" id="0Cd-kd-GpN"/>
                             <constraint firstItem="cUl-9L-BPm" firstAttribute="centerX" secondItem="vXD-Zz-gSd" secondAttribute="centerX" id="2AY-DP-Usi"/>
                             <constraint firstItem="bo5-aF-Aen" firstAttribute="top" secondItem="cUl-9L-BPm" secondAttribute="bottom" constant="-60" id="5El-0c-8jh"/>
+                            <constraint firstItem="PBN-KX-bXG" firstAttribute="centerY" secondItem="vXD-Zz-gSd" secondAttribute="centerY" id="5M2-48-s55"/>
                             <constraint firstItem="k9A-rL-GPv" firstAttribute="centerX" secondItem="vXD-Zz-gSd" secondAttribute="centerX" id="Frn-IX-8fO"/>
                             <constraint firstItem="1o8-Mt-bDo" firstAttribute="top" secondItem="ubb-xE-gq5" secondAttribute="bottom" constant="8" id="I87-Yl-tGz"/>
                             <constraint firstItem="k9A-rL-GPv" firstAttribute="top" secondItem="fbN-kT-vPQ" secondAttribute="bottom" constant="8" id="O21-qF-Y6l"/>
@@ -160,6 +169,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ballHorizontalCenterConstraint" destination="0Cd-kd-GpN" id="6fU-ug-6mz"/>
+                        <outlet property="ballSizeConstraint" destination="WOL-7c-DEV" id="FYd-9Y-qwc"/>
+                        <outlet property="ballVerticalCenterConstraint" destination="5M2-48-s55" id="Lr3-MW-BZ3"/>
+                        <outlet property="ballView" destination="PBN-KX-bXG" id="b7a-oe-tuJ"/>
                         <outlet property="contentImageView" destination="fbN-kT-vPQ" id="esK-2l-LbE"/>
                         <outlet property="handCenterConstraint" destination="2AY-DP-Usi" id="meU-1T-Q0J"/>
                         <outlet property="handImageView" destination="cUl-9L-BPm" id="4Xu-Ci-n9x"/>
@@ -554,12 +567,13 @@
     </scenes>
     <resources>
         <image name="back" width="30" height="24"/>
-        <image name="bigHand" width="132" height="242"/>
+        <image name="ball" width="6" height="6"/>
         <image name="btn_config" width="31" height="31"/>
         <image name="hand" width="96" height="177"/>
         <image name="help" width="518" height="592"/>
         <image name="logo" width="214" height="182"/>
         <image name="mask" width="667" height="375"/>
+        <image name="table" width="373" height="148"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zbM-Mm-x9g"/>

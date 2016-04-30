@@ -15,22 +15,28 @@ class TutorialContentViewController: UIViewController {
     var tutoTitle = ""
     var tutoSubtitle = ""
     
+    @IBOutlet weak var ballView: UIView!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var handImageView: UIImageView!
     @IBOutlet weak var handCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var ballVerticalCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var ballHorizontalCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var ballSizeConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         handImageView.alpha = 0
-        animateHand(1)
+        ballView.alpha = 0
+        animateLeft()
         handCenterConstraint.constant = 0
         contentImageView.image = UIImage(named: imageName)
         titleLabel.text = tutoTitle
         subtitleLabel.text = tutoSubtitle
         if index == 2 {
             handImageView.alpha = 1
+            ballView.alpha = 1
         }
         // Do any additional setup after loading the view.
     }
@@ -39,16 +45,42 @@ class TutorialContentViewController: UIViewController {
         
     }
     
-    func animateHand(interval: NSTimeInterval) {
+    func animateLeft() {
         UIView.animateWithDuration(1, animations: {
-            self.handCenterConstraint.constant = self.view.frame.size.width/4
+            self.handCenterConstraint.constant = -(self.view.frame.size.width/4)
+            self.ballSizeConstraint.constant = 10
+            self.ballVerticalCenterConstraint.constant = self.view.frame.size.height/4
+            self.ballHorizontalCenterConstraint.constant = self.handCenterConstraint.constant
             self.view.layoutIfNeeded()
         }) { (finished) in
-            UIView.animateWithDuration(1.0, animations: {
-                self.handCenterConstraint.constant = -(self.view.frame.size.width/4)
+            UIView.animateWithDuration(1, animations: {
+                self.handCenterConstraint.constant = 0
+                self.ballSizeConstraint.constant = 5
+                self.ballVerticalCenterConstraint.constant = -(self.view.frame.size.height/4)
+                self.ballHorizontalCenterConstraint.constant = 0
                 self.view.layoutIfNeeded()
             }) { (finished) in
-                self.animateHand(2)
+                self.animateRight()
+            }
+        }
+    }
+    
+    func animateRight() {
+        UIView.animateWithDuration(1, animations: {
+            self.handCenterConstraint.constant = self.view.frame.size.width/4
+            self.ballSizeConstraint.constant = 10
+            self.ballVerticalCenterConstraint.constant = self.view.frame.size.height/4
+            self.ballHorizontalCenterConstraint.constant = self.handCenterConstraint.constant
+            self.view.layoutIfNeeded()
+        }) { (finished) in
+            UIView.animateWithDuration(1, animations: {
+                self.handCenterConstraint.constant = 0
+                self.ballSizeConstraint.constant = 5
+                self.ballVerticalCenterConstraint.constant = -(self.view.frame.size.height/4)
+                self.ballHorizontalCenterConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }) { (finished) in
+                self.animateLeft()
             }
         }
     }
