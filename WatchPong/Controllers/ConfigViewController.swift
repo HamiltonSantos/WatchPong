@@ -40,6 +40,9 @@ class ConfigViewController: UIViewController {
         
         if vrSwitch.on {
             watchSwitch.setOn(true, animated: true)
+            watchSwitch.enabled = false
+        } else {
+            watchSwitch.enabled = true
         }
         
     }
