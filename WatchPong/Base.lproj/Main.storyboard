@@ -345,6 +345,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="leftCamera"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
                         </subviews>
@@ -495,10 +496,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-pk-Rwt">
@@ -557,6 +559,6 @@
         <image name="mask" width="667" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ieo-G1-ZVv"/>
+        <segue reference="zbM-Mm-x9g"/>
     </inferredMetricsTieBreakers>
 </document>

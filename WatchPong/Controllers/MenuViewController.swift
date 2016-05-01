@@ -19,9 +19,9 @@ class MenuViewController: TransparenetBarViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if !configuration.seenTutorial {
-            performSegueWithIdentifier("tutorialSegue", sender: nil)
-        }
+//        if !configuration.seenTutorial {
+//            performSegueWithIdentifier("tutorialSegue", sender: nil)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

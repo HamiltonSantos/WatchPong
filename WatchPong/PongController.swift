@@ -14,10 +14,11 @@ class PongController: NSObject {
 
     weak var viewControllerDelegate: UIViewController?
 
-    let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ping.mp3")
-    let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
+    let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ball1.mp3")
+    let racketSound = SCNAudioSource(fileNamed: "art.scnassets/paddle1.mp3")
     let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
     let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clapping.mp3")
+
     let winningScore = Configuration.sharedConfig.winningScore
 
     // Scene
@@ -86,21 +87,25 @@ class PongController: NSObject {
 extension PongController {
 
     func applyOtherBallForce() {
-        let force = pongScene.points.randomItem().position.normalized() - pongScene.ball.presentationNode.position.normalized()
-        applyBallFoce(SCNVector3Make(force.x, 1, 1))
-        playRacketSound()
+//        let force = SCNVector3Make(frandom2(6), frandom(4), frandom(4)) - pongScene.ball.presentationNode.position.normalized()
+        let randomX = frandom(1) - 0.5
+        let randomY = 0.5
+        let randomZ = frandom(1) + 1
+        print("random x \(randomX)")
+        applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
+        self.myTurn = false
     }
 
     func applyBallFoce(vectorForce: SCNVector3) {
         resetVelocity(pongScene.ball)
         applyForce(pongScene.ball, force: vectorForce * force)
-        playRacketSound()
         myTurn = false
     }
 
     func applyForce(node: SCNNode, force: SCNVector3) {
         node.physicsBody?.affectedByGravity = true
         node.physicsBody?.applyForce(force, impulse: true)
+        playRacketSound()
     }
 }
 
@@ -176,15 +181,19 @@ extension PongController {
     }
 
     func processAction(position: SCNVector3, force: SCNVector3 = defaultForceVector) {
-        let x = pongScene.ball.presentationNode.position.x
+        let ballPosition = pongScene.ball.presentationNode.position
+
+        let x = ballPosition.x
 
         if x == 0 {
             changeBallPosition(position)
         }
 
-        let forceToApply = pongScene.centerPoint.position.normalized() - pongScene.ball.presentationNode.position.normalized()
+        let xForce = pongScene.centerPoint.position.normalized() - ballPosition.normalized()
+        let zExtra =  abs((ballPosition.x / 4)) * -1
+        let zForce =  zExtra + -1
 
-        applyBallFoce(SCNVector3Make(forceToApply.x, 1, -1))
+        applyBallFoce(SCNVector3Make(xForce.x, 1, zForce))
     }
 
 }
@@ -228,7 +237,6 @@ extension PongController: SCNPhysicsContactDelegate {
         if contact.nodeB == pongScene.otherSide {
             delay(0.5) {
                 self.applyOtherBallForce()
-                self.myTurn = false
             }
         }
     }
