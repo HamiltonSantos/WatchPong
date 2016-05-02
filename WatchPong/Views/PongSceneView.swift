@@ -17,6 +17,7 @@ class PongSceneView: SCNView {
 
     override func awakeFromNib() {
         // create a new scene
+        super.awakeFromNib()
         self.scene = PongScene.sharedInstance.sharedScene
 
         // retrieve the SCNView
@@ -24,9 +25,13 @@ class PongSceneView: SCNView {
 
         self.antialiasingMode = .Multisampling4X
 
-        self.playing = true
-
-        self.delegate = isDelegate ? PongSceneRendererDelegate.sharedInstance : nil
+//        self.delegate = PongSceneRendererDelegate.sharedInstance
+        if isDelegate {
+            self.playing = true
+            self.delegate = PongSceneRendererDelegate.sharedInstance
+        }else {
+            self.delegate = nil
+        }
 
     }
 

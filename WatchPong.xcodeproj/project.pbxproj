@@ -357,15 +357,15 @@
 				TargetAttributes = {
 					25DC0C161CABFB2600F0661F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 					895C71D81CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 					895C71E41CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = 2S8FFYU59P;
 					};
 				};
 			};
