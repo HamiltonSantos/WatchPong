@@ -14,10 +14,11 @@ class PongController: NSObject {
 
     weak var viewControllerDelegate: UIViewController?
 
-    let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ping.mp3")
-    let racketSound = SCNAudioSource(fileNamed: "art.scnassets/pong.mp3")
+    let tableSound = SCNAudioSource(fileNamed: "art.scnassets/ball1.mp3")
+    let racketSound = SCNAudioSource(fileNamed: "art.scnassets/paddle1.mp3")
     let endGameSound = SCNAudioSource(fileNamed: "art.scnassets/endGame.mp3")
     let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clapping.mp3")
+
     let winningScore = Configuration.sharedConfig.winningScore
 
     // Scene
@@ -29,7 +30,10 @@ class PongController: NSObject {
             updatePointsText()
             if (myPoints >= winningScore) {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.viewControllerDelegate?.performSegueWithIdentifier("endGame", sender: nil)
+                    let vc = FinalizedGameViewController.instantiateViewController()
+                    vc.userWinner = true
+                    vc.score = "\(self.myPoints) - \(self.otherPoints)"
+                    self.viewControllerDelegate?.navigationController?.pushViewController(vc, animated: true)
                 })
 
             }
@@ -51,22 +55,7 @@ class PongController: NSObject {
     }
 
     // Contact
-    var lastSideContact: SCNNode? {
-        didSet {
-            if oldValue != nil && oldValue == lastSideContact {
-
-                if lastSideContact == pongScene.mySide {
-                    otherPoints += 1
-                    myTurn = false
-                } else {
-                    myPoints += 1
-                    myTurn = true
-                }
-                playClapSound()
-                resetGamePositions()
-            }
-        }
-    }
+    var lastSideContact: SCNNode?
 
     override init() {
         super.init()
@@ -86,21 +75,30 @@ class PongController: NSObject {
 extension PongController {
 
     func applyOtherBallForce() {
-        let force = pongScene.points.randomItem().position.normalized() - pongScene.ball.presentationNode.position.normalized()
-        applyBallFoce(SCNVector3Make(force.x, 1, 1))
-        playRacketSound()
+//        let force = SCNVector3Make(frandom2(6), frandom(4), frandom(4)) - pongScene.ball.presentationNode.position.normalized()
+        let ballPosition = pongScene.ball.presentationNode.position
+        let randomX = frandom(1) - 0.5
+        let randomY = 0.6
+        let zExtra = abs((ballPosition.z / 5.5))
+        let randomZ =  zExtra + 0.7
+        print("random x \(randomX)")
+        applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
+        self.myTurn = false
     }
 
     func applyBallFoce(vectorForce: SCNVector3) {
         resetVelocity(pongScene.ball)
         applyForce(pongScene.ball, force: vectorForce * force)
-        playRacketSound()
         myTurn = false
     }
 
     func applyForce(node: SCNNode, force: SCNVector3) {
+
+        print("Force: \(force)")
+        print("Position: \(node.presentationNode.position)")
         node.physicsBody?.affectedByGravity = true
         node.physicsBody?.applyForce(force, impulse: true)
+        playRacketSound()
     }
 }
 
@@ -131,9 +129,10 @@ extension PongController {
     }
 
     func resetGamePositions() {
-        resetBall()
         lastSideContact = nil
+        pongScene.ball.physicsBody!.clearAllForces()
         pongScene.ball.physicsBody!.affectedByGravity = false
+        resetBall()
     }
 
     func resetBall() {
@@ -176,15 +175,19 @@ extension PongController {
     }
 
     func processAction(position: SCNVector3, force: SCNVector3 = defaultForceVector) {
-        let x = pongScene.ball.presentationNode.position.x
+        let ballPosition = pongScene.ball.presentationNode.position
+
+        let x = ballPosition.x
 
         if x == 0 {
             changeBallPosition(position)
         }
 
-        let forceToApply = pongScene.centerPoint.position.normalized() - pongScene.ball.presentationNode.position.normalized()
+        let xForce = pongScene.centerPoint.position.normalized() - ballPosition.normalized()
+        let zExtra = abs((ballPosition.z / 5.2)) * -1
+        let zForce = zExtra + -0.25
 
-        applyBallFoce(SCNVector3Make(forceToApply.x, 1, -1))
+        applyBallFoce(SCNVector3Make(xForce.x, 1, zForce))
     }
 
 }
@@ -194,11 +197,29 @@ extension PongController {
 extension PongController: SCNPhysicsContactDelegate {
 
     func physicsWorld(world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact) {
+        
+        print(NSThread.currentThread())
 
+        let oldLastSide = lastSideContact
         if contact.nodeB == pongScene.mySide || contact.nodeB == pongScene.otherSide {
             lastSideContact = contact.nodeB
         } else if contact.nodeA == pongScene.mySide || contact.nodeA == pongScene.otherSide {
             lastSideContact = contact.nodeA
+        }
+
+        guard oldLastSide != lastSideContact else {
+
+            if lastSideContact == pongScene.mySide {
+                otherPoints += 1
+                myTurn = false
+            } else {
+                myPoints += 1
+                myTurn = true
+            }
+            playClapSound()
+            resetGamePositions()
+
+            return
         }
 
         if (contact.nodeA == pongScene.mySide || contact.nodeB == pongScene.mySide) {
@@ -223,12 +244,11 @@ extension PongController: SCNPhysicsContactDelegate {
 
 
     func physicsWorld(world: SCNPhysicsWorld, didEndContact contact: SCNPhysicsContact) {
-        print(contact)
+//        print(contact)
 
         if contact.nodeB == pongScene.otherSide {
-            delay(0.5) {
+            delay(0.25) {
                 self.applyOtherBallForce()
-                self.myTurn = false
             }
         }
     }

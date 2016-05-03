@@ -23,6 +23,10 @@ class Configuration: NSObject {
         self.isVR = defaults.boolForKey("isVR")
         self.useWatch = defaults.boolForKey("useWatch")
         self.winningScore = defaults.integerForKey("winningScore")
+        if winningScore == 0 {
+            winningScore = 7
+            defaults.setInteger(winningScore, forKey: "winningScore")
+        }
         self.seenTutorial = defaults.boolForKey("seenTutorial")
     }
     

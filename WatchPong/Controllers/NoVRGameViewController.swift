@@ -43,7 +43,7 @@ class NoVRGameViewController: TransparenetBarViewController {
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        sceneView.scene!.paused = true
+        PongScene.sharedInstance.sharedScene.paused = true
     }
 
 }

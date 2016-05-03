@@ -21,7 +21,7 @@ class VRGameViewController: TransparenetBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sceneViewLeft.scene!.paused = false
+        PongScene.sharedInstance.sharedScene.paused = false
         
         gameController.viewControllerDelegate = self
 
@@ -39,7 +39,15 @@ class VRGameViewController: TransparenetBarViewController {
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        sceneViewLeft.scene!.paused = true
+        PongScene.sharedInstance.sharedScene.paused = true
+    }
+    
+    @IBAction func letPressed(sender: AnyObject) {
+        gameController.processLeftAction()
+    }
+    
+    @IBAction func rightPressed(sender: AnyObject) {
+        gameController.processRightAction()
     }
 
 }

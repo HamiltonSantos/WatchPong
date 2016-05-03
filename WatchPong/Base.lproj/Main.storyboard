@@ -399,29 +399,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5q0-oy-7BV" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" jitteringEnabled="YES" preferredRenderingAPI="1" translatesAutoresizingMaskIntoConstraints="NO" id="5q0-oy-7BV" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="300" y="0.0" width="300" height="600"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="rightCamera"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-5u-ThW" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" preferredRenderingAPI="1" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-5u-ThW" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="leftCamera"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJX-EZ-NSL">
+                                <rect key="frame" x="0.0" y="64" width="300" height="536"/>
+                                <connections>
+                                    <action selector="letPressed:" destination="ce6-0l-ro0" eventType="touchUpInside" id="6HX-mU-S0I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3S-Xv-gCL">
+                                <rect key="frame" x="300" y="64" width="300" height="536"/>
+                                <connections>
+                                    <action selector="rightPressed:" destination="ce6-0l-ro0" eventType="touchUpInside" id="K5w-kN-nFO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="C3S-Xv-gCL" firstAttribute="leading" secondItem="kJX-EZ-NSL" secondAttribute="trailing" id="7hJ-kb-DN8"/>
                             <constraint firstItem="5q0-oy-7BV" firstAttribute="leading" secondItem="aRt-5u-ThW" secondAttribute="trailing" id="Alp-ok-e9d"/>
                             <constraint firstItem="5q0-oy-7BV" firstAttribute="width" secondItem="aRt-5u-ThW" secondAttribute="width" id="Dib-Mt-0Ca"/>
+                            <constraint firstItem="C3S-Xv-gCL" firstAttribute="top" secondItem="Hw1-hk-aQQ" secondAttribute="bottom" id="E94-mi-fB0"/>
                             <constraint firstItem="Y9h-kW-szJ" firstAttribute="top" secondItem="aRt-5u-ThW" secondAttribute="bottom" id="EXH-oi-ibb"/>
                             <constraint firstItem="Y9h-kW-szJ" firstAttribute="top" secondItem="5q0-oy-7BV" secondAttribute="bottom" id="Ml7-s8-ZRS"/>
                             <constraint firstItem="aRt-5u-ThW" firstAttribute="leading" secondItem="cm6-7q-ksD" secondAttribute="leading" id="SgV-1I-D87"/>
                             <constraint firstItem="aRt-5u-ThW" firstAttribute="top" secondItem="cm6-7q-ksD" secondAttribute="topMargin" id="UkI-7L-1MJ"/>
+                            <constraint firstItem="Y9h-kW-szJ" firstAttribute="top" secondItem="C3S-Xv-gCL" secondAttribute="bottom" id="VPM-7B-M5M"/>
+                            <constraint firstItem="5q0-oy-7BV" firstAttribute="leading" secondItem="kJX-EZ-NSL" secondAttribute="trailing" id="ZpC-ei-JmT"/>
+                            <constraint firstItem="Y9h-kW-szJ" firstAttribute="top" secondItem="kJX-EZ-NSL" secondAttribute="bottom" id="abc-sn-gt4"/>
+                            <constraint firstAttribute="trailing" secondItem="C3S-Xv-gCL" secondAttribute="trailing" id="d7B-3Q-xLJ"/>
                             <constraint firstItem="5q0-oy-7BV" firstAttribute="top" secondItem="cm6-7q-ksD" secondAttribute="topMargin" id="eT5-Wc-NHc"/>
                             <constraint firstAttribute="trailing" secondItem="5q0-oy-7BV" secondAttribute="trailing" id="i4L-Y4-e2Z"/>
+                            <constraint firstItem="kJX-EZ-NSL" firstAttribute="leading" secondItem="cm6-7q-ksD" secondAttribute="leading" id="pD9-Ci-Vhb"/>
+                            <constraint firstItem="kJX-EZ-NSL" firstAttribute="top" secondItem="Hw1-hk-aQQ" secondAttribute="bottom" id="wAC-VZ-jDb"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -559,10 +581,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-pk-Rwt">
@@ -626,6 +649,6 @@
         <image name="table" width="373" height="148"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ieo-G1-ZVv"/>
+        <segue reference="zbM-Mm-x9g"/>
     </inferredMetricsTieBreakers>
 </document>

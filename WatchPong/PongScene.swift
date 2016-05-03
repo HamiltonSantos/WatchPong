@@ -22,6 +22,9 @@ class PongScene : NSObject {
     let textPoints : SCNText
     let racket : SCNNode
 
+    // Camera Node
+    var cameraNode: SCNNode?
+
     // Initial Posiitons
     let mySideInitialLeftPosition : SCNVector3
     let mySideInitialRightPosition : SCNVector3
@@ -62,6 +65,8 @@ class PongScene : NSObject {
 //        self.racket.physicsBody!.affectedByGravity = false
 //        self.racket.physicsBody!.contactTestBitMask = 1
 
+        // camera
+        cameraNode = sharedScene.childNode("cameraNode")
 
         // Initial Positions
         self.mySideInitialLeftPosition = sharedScene.childNode("mySideStartPointLeft").position
