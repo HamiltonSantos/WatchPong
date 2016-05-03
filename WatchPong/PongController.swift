@@ -80,7 +80,7 @@ extension PongController {
         let randomX = frandom(1) - 0.5
         let randomY = 0.6
         let zExtra = abs((ballPosition.z / 5.5))
-        let randomZ =  zExtra + frandom(1) + 0.34
+        let randomZ =  zExtra + 0.7
         print("random x \(randomX)")
         applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
         self.myTurn = false
@@ -184,7 +184,7 @@ extension PongController {
         }
 
         let xForce = pongScene.centerPoint.position.normalized() - ballPosition.normalized()
-        let zExtra = abs((ballPosition.z / 5.5)) * -1
+        let zExtra = abs((ballPosition.z / 5.2)) * -1
         let zForce = zExtra + -0.25
 
         applyBallFoce(SCNVector3Make(xForce.x, 1, zForce))
@@ -247,7 +247,7 @@ extension PongController: SCNPhysicsContactDelegate {
 //        print(contact)
 
         if contact.nodeB == pongScene.otherSide {
-            delay(0.5) {
+            delay(0.25) {
                 self.applyOtherBallForce()
             }
         }
