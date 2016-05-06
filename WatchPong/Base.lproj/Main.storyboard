@@ -581,6 +581,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtC-ya-O4b" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                </userDefinedRuntimeAttributes>
+                            </sceneKitView>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-a1-e20" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <userDefinedRuntimeAttributes>
@@ -588,13 +594,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-pk-Rwt">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="leftPressed:" destination="SVT-jZ-8e4" eventType="touchUpInside" id="2as-mC-cr9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn9-yW-lHh">
                                 <rect key="frame" x="300" y="0.0" width="300" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -602,21 +601,32 @@
                                     <action selector="rightPressed:" destination="SVT-jZ-8e4" eventType="touchUpInside" id="cBx-Ac-vlC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOY-pk-Rwt">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="leftPressed:" destination="SVT-jZ-8e4" eventType="touchUpInside" id="2as-mC-cr9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zOY-pk-Rwt" firstAttribute="width" secondItem="Cn9-yW-lHh" secondAttribute="width" id="4c3-3S-3jb"/>
                             <constraint firstItem="zOY-pk-Rwt" firstAttribute="leading" secondItem="aKB-bP-1qM" secondAttribute="leading" id="7Mk-r3-33m"/>
+                            <constraint firstAttribute="trailing" secondItem="wtC-ya-O4b" secondAttribute="trailing" id="Cc9-mK-r98"/>
                             <constraint firstItem="zOY-pk-Rwt" firstAttribute="top" secondItem="aKB-bP-1qM" secondAttribute="topMargin" id="D9r-nS-IKK"/>
                             <constraint firstItem="t4d-a1-e20" firstAttribute="top" secondItem="aKB-bP-1qM" secondAttribute="topMargin" id="DkK-VU-ObT"/>
                             <constraint firstItem="tqw-E8-yjq" firstAttribute="top" secondItem="t4d-a1-e20" secondAttribute="bottom" id="Ggz-8A-TMi"/>
                             <constraint firstAttribute="trailing" secondItem="t4d-a1-e20" secondAttribute="trailing" id="Hv4-uU-xqN"/>
+                            <constraint firstAttribute="topMargin" secondItem="wtC-ya-O4b" secondAttribute="top" id="IG1-ob-feW"/>
                             <constraint firstItem="Cn9-yW-lHh" firstAttribute="leading" secondItem="zOY-pk-Rwt" secondAttribute="trailing" id="ObI-XD-40b"/>
+                            <constraint firstItem="wtC-ya-O4b" firstAttribute="leading" secondItem="aKB-bP-1qM" secondAttribute="leading" id="bCK-cC-3I3"/>
                             <constraint firstItem="tqw-E8-yjq" firstAttribute="top" secondItem="zOY-pk-Rwt" secondAttribute="bottom" id="cz5-hD-ovu"/>
                             <constraint firstItem="Cn9-yW-lHh" firstAttribute="trailing" secondItem="aKB-bP-1qM" secondAttribute="trailing" id="edv-ad-I9k"/>
                             <constraint firstItem="Cn9-yW-lHh" firstAttribute="top" secondItem="aKB-bP-1qM" secondAttribute="topMargin" id="hG4-vP-IdS"/>
                             <constraint firstItem="tqw-E8-yjq" firstAttribute="top" secondItem="Cn9-yW-lHh" secondAttribute="bottom" id="jHy-7d-WVr"/>
                             <constraint firstItem="t4d-a1-e20" firstAttribute="leading" secondItem="aKB-bP-1qM" secondAttribute="leading" id="mIl-Uy-4J5"/>
+                            <constraint firstItem="tqw-E8-yjq" firstAttribute="top" secondItem="wtC-ya-O4b" secondAttribute="bottom" id="uhC-EV-J3G"/>
                             <constraint firstItem="t4d-a1-e20" firstAttribute="top" secondItem="g0Q-UV-4Qj" secondAttribute="bottom" id="wql-1K-Rqn"/>
                         </constraints>
                         <variation key="default">
@@ -649,6 +659,6 @@
         <image name="table" width="373" height="148"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zbM-Mm-x9g"/>
+        <segue reference="Ieo-G1-ZVv"/>
     </inferredMetricsTieBreakers>
 </document>

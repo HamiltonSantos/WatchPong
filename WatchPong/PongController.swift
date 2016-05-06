@@ -80,7 +80,7 @@ extension PongController {
         let randomX = frandom(1) - 0.5
         let randomY = 0.6
         let zExtra = abs((ballPosition.z / 5.5))
-        let randomZ =  zExtra + 0.7
+        let randomZ =  zExtra + 0.8
         print("random x \(randomX)")
         applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
         self.myTurn = false
