@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lM4-IE-06a">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="ghx-i3-0w2">
+            <objects>
+                <viewController id="lM4-IE-06a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LnW-hs-Hdj"/>
+                        <viewControllerLayoutGuide type="bottom" id="t5z-Bo-TJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xxo-7V-117">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-Ev-ti0">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-di-YpY">
+                                <rect key="frame" x="853" y="449" width="214" height="182"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-cy-CP9">
+                                <rect key="frame" x="823" y="655" width="275" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="qSv-J4-gfX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BV-Wp-DGR">
+                                <rect key="frame" x="110" y="60" width="209" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Tutorial"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAm-0E-mfe">
+                                <rect key="frame" x="1496" y="60" width="314" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Configuration"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hzI-cy-CP9" firstAttribute="top" secondItem="SQT-di-YpY" secondAttribute="bottom" constant="24" id="1KO-vW-Q1T"/>
+                            <constraint firstItem="SQT-di-YpY" firstAttribute="centerY" secondItem="xxo-7V-117" secondAttribute="centerY" id="1fH-mI-hd3"/>
+                            <constraint firstAttribute="trailing" secondItem="Mdn-Ev-ti0" secondAttribute="trailing" id="3MR-Og-9KM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rAm-0E-mfe" secondAttribute="trailing" constant="90" id="EEZ-CO-z5Q"/>
+                            <constraint firstItem="7BV-Wp-DGR" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" constant="60" id="LKv-VW-4vA"/>
+                            <constraint firstItem="7BV-Wp-DGR" firstAttribute="leading" secondItem="xxo-7V-117" secondAttribute="leadingMargin" constant="90" id="Lut-Vy-7gT"/>
+                            <constraint firstItem="SQT-di-YpY" firstAttribute="centerX" secondItem="xxo-7V-117" secondAttribute="centerX" id="P5v-cG-3KE"/>
+                            <constraint firstItem="rAm-0E-mfe" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" constant="60" id="YZN-lb-FlE"/>
+                            <constraint firstItem="Mdn-Ev-ti0" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" id="fUU-uM-2yt"/>
+                            <constraint firstItem="Mdn-Ev-ti0" firstAttribute="leading" secondItem="xxo-7V-117" secondAttribute="leading" id="flg-Rm-G7I"/>
+                            <constraint firstItem="t5z-Bo-TJZ" firstAttribute="top" secondItem="Mdn-Ev-ti0" secondAttribute="bottom" id="v66-R8-VYL"/>
+                            <constraint firstItem="hzI-cy-CP9" firstAttribute="centerX" secondItem="xxo-7V-117" secondAttribute="centerX" id="vsG-hT-4Mb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMG-VB-5Kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1912" y="480"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -39,4 +97,8 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="214" height="182"/>
+        <image name="mask" width="667" height="375"/>
+    </resources>
 </document>
