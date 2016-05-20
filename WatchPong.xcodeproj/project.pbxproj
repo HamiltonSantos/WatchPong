@@ -7,8 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250E7F131CEF3BCC00311532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E7F121CEF3BCC00311532 /* AppDelegate.swift */; };
+		250E7F151CEF3BCC00311532 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F141CEF3BCC00311532 /* art.scnassets */; };
+		250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F181CEF3BCC00311532 /* Main.storyboard */; };
+		250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F1B1CEF3BCC00311532 /* Assets.xcassets */; };
+		2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
+		252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
+		252748821CEF44650018324F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E7F161CEF3BCC00311532 /* GameViewController.swift */; };
 		257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */; };
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
+		25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
+		25CF026B1CEF3D2B006A3505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
+		25CF026D1CEF3DED006A3505 /* TVPongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF026C1CEF3DED006A3505 /* TVPongController.swift */; };
+		25CF026E1CEF3E19006A3505 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
+		25CF026F1CEF3E2F006A3505 /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
+		25CF02701CEF3F40006A3505 /* RandomHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2971AA029D4025A4B24D /* RandomHelpers.swift */; };
+		25CF02711CEF3F6A006A3505 /* SCSceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */; };
+		25CF02721CEF3FCB006A3505 /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */; };
+		25CF02731CEF3FF4006A3505 /* DispatchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */; };
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
 		25F8D1801CCE589200400427 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */; };
 		25F8D1821CCE59ED00400427 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8D1811CCE59ED00400427 /* TutorialContentViewController.swift */; };
@@ -91,8 +107,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		250E7F101CEF3BCC00311532 /* TVPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		250E7F121CEF3BCC00311532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		250E7F141CEF3BCC00311532 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		250E7F161CEF3BCC00311532 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		250E7F191CEF3BCC00311532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		250E7F1B1CEF3BCC00311532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		250E7F1D1CEF3BCC00311532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongSceneRendererDelegate.swift; sourceTree = "<group>"; };
 		257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		25CF026C1CEF3DED006A3505 /* TVPongController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongController.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +161,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		250E7F0D1CEF3BCC00311532 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25DC0C141CABFB2600F0661F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,12 +185,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250E7F111CEF3BCC00311532 /* TVPong */ = {
+			isa = PBXGroup;
+			children = (
+				250E7F121CEF3BCC00311532 /* AppDelegate.swift */,
+				250E7F141CEF3BCC00311532 /* art.scnassets */,
+				250E7F161CEF3BCC00311532 /* GameViewController.swift */,
+				250E7F181CEF3BCC00311532 /* Main.storyboard */,
+				250E7F1B1CEF3BCC00311532 /* Assets.xcassets */,
+				250E7F1D1CEF3BCC00311532 /* Info.plist */,
+				25CF026C1CEF3DED006A3505 /* TVPongController.swift */,
+				252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */,
+			);
+			path = TVPong;
+			sourceTree = "<group>";
+		};
 		25DC0C0E1CABFB2600F0661F = {
 			isa = PBXGroup;
 			children = (
 				25DC0C191CABFB2600F0661F /* WatchPong */,
 				895C71DA1CC0649F001BDA8E /* WatchApp */,
 				895C71E91CC0649F001BDA8E /* WatchApp Extension */,
+				250E7F111CEF3BCC00311532 /* TVPong */,
 				25DC0C181CABFB2600F0661F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +217,7 @@
 				25DC0C171CABFB2600F0661F /* WatchPong.app */,
 				895C71D91CC0649F001BDA8E /* WatchApp.app */,
 				895C71E51CC0649F001BDA8E /* WatchApp Extension.appex */,
+				250E7F101CEF3BCC00311532 /* TVPong.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,6 +341,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		250E7F0F1CEF3BCC00311532 /* TVPong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 250E7F201CEF3BCC00311532 /* Build configuration list for PBXNativeTarget "TVPong" */;
+			buildPhases = (
+				250E7F0C1CEF3BCC00311532 /* Sources */,
+				250E7F0D1CEF3BCC00311532 /* Frameworks */,
+				250E7F0E1CEF3BCC00311532 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVPong;
+			productName = TVPong;
+			productReference = 250E7F101CEF3BCC00311532 /* TVPong.app */;
+			productType = "com.apple.product-type.application";
+		};
 		25DC0C161CABFB2600F0661F /* WatchPong */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25DC0C2B1CABFB2600F0661F /* Build configuration list for PBXNativeTarget "WatchPong" */;
@@ -355,6 +421,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Hamilton Santos";
 				TargetAttributes = {
+					250E7F0F1CEF3BCC00311532 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					25DC0C161CABFB2600F0661F = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 28CU5YV2B9;
@@ -385,11 +454,24 @@
 				25DC0C161CABFB2600F0661F /* WatchPong */,
 				895C71D81CC0649F001BDA8E /* WatchApp */,
 				895C71E41CC0649F001BDA8E /* WatchApp Extension */,
+				250E7F0F1CEF3BCC00311532 /* TVPong */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		250E7F0E1CEF3BCC00311532 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				250E7F151CEF3BCC00311532 /* art.scnassets in Resources */,
+				25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */,
+				250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */,
+				250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */,
+				25CF026B1CEF3D2B006A3505 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25DC0C151CABFB2600F0661F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +503,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		250E7F0C1CEF3BCC00311532 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25CF026F1CEF3E2F006A3505 /* PongScene.swift in Sources */,
+				25CF026D1CEF3DED006A3505 /* TVPongController.swift in Sources */,
+				25CF02721CEF3FCB006A3505 /* SCNVector3Extensions.swift in Sources */,
+				2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */,
+				25CF02731CEF3FF4006A3505 /* DispatchHelpers.swift in Sources */,
+				25CF02701CEF3F40006A3505 /* RandomHelpers.swift in Sources */,
+				25CF026E1CEF3E19006A3505 /* Configuration.swift in Sources */,
+				250E7F131CEF3BCC00311532 /* AppDelegate.swift in Sources */,
+				252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */,
+				252748821CEF44650018324F /* GameViewController.swift in Sources */,
+				25CF02711CEF3F6A006A3505 /* SCSceneExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		25DC0C131CABFB2600F0661F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +581,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		250E7F181CEF3BCC00311532 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				250E7F191CEF3BCC00311532 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		3C2A28549054E57895DD3237 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -508,6 +616,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		250E7F1E1CEF3BCC00311532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = TVPong/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.TVPong;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		250E7F1F1CEF3BCC00311532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = TVPong/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.TVPong;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		25DC0C291CABFB2600F0661F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -700,6 +838,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		250E7F201CEF3BCC00311532 /* Build configuration list for PBXNativeTarget "TVPong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				250E7F1E1CEF3BCC00311532 /* Debug */,
+				250E7F1F1CEF3BCC00311532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		25DC0C121CABFB2600F0661F /* Build configuration list for PBXProject "WatchPong" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

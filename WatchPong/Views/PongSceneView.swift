@@ -25,10 +25,10 @@ class PongSceneView: SCNView {
 
         self.antialiasingMode = .Multisampling4X
 
-//        self.delegate = PongSceneRendererDelegate.sharedInstance
+        self.delegate = TVPongSceneRendererDelegate.sharedInstance
         if isDelegate {
             self.playing = true
-            self.delegate = PongSceneRendererDelegate.sharedInstance
+            self.delegate = TVPongSceneRendererDelegate.sharedInstance
         }else {
             self.delegate = nil
         }
