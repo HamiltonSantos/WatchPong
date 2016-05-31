@@ -69,7 +69,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0MT-mn-i4x"/>
                         <viewControllerLayoutGuide type="bottom" id="zKz-Ah-VF4"/>
@@ -93,9 +93,6 @@
                             <constraint firstItem="HGe-Mq-Qya" firstAttribute="leading" secondItem="BxU-Oe-mI4" secondAttribute="leading" id="qsD-Nx-ENr"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="sceneView" destination="HGe-Mq-Qya" id="VlH-8l-nFm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>

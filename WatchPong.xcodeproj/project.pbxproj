@@ -13,14 +13,10 @@
 		250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F1B1CEF3BCC00311532 /* Assets.xcassets */; };
 		2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
 		252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
-		252748821CEF44650018324F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E7F161CEF3BCC00311532 /* GameViewController.swift */; };
 		257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */; };
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
 		25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
 		25CF026B1CEF3D2B006A3505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
-		25CF026D1CEF3DED006A3505 /* TVPongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF026C1CEF3DED006A3505 /* TVPongController.swift */; };
-		25CF026E1CEF3E19006A3505 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
-		25CF026F1CEF3E2F006A3505 /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
 		25CF02701CEF3F40006A3505 /* RandomHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2971AA029D4025A4B24D /* RandomHelpers.swift */; };
 		25CF02711CEF3F6A006A3505 /* SCSceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2990DD49E050E77FFD00 /* SCSceneExtensions.swift */; };
 		25CF02721CEF3FCB006A3505 /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */; };
@@ -62,6 +58,13 @@
 		89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
 		89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */; };
 		89F5AB7B1CC68350004A35D1 /* FinalizedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */; };
+		EBF3F2E21CFDC93900787156 /* TVGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3F2E11CFDC93900787156 /* TVGameViewController.swift */; };
+		EBF3F2E41CFDC9BC00787156 /* PongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2519C2E2505A6A2167CD /* PongController.swift */; };
+		EBF3F2E51CFDC9BC00787156 /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
+		EBF3F2E61CFDC9BC00787156 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
+		EBF3F2E71CFDCA0700787156 /* FinalizedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */; };
+		EBF3F2E81CFDCA2000787156 /* InstantiateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2AA4D9A4785E10CC4FB6 /* InstantiateViewController.swift */; };
+		EBF3F2E91CFDCA3100787156 /* UIViewControllerAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2517EFA88CE08ADFB1C0 /* UIViewControllerAdditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,14 +113,12 @@
 		250E7F101CEF3BCC00311532 /* TVPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		250E7F121CEF3BCC00311532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		250E7F141CEF3BCC00311532 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		250E7F161CEF3BCC00311532 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		250E7F191CEF3BCC00311532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		250E7F1B1CEF3BCC00311532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		250E7F1D1CEF3BCC00311532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongSceneRendererDelegate.swift; sourceTree = "<group>"; };
 		257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		25CF026C1CEF3DED006A3505 /* TVPongController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongController.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 		89C47E571CBECC6B00E889B0 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoVRGameViewController.swift; sourceTree = "<group>"; };
 		89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalizedGameViewController.swift; sourceTree = "<group>"; };
+		EBF3F2E11CFDC93900787156 /* TVGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,12 +192,11 @@
 			children = (
 				250E7F121CEF3BCC00311532 /* AppDelegate.swift */,
 				250E7F141CEF3BCC00311532 /* art.scnassets */,
-				250E7F161CEF3BCC00311532 /* GameViewController.swift */,
 				250E7F181CEF3BCC00311532 /* Main.storyboard */,
 				250E7F1B1CEF3BCC00311532 /* Assets.xcassets */,
 				250E7F1D1CEF3BCC00311532 /* Info.plist */,
-				25CF026C1CEF3DED006A3505 /* TVPongController.swift */,
 				252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */,
+				EBF3F2E11CFDC93900787156 /* TVGameViewController.swift */,
 			);
 			path = TVPong;
 			sourceTree = "<group>";
@@ -508,17 +509,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25CF026F1CEF3E2F006A3505 /* PongScene.swift in Sources */,
-				25CF026D1CEF3DED006A3505 /* TVPongController.swift in Sources */,
+				EBF3F2E51CFDC9BC00787156 /* PongScene.swift in Sources */,
 				25CF02721CEF3FCB006A3505 /* SCNVector3Extensions.swift in Sources */,
 				2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */,
+				EBF3F2E81CFDCA2000787156 /* InstantiateViewController.swift in Sources */,
+				EBF3F2E21CFDC93900787156 /* TVGameViewController.swift in Sources */,
+				EBF3F2E91CFDCA3100787156 /* UIViewControllerAdditions.swift in Sources */,
 				25CF02731CEF3FF4006A3505 /* DispatchHelpers.swift in Sources */,
+				EBF3F2E41CFDC9BC00787156 /* PongController.swift in Sources */,
+				EBF3F2E61CFDC9BC00787156 /* Configuration.swift in Sources */,
 				25CF02701CEF3F40006A3505 /* RandomHelpers.swift in Sources */,
-				25CF026E1CEF3E19006A3505 /* Configuration.swift in Sources */,
 				250E7F131CEF3BCC00311532 /* AppDelegate.swift in Sources */,
 				252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */,
-				252748821CEF44650018324F /* GameViewController.swift in Sources */,
 				25CF02711CEF3F6A006A3505 /* SCSceneExtensions.swift in Sources */,
+				EBF3F2E71CFDCA0700787156 /* FinalizedGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
