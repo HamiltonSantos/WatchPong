@@ -19,32 +19,8 @@ class TVPongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
     override init() {
         motionManager = GCMotion()
         super.init()
-        initCamera()
     }
     
-    func initCamera() {
-        // Respond to user head movement
-        
-//        motionManager.deviceMotionUpdateInterval = 1.0 / 60
-//        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XArbitraryZVertical)
-//        motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
-//            (motion: CMDeviceMotion?, error) in
-//            
-//            if let motion = motion {
-//                let currentAttitude = motion.attitude
-//                let cameraNode = self.pongScene.cameraNode
-//                SCNTransaction.begin()
-//                SCNTransaction.setAnimationDuration(0.05)
-//
-//                cameraNode!.eulerAngles.x = Float(currentAttitude.roll - 90)
-//                cameraNode!.eulerAngles.z = Float(currentAttitude.pitch)
-//                cameraNode!.eulerAngles.y = Float(currentAttitude.yaw)
-//                
-//                SCNTransaction.commit()
-//            }
-//        
-//        }
-    }
     
     func renderer(aRenderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval) {
         let racket = pongScene.racket
@@ -68,8 +44,6 @@ class TVPongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
         if ball.presentationNode.position.y > 3{
             
         }
-        
-        
         
         racket.rotation.z = ball.presentationNode.position.x * 45
         SCNTransaction.commit()

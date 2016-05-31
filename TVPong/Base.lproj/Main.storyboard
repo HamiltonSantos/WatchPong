@@ -20,17 +20,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-Ev-ti0">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-di-YpY">
-                                <rect key="frame" x="853" y="449" width="214" height="182"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-di-YpY">
+                                <rect key="frame" x="760" y="340" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="6kP-vS-UpM"/>
+                                    <constraint firstAttribute="width" constant="400" id="9dS-JW-MeO"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-cy-CP9">
-                                <rect key="frame" x="823" y="655" width="275" height="86"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Start Game"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="qSv-J4-gfX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BV-Wp-DGR">
                                 <rect key="frame" x="110" y="60" width="209" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -41,18 +37,26 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Configuration"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-cy-CP9">
+                                <rect key="frame" x="823" y="60" width="275" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="qSv-J4-gfX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hzI-cy-CP9" firstAttribute="top" secondItem="SQT-di-YpY" secondAttribute="bottom" constant="24" id="1KO-vW-Q1T"/>
                             <constraint firstItem="SQT-di-YpY" firstAttribute="centerY" secondItem="xxo-7V-117" secondAttribute="centerY" id="1fH-mI-hd3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rAm-0E-mfe" secondAttribute="trailing" constant="90" id="3Ca-Gb-awm"/>
                             <constraint firstAttribute="trailing" secondItem="Mdn-Ev-ti0" secondAttribute="trailing" id="3MR-Og-9KM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rAm-0E-mfe" secondAttribute="trailing" constant="90" id="EEZ-CO-z5Q"/>
                             <constraint firstItem="7BV-Wp-DGR" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" constant="60" id="LKv-VW-4vA"/>
                             <constraint firstItem="7BV-Wp-DGR" firstAttribute="leading" secondItem="xxo-7V-117" secondAttribute="leadingMargin" constant="90" id="Lut-Vy-7gT"/>
                             <constraint firstItem="SQT-di-YpY" firstAttribute="centerX" secondItem="xxo-7V-117" secondAttribute="centerX" id="P5v-cG-3KE"/>
                             <constraint firstItem="rAm-0E-mfe" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" constant="60" id="YZN-lb-FlE"/>
                             <constraint firstItem="Mdn-Ev-ti0" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" id="fUU-uM-2yt"/>
                             <constraint firstItem="Mdn-Ev-ti0" firstAttribute="leading" secondItem="xxo-7V-117" secondAttribute="leading" id="flg-Rm-G7I"/>
+                            <constraint firstItem="hzI-cy-CP9" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" constant="60" id="tPl-QD-0bV"/>
                             <constraint firstItem="t5z-Bo-TJZ" firstAttribute="top" secondItem="Mdn-Ev-ti0" secondAttribute="bottom" id="v66-R8-VYL"/>
                             <constraint firstItem="hzI-cy-CP9" firstAttribute="centerX" secondItem="xxo-7V-117" secondAttribute="centerX" id="vsG-hT-4Mb"/>
                         </constraints>

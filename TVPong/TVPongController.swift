@@ -5,6 +5,7 @@
 
 import Foundation
 import SceneKit
+import GameController
 
 // Constants
 let force = Float(5.5)
