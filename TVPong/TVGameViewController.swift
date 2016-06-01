@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import GameController
 
-class TVGameViewController: UIViewController {
+class TVGameViewController: UIViewController, ReactToMotionEvents {
+
+    let controllers = GCController.controllers()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        for gamepad in controllers{
+//            if let motion = gamepad.motion{
+//                let motionHandler = GCMotionValueChangedHandler(motionBegan(.MotionShake, withEvent: )
+//            }
+            
+        }
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.motionDelegate = self
     }
-
+    
+    func motionUpdate(motion: GCMotion) {
+        print("x: \(motion.userAcceleration.x)   y: \(motion.userAcceleration.y)")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 
@@ -31,5 +46,9 @@ class TVGameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: CONTROLLER
+
+
 
 }
