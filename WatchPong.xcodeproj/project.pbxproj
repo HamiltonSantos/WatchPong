@@ -15,7 +15,6 @@
 		252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
 		257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */; };
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
-		25B48C701D05A595000D1DF0 /* 3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 25B48C6F1D05A595000D1DF0 /* 3.PNG */; };
 		25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
 		25CF026B1CEF3D2B006A3505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
 		25CF02701CEF3F40006A3505 /* RandomHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2971AA029D4025A4B24D /* RandomHelpers.swift */; };
@@ -120,7 +119,6 @@
 		252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongSceneRendererDelegate.swift; sourceTree = "<group>"; };
 		257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		25B48C6F1D05A595000D1DF0 /* 3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.PNG; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				250E7F141CEF3BCC00311532 /* art.scnassets */,
 				250E7F181CEF3BCC00311532 /* Main.storyboard */,
 				250E7F1B1CEF3BCC00311532 /* Assets.xcassets */,
-				25B48C6F1D05A595000D1DF0 /* 3.PNG */,
 				250E7F1D1CEF3BCC00311532 /* Info.plist */,
 				252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */,
 				EBF3F2E11CFDC93900787156 /* TVGameViewController.swift */,
@@ -472,7 +469,6 @@
 				250E7F151CEF3BCC00311532 /* art.scnassets in Resources */,
 				25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */,
 				250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */,
-				25B48C701D05A595000D1DF0 /* 3.PNG in Resources */,
 				250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */,
 				25CF026B1CEF3D2B006A3505 /* Assets.xcassets in Resources */,
 			);
