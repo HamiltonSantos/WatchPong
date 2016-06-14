@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func setupControllers(notif: NSNotification) {
-        print("controller connection")
         let controllers = GCController.controllers()
         for controller in controllers {
             controller.motion?.valueChangedHandler = { (motion: GCMotion)->() in
