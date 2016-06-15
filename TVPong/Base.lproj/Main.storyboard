@@ -32,31 +32,31 @@
                                 <rect key="frame" x="814" y="0.0" width="960" height="1080"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQ5-Jl-mfd">
-                                <rect key="frame" x="960" y="490" width="395" height="220"/>
+                                <rect key="frame" x="960" y="490" width="394" height="220"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" image="startGame"/>
-                                <state key="focused" image="startGameSeleted"/>
+                                <state key="focused" image="startGameSelected"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="fnK-NW-2hT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPq-e7-2DX">
-                                <rect key="frame" x="985" y="610" width="395" height="220"/>
+                                <rect key="frame" x="985" y="610" width="394" height="220"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" image="multiplayer"/>
                                 <state key="focused" image="multiplayerSelected"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-eD-TIv">
-                                <rect key="frame" x="1010" y="730" width="395" height="220"/>
+                                <rect key="frame" x="1010" y="730" width="394" height="220"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" image="howToPlay"/>
+                                <state key="normal" image="hotToPlay"/>
                                 <state key="focused" image="howToPlaySelected"/>
                                 <connections>
                                     <segue destination="czn-Ka-tBI" kind="show" id="idR-0Z-NRX"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTV" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-fF-mMw">
-                                <rect key="frame" x="525" y="153" width="295" height="426"/>
+                                <rect key="frame" x="515" y="151" width="305" height="428"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -178,15 +178,15 @@
     <resources>
         <image name="3" width="1104" height="621"/>
         <image name="blueMenuPortion" width="733" height="1080"/>
-        <image name="howToPlay" width="315" height="180"/>
+        <image name="hotToPlay" width="314" height="180"/>
         <image name="howToPlaySelected" width="319" height="194"/>
-        <image name="logoTV" width="295" height="426"/>
+        <image name="logoTV" width="305" height="428"/>
         <image name="mask" width="667" height="375"/>
         <image name="multiplayer" width="314" height="180"/>
         <image name="multiplayerSelected" width="319" height="194"/>
         <image name="redMenuPortion" width="712" height="1080"/>
         <image name="startGame" width="314" height="180"/>
-        <image name="startGameSeleted" width="319" height="194"/>
+        <image name="startGameSelected" width="319" height="194"/>
         <image name="table" width="373" height="148"/>
     </resources>
 </document>
