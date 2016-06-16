@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		250E7F131CEF3BCC00311532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E7F121CEF3BCC00311532 /* AppDelegate.swift */; };
-		250E7F151CEF3BCC00311532 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F141CEF3BCC00311532 /* art.scnassets */; };
 		250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F181CEF3BCC00311532 /* Main.storyboard */; };
 		250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F1B1CEF3BCC00311532 /* Assets.xcassets */; };
 		2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
@@ -112,7 +111,6 @@
 /* Begin PBXFileReference section */
 		250E7F101CEF3BCC00311532 /* TVPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		250E7F121CEF3BCC00311532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		250E7F141CEF3BCC00311532 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		250E7F191CEF3BCC00311532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		250E7F1B1CEF3BCC00311532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		250E7F1D1CEF3BCC00311532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				250E7F121CEF3BCC00311532 /* AppDelegate.swift */,
-				250E7F141CEF3BCC00311532 /* art.scnassets */,
 				250E7F181CEF3BCC00311532 /* Main.storyboard */,
 				250E7F1B1CEF3BCC00311532 /* Assets.xcassets */,
 				250E7F1D1CEF3BCC00311532 /* Info.plist */,
@@ -466,7 +463,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				250E7F151CEF3BCC00311532 /* art.scnassets in Resources */,
 				25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */,
 				250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */,
 				250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */,
