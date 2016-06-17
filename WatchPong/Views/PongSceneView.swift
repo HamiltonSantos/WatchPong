@@ -24,11 +24,20 @@ class PongSceneView: SCNView {
         self.pointOfView = scene!.rootNode.childNodeWithName(cameraName, recursively: true)
 
         self.antialiasingMode = .Multisampling4X
-
-        self.delegate = TVPongSceneRendererDelegate.sharedInstance
+        #if TARGET_OS_TV
+            self.delegate = TVPongSceneRendererDelegate.sharedInstance
+        #else
+            self.delegate = PongSceneRendererDelegate.sharedInstance
+        #endif
+        
         if isDelegate {
             self.playing = true
-            self.delegate = TVPongSceneRendererDelegate.sharedInstance
+            self.antialiasingMode = .Multisampling4X
+            #if TARGET_OS_TV
+                self.delegate = TVPongSceneRendererDelegate.sharedInstance
+            #else
+                self.delegate = PongSceneRendererDelegate.sharedInstance
+            #endif
         }else {
             self.delegate = nil
         }
