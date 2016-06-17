@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>BEPID</author>
+      <authoring_tool>OpenCOLLADA2016;  Version: 1.6;  Revision: 18</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;preserveSourceTree=0;copyTextures=0;exportTriangles=0;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPhysics=0;exportConvexMeshGeometries=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJoints=1;exportSkin=1;exportAnimations=1;exportOptimizedBezierAnimation=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///Users/BEPID/Desktop/modelos3D/Projeto_PingPong.mb</source_data>
+    </contributor>
+    <created>2016-06-10T12:42:30</created>
+    <modified>2016-06-10T12:42:30</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="lambert3" name="lambert3">
+      <instance_effect url="#lambert3-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert3-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <wrapU sid="wrapU" type="bool">1</wrapU>
+                    <wrapV sid="wrapV" type="bool">1</wrapV>
+                    <mirrorU sid="mirrorU" type="bool">0</mirrorU>
+                    <mirrorV sid="mirrorV" type="bool">0</mirrorV>
+                    <coverageU sid="coverageU" type="float">1</coverageU>
+                    <coverageV sid="coverageV" type="float">1</coverageV>
+                    <translateFrameU sid="translateFrameU" type="float">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV" type="float">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame" type="float">0</rotateFrame>
+                    <stagger sid="stagger" type="bool">0</stagger>
+                    <fast sid="fast" type="bool">0</fast>
+                    <repeatU sid="repeatU" type="float">1</repeatU>
+                    <repeatV sid="repeatV" type="float">1</repeatV>
+                    <offsetU sid="offsetU" type="float">0</offsetU>
+                    <offsetV sid="offsetV" type="float">0</offsetV>
+                    <rotateUV sid="rotateUV" type="float">0</rotateUV>
+                    <noiseU sid="noiseU" type="float">0</noiseU>
+                    <noiseV sid="noiseV" type="float">0</noiseV>
+                    <blend_mode sid="blend_mode" type="string">NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId" type="string">lambert3</originalMayaNodeId>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///Users/BEPID/Desktop/placa01.png</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId" type="string">file1</originalMayaNodeId>
+          <dgnode_type sid="dgnode_type" type="string">kFile</dgnode_type>
+          <image_sequence sid="image_sequence" type="bool">0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="pCubeShape33" name="pCubeShape33">
+      <mesh>
+        <source id="pCubeShape33-positions" name="pCubeShape33-positions">
+          <float_array id="pCubeShape33-positions-array" count="36">-0.9838948 -0.5 0.5 0.9838948 -0.5 0.5 -0.07256386 1.182589 0.5 0.07227632 1.182589 0.5 -0.07256386 1.182589 -0.5 0.07227632 1.182589 -0.5 -0.9838948 -0.5 -0.5 0.9838948 -0.5 -0.5 -0.5805506 -0.4999999 0.5 -0.5805506 -0.4999999 -0.5 0.5732512 -0.4999999 0.5 0.5732512 -0.4999999 -0.5</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape33-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCubeShape33-normals" name="pCubeShape33-normals">
+          <float_array id="pCubeShape33-normals-array" count="96">0 1 0 0 1 0 0 1 0 0 1 0 0.8792447 0.4763704 0 0.8792447 0.4763704 0 0.8792447 0.4763704 0 0.8792447 0.4763704 0 -0.8793077 0.4762542 0 -0.8793077 0.4762542 0 -0.8793077 0.4762542 0 -0.8793077 0.4762542 0 0 -0.9999999 0 0 -0.9999999 0 0 -0.9999999 0 0 -0.9999999 0 0 0 -0.9999999 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 0.9999999 0 0 0.9999999 0 0 1 0 0 0.9999999 0 0 -1 0 0 -0.9999999 0 0 -0.9999999 0 -1 0 0 -1 0 0 -1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape33-normals-array" count="32" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCubeShape33-map1" name="pCubeShape33-map1">
+          <float_array id="pCubeShape33-map1-array" count="32">0.8032486 0.08512485 0.8027782 0.9133943 0.8030219 0.4841439 0.8030047 0.5143467 0.2041478 0.4841027 0.2041306 0.5143054 0.2043745 0.0850836 0.203904 0.9133531 0.8941491 0.1251958 0.8032966 0.01658112 0.1009833 0.1251253 0.8975528 0.872618 0.8027295 0.9815147 0.2038553 0.9814734 0.1014048 0.872547 0.2044221 0.01653988</float_array>
+          <technique_common>
+            <accessor source="#pCubeShape33-map1-array" count="16" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCubeShape33-vertices" name="pCubeShape33-vertices">
+          <input semantic="POSITION" source="#pCubeShape33-positions"/>
+        </vertices>
+        <polylist material="lambert3SG" count="9">
+          <input semantic="VERTEX" source="#pCubeShape33-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pCubeShape33-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pCubeShape33-map1" offset="2" set="0"/>
+          <vcount>4 4 4 4 3 3 3 3 4</vcount>
+          <p>4 0 4 2 1 2 3 2 3 5 3 5 1 4 1 7 5 7 5 6 5 3 7 3 6 8 6 0 9 0 2 10 2 4 11 4 6 12 6 9 13 15 8 14 9 0 15 0 4 16 4 9 17 10 6 18 6 0 19 0 8 20 8 2 21 2 3 22 3 10 23 11 1 24 1 11 25 14 5 26 5 7 27 7 10 28 12 11 29 13 7 30 7 1 31 1</p>
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId">pCubeShape33</originalMayaNodeId>
+          <double_sided sid="double_sided">1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="Projeto_PingPong">
+      <node id="_pCube33" name="pCube33" type="NODE">
+        <translate sid="translate">13.78951 0.7460797 4.770362</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">0.4490564 1.592101 5.1162</scale>
+        <instance_geometry url="#pCubeShape33">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert3SG" target="#lambert3">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId sid="originalMayaNodeId" type="string">pCube33</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>BEPID</author>
+      <authoring_tool>OpenCOLLADA2016;  Version: 1.6;  Revision: 18</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;preserveSourceTree=0;copyTextures=0;exportTriangles=0;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPhysics=0;exportConvexMeshGeometries=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJoints=1;exportSkin=1;exportAnimations=1;exportOptimizedBezierAnimation=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///Users/BEPID/Desktop/modelos3D/Projeto_PingPong.mb</source_data>
+    </contributor>
+    <created>2016-06-10T12:41:50</created>
+    <modified>2016-06-10T12:41:50</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="b01" name="b01">
+      <instance_effect url="#b01-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="b01-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <wrapU sid="wrapU" type="bool">1</wrapU>
+                    <wrapV sid="wrapV" type="bool">1</wrapV>
+                    <mirrorU sid="mirrorU" type="bool">0</mirrorU>
+                    <mirrorV sid="mirrorV" type="bool">0</mirrorV>
+                    <coverageU sid="coverageU" type="float">1</coverageU>
+                    <coverageV sid="coverageV" type="float">1</coverageV>
+                    <translateFrameU sid="translateFrameU" type="float">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV" type="float">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame" type="float">0</rotateFrame>
+                    <stagger sid="stagger" type="bool">0</stagger>
+                    <fast sid="fast" type="bool">0</fast>
+                    <repeatU sid="repeatU" type="float">1</repeatU>
+                    <repeatV sid="repeatV" type="float">1</repeatV>
+                    <offsetU sid="offsetU" type="float">0</offsetU>
+                    <offsetV sid="offsetV" type="float">0</offsetV>
+                    <rotateUV sid="rotateUV" type="float">0</rotateUV>
+                    <noiseU sid="noiseU" type="float">0</noiseU>
+                    <noiseV sid="noiseV" type="float">0</noiseV>
+                    <blend_mode sid="blend_mode" type="string">NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <texture texture="file2-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <wrapU sid="wrapU" type="bool">1</wrapU>
+                    <wrapV sid="wrapV" type="bool">1</wrapV>
+                    <mirrorU sid="mirrorU" type="bool">0</mirrorU>
+                    <mirrorV sid="mirrorV" type="bool">0</mirrorV>
+                    <coverageU sid="coverageU" type="float">1</coverageU>
+                    <coverageV sid="coverageV" type="float">1</coverageV>
+                    <translateFrameU sid="translateFrameU" type="float">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV" type="float">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame" type="float">0</rotateFrame>
+                    <stagger sid="stagger" type="bool">0</stagger>
+                    <fast sid="fast" type="bool">0</fast>
+                    <repeatU sid="repeatU" type="float">1</repeatU>
+                    <repeatV sid="repeatV" type="float">1</repeatV>
+                    <offsetU sid="offsetU" type="float">0</offsetU>
+                    <offsetV sid="offsetV" type="float">0</offsetV>
+                    <rotateUV sid="rotateUV" type="float">0</rotateUV>
+                    <noiseU sid="noiseU" type="float">0</noiseU>
+                    <noiseV sid="noiseV" type="float">0</noiseV>
+                    <blend_mode sid="blend_mode" type="string">NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId" type="string">b01</originalMayaNodeId>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///Users/BEPID/Desktop/modelos3D/Tx_boneco01.png</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId" type="string">file2</originalMayaNodeId>
+          <dgnode_type sid="dgnode_type" type="string">kFile</dgnode_type>
+          <image_sequence sid="image_sequence" type="bool">0</image_sequence>
+          <dgnode_type sid="dgnode_type" type="string">kFile</dgnode_type>
+          <image_sequence sid="image_sequence" type="bool">0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="pCylinder4Shape" name="pCylinder4Shape">
+      <mesh>
+        <source id="pCylinder4Shape-positions" name="pCylinder4Shape-positions">
+          <float_array id="pCylinder4Shape-positions-array" count="270">15.24584 0.2761418 -3.556697 15.03852 0.2761418 -3.642572 14.83119 0.2761418 -3.556697 14.74532 0.2761418 -3.349375 14.83119 0.2761418 -3.142054 15.03852 0.2761418 -3.056179 15.24584 0.2761418 -3.142054 15.33171 0.2761418 -3.349375 15.24584 0.9449902 -3.556697 15.03852 0.9449902 -3.642572 14.83119 0.9449902 -3.556697 14.74532 0.9449902 -3.349375 14.83119 0.9449902 -3.142054 15.03852 0.9449902 -3.056179 15.24584 0.9449902 -3.142054 15.33171 0.9449902 -3.349375 15.11372 1.077316 -3.424581 15.03852 1.077316 -3.455732 14.96331 1.077316 -3.424581 14.93216 1.077316 -3.349375 14.96331 1.077316 -3.27417 15.03852 1.077316 -3.243019 15.11372 1.077316 -3.27417 15.14487 1.077316 -3.349375 15.20746 1.017241 -3.518323 15.03852 1.017241 -3.588304 14.86957 1.017241 -3.518323 14.79959 1.017241 -3.349375 14.86957 1.017241 -3.180428 15.03852 1.017241 -3.110447 15.20746 1.017241 -3.180428 15.27744 1.017241 -3.349375 15.1135 0.1056588 -3.424359 15.03852 0.1056588 -3.455418 14.96353 0.1056588 -3.424359 14.93247 0.1056588 -3.349375 14.96353 0.1056588 -3.274392 15.03852 0.1056588 -3.243333 15.1135 0.1056588 -3.274392 15.14456 0.1056588 -3.349375 15.2035 0.1884173 -3.514358 15.27184 0.1884173 -3.349375 15.2035 0.1884173 -3.184393 15.03852 0.1884173 -3.116056 14.87353 0.1884173 -3.184393 14.80519 0.1884173 -3.349375 14.87353 0.1884173 -3.514358 15.03852 0.1884173 -3.582695 15.14484 1.130275 -3.455697 15.03852 1.130275 -3.499737 14.93219 1.130275 -3.455697 14.88815 1.130275 -3.349375 14.93219 1.130275 -3.243054 15.03852 1.130275 -3.199014 15.14484 1.130275 -3.243054 15.18888 1.130275 -3.349375 15.22267 1.229453 -3.53353 15.03852 1.229453 -3.609809 14.85436 1.229453 -3.53353 14.77808 1.229453 -3.349375 14.85436 1.229453 -3.165221 15.03852 1.229453 -3.088942 15.22267 1.229453 -3.165221 15.29895 1.229453 -3.349375 15.25116 1.364933 -3.562019 15.03852 1.364933 -3.650098 14.82587 1.364933 -3.562019 14.73779 1.364933 -3.349375 14.82587 1.364933 -3.136732 15.03852 1.364933 -3.048652 15.25116 1.364933 -3.136732 15.33924 1.364933 -3.349375 15.22267 1.500413 -3.53353 15.03852 1.500413 -3.609809 14.85436 1.500413 -3.53353 14.77808 1.500413 -3.349375 14.85436 1.500413 -3.165221 15.03852 1.500413 -3.088942 15.22267 1.500413 -3.165221 15.29895 1.500413 -3.349375 15.14484 1.599592 -3.455697 15.03852 1.599592 -3.499737 14.93219 1.599592 -3.455697 14.88815 1.599592 -3.349375 14.93219 1.599592 -3.243054 15.03852 1.599592 -3.199014 15.14484 1.599592 -3.243054 15.18888 1.599592 -3.349375 15.03852 1.093973 -3.349375 15.03852 1.635894 -3.349375</float_array>
+          <technique_common>
+            <accessor source="#pCylinder4Shape-positions-array" count="90" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCylinder4Shape-normals" name="pCylinder4Shape-normals">
+          <float_array id="pCylinder4Shape-normals-array" count="270">0.7057136 -0.06275051 -0.7057129 0 -0.06275038 -0.9980293 -0.7057125 -0.06275018 -0.7057141 -0.9980292 -0.06274983 0 -0.7057124 -0.06275018 0.7057141 0 -0.06275025 0.9980293 0.7057136 -0.06275069 0.7057129 0.9980292 -0.0627512 0 0.7059239 0.05782208 -0.7059234 0 0.05782213 -0.9983268 -0.705923 0.0578228 -0.7059244 -0.9983268 0.05782315 0 -0.705923 0.05782288 0.7059245 0 0.05782203 0.9983269 0.705924 0.05782182 0.7059235 0.998327 0.05782196 0 0.1421115 0.979596 -0.1421121 0 0.9795961 -0.2009763 -0.1421122 0.9795961 -0.1421112 -0.2009753 0.9795962 0 -0.1421116 0.9795963 0.1421104 0 0.979596 0.2009768 0.1421115 0.979596 0.1421127 0.2009756 0.9795962 0 0.4664717 0.7515383 -0.4664702 0 0.7515384 -0.6596892 -0.4664702 0.7515393 -0.46647 -0.6596857 0.7515416 0 -0.4664696 0.7515395 0.4664702 0 0.751537 0.6596909 0.4664728 0.7515364 0.466472 0.659691 0.751537 0 0.192893 -0.962073 -0.1928935 0 -0.9620734 -0.272791 -0.1928924 -0.9620732 -0.1928926 -0.2727909 -0.9620734 0 -0.1928923 -0.9620731 0.1928934 0 -0.962073 0.2727918 0.1928923 -0.9620732 0.1928931 0.2727922 -0.962073 0 0.5160272 -0.6836884 -0.5160291 0.7297726 -0.6836899 0 0.5160255 -0.6836905 0.5160279 0 -0.6836882 0.7297741 -0.5160266 -0.6836884 0.5160297 -0.7297733 -0.683689 0 -0.5160273 -0.6836886 -0.5160286 0 -0.6836887 -0.7297739 0.4210385 -0.8034016 -0.4210373 0 -0.8034003 -0.5954391 -0.4210368 -0.8034024 -0.4210379 -0.5954351 -0.8034033 0 -0.4210369 -0.803402 0.4210379 0 -0.8034033 0.595435 0.421037 -0.8034039 0.4210344 0.5954371 -0.8034019 0 0.6239373 -0.4705349 -0.6239384 0 -0.4705327 -0.8823826 -0.6239375 -0.4705333 -0.6239395 -0.8823825 -0.4705329 0 -0.623938 -0.4705328 0.6239393 0 -0.4705355 0.882381 0.623937 -0.4705371 0.6239372 0.8823806 -0.4705364 0 0.7071075 0 -0.7071061 0 0 -0.9999999 -0.7071047 0 -0.7071089 -1 0 0 -0.7071055 0 0.7071081 0 0 1 0.7071082 0 0.7071053 1 0 0 0.6239373 0.4705359 -0.6239376 0 0.4705332 -0.8823823 -0.6239378 0.4705337 -0.6239389 -0.8823813 0.4705351 0 -0.6239373 0.4705354 0.6239381 0 0.4705364 0.8823805 0.6239367 0.4705372 0.6239373 0.8823803 0.4705371 0 0.4210381 0.8034029 -0.4210351 0 0.803401 -0.5954382 -0.4210374 0.8034018 -0.4210379 -0.595436 0.8034028 0 -0.4210369 0.8034026 0.421037 0 0.8034039 0.5954343 0.4210374 0.8034033 0.421035 0.5954368 0.8034021 0 0 -1 0 0 0.9999999 0</float_array>
+          <technique_common>
+            <accessor source="#pCylinder4Shape-normals-array" count="90" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCylinder4Shape-map1" name="pCylinder4Shape-map1">
+          <float_array id="pCylinder4Shape-map1-array" count="234">0.1355073 0.1772022 0.2105075 0.1895897 0.21327 0.4427252 0.134809 0.4535542 0.2847688 0.193262 0.2885183 0.4371523 0.3585978 0.1926377 0.3619804 0.4340137 0.4330418 0.1898408 0.4348773 0.4333681 0.5093392 0.1850383 0.508194 0.4375135 0.588931 0.1759503 0.5820485 0.451354 0.6744601 0.1563596 0.05066454 0.4773787 0.5278197 0.08229184 0.4781408 0.09166634 0.4212209 0.09660798 0.3618259 0.09943375 0.3031805 0.1004689 0.2483128 0.09841597 0.2015447 0.09019354 0.8242818 0.1435368 0.5504911 0.5482207 0.1923172 0.5372977 0.2424042 0.5274209 0.2997438 0.522076 0.359474 0.5189705 0.4184118 0.517813 0.4736006 0.5199271 0.520699 0.528449 0.08629006 0.5162408 0.1524514 0.4864905 0.2228122 0.4749638 0.2927875 0.4696189 0.3619108 0.4667136 0.4302107 0.4660428 0.4975314 0.4697284 0.5623794 0.4828569 0.6349875 0.1085917 0.5691084 0.1363686 0.4987802 0.1469718 0.4285595 0.1517747 0.3591161 0.1543587 0.2905193 0.1549398 0.2229944 0.1514949 0.1580863 0.1391416 0.2606221 0.6413288 0.2944786 0.6554016 0.2642089 0.7065514 0.2114589 0.6955885 0.3300883 0.6612016 0.3140181 0.7105712 0.3655784 0.6626395 0.3625895 0.7115197 0.401203 0.6607714 0.4114882 0.7101825 0.4374049 0.654441 0.4623519 0.7060947 0.4730226 0.6396194 0.517562 0.6974071 0.5013123 0.606643 0.1562963 0.6652934 0.2550083 0.7602684 0.1948171 0.7586504 0.3095998 0.7601527 0.3620239 0.7597867 0.4144653 0.7594416 0.4691098 0.7593994 0.5293775 0.7611776 0.1211357 0.750329 0.2618502 0.8136292 0.2067624 0.8224922 0.3126349 0.8094432 0.3614921 0.8080595 0.4100557 0.8089982 0.4598913 0.813046 0.5126762 0.8241027 0.1420096 0.8432896 0.2869311 0.8653051 0.2514624 0.8802477 0.3230422 0.858887 0.3586176 0.8569634 0.3940881 0.8583708 0.4297061 0.8641579 0.4636359 0.8782293 0.2234117 0.9133537 0.3647055 0.6035329 0.3598512 0.9160929 0.4872507 0.9082438 0.2370683 0.6113485 0.5678533 0.854527 0.6031144 0.7697378 0.5824776 0.6768675 0.1022578 0.1073755 0.06180257 0.1493427 0.8516156 0.1158999 0.5615596 0.06341577 0.1715184 0.07103324 0.8514013 0.07702964 0.8237645 0.04969562 0.7848943 0.04990976 0.7575605 0.07754662 0.7577748 0.1164169 0.7854117 0.1437509 0.6181638 0.5163988 0.8227704 0.6502779 0.1587734 0.5568404 0.851851 0.6209708 0.8516906 0.579684 0.8223835 0.5506037 0.7810972 0.5507642 0.7520165 0.5800712 0.7521766 0.6213571 0.781484 0.6504382 0.6538971 0.4824511</float_array>
+          <technique_common>
+            <accessor source="#pCylinder4Shape-map1-array" count="117" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCylinder4Shape-vertices" name="pCylinder4Shape-vertices">
+          <input semantic="POSITION" source="#pCylinder4Shape-positions"/>
+          <input semantic="NORMAL" source="#pCylinder4Shape-normals"/>
+        </vertices>
+        <polylist material="lambert4SG" count="90">
+          <input semantic="VERTEX" source="#pCylinder4Shape-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#pCylinder4Shape-map1" offset="1" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+          <p>0 0 1 1 9 2 8 3 1 1 2 4 10 5 9 2 2 4 3 6 11 7 10 5 3 6 4 8 12 9 11 7 4 8 5 10 13 11 12 9 5 10 6 12 14 13 13 11 6 12 7 14 15 116 14 13 7 96 0 0 8 3 15 15 38 105 37 104 36 103 35 102 34 101 33 100 32 97 39 23 23 107 16 115 17 114 18 113 19 112 20 111 21 110 22 109 31 32 24 33 16 25 23 108 24 33 25 34 17 26 16 25 25 34 26 35 18 27 17 26 26 35 27 36 19 28 18 27 27 36 28 37 20 29 19 28 28 37 29 38 21 30 20 29 29 38 30 39 22 31 21 30 30 39 31 106 23 24 22 31 8 3 9 2 25 34 24 33 9 2 10 5 26 35 25 34 10 5 11 7 27 36 26 35 11 7 12 9 28 37 27 36 12 9 13 11 29 38 28 37 13 11 14 13 30 39 29 38 14 13 15 116 31 106 30 39 15 15 8 3 24 33 31 32 41 40 42 41 38 16 39 98 42 41 43 42 37 17 38 16 43 42 44 43 36 18 37 17 44 43 45 44 35 19 36 18 45 44 46 45 34 20 35 19 46 45 47 46 33 21 34 20 47 46 40 47 32 22 33 21 40 47 41 95 39 99 32 22 0 0 7 96 41 95 40 47 7 14 6 12 42 41 41 40 6 12 5 10 43 42 42 41 5 10 4 8 44 43 43 42 4 8 3 6 45 44 44 43 3 6 2 4 46 45 45 44 2 4 1 1 47 46 46 45 1 1 0 0 40 47 47 46 48 48 49 49 57 50 56 51 49 49 50 52 58 53 57 50 50 52 51 54 59 55 58 53 51 54 52 56 60 57 59 55 52 56 53 58 61 59 60 57 53 58 54 60 62 61 61 59 54 60 55 62 63 94 62 61 55 91 48 48 56 51 63 63 56 51 57 50 65 64 64 65 57 50 58 53 66 66 65 64 58 53 59 55 67 67 66 66 59 55 60 57 68 68 67 67 60 57 61 59 69 69 68 68 61 59 62 61 70 70 69 69 62 61 63 94 71 93 70 70 63 63 56 51 64 65 71 71 64 65 65 64 73 72 72 73 65 64 66 66 74 74 73 72 66 66 67 67 75 75 74 74 67 67 68 68 76 76 75 75 68 68 69 69 77 77 76 76 69 69 70 70 78 78 77 77 70 70 71 93 79 92 78 78 71 71 64 65 72 73 79 79 72 73 73 72 81 80 80 81 73 72 74 74 82 82 81 80 74 74 75 75 83 83 82 82 75 75 76 76 84 84 83 83 76 76 77 77 85 85 84 84 77 77 78 78 86 86 85 85 78 78 79 92 87 90 86 86 79 79 72 73 80 81 87 87 49 49 48 48 88 88 50 52 49 49 88 88 51 54 50 52 88 88 52 56 51 54 88 88 53 58 52 56 88 88 54 60 53 58 88 88 55 62 54 60 88 88 48 48 55 91 88 88 80 81 81 80 89 89 81 80 82 82 89 89 82 82 83 83 89 89 83 83 84 84 89 89 84 84 85 85 89 89 85 85 86 86 89 89 86 86 87 90 89 89 87 87 80 81 89 89</p>
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId">pCylinder4Shape</originalMayaNodeId>
+          <double_sided sid="double_sided">1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="Projeto_PingPong">
+      <node id="_pCylinder4" name="pCylinder4" type="NODE">
+        <translate sid="translate">0 1.300274 2.519186</translate>
+        <translate sid="rotatePivot">15.03851 0.8707761 -3.349375</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <translate sid="rotatePivotInverse">-15.03851 -0.8707761 3.349375</translate>
+        <translate sid="scalePivot">15.03851 0.8707761 -3.349375</translate>
+        <scale sid="scale">2.657841 2.657841 2.657841</scale>
+        <translate sid="scalePivotInverse">-15.03851 -0.8707761 3.349375</translate>
+        <instance_geometry url="#pCylinder4Shape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert4SG" target="#b01">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId sid="originalMayaNodeId" type="string">pCylinder4</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>
