@@ -46,7 +46,7 @@ class PongScene : NSObject {
         self.points.append(sharedScene.childNode("point1"))
         self.points.append(sharedScene.childNode("point2"))
         // floor
-        self.floor = sharedScene.childNode("floor")
+        self.floor = sharedScene.childNode("arena")
         // textPoints
         self.textPoints = sharedScene.childNode("textPoints").geometry as! SCNText
 
@@ -57,7 +57,7 @@ class PongScene : NSObject {
 
         // racket
         let racketScene = SCNScene(named: "art.scnassets/racket.scn")
-        self.racket = racketScene!.childNode("Raquete")
+        self.racket = sharedScene.childNode("Racket")
         sharedScene.rootNode.addChildNode(racket)
         self.racket.position = SCNVector3Make(0,5,-6)
         self.racket.rotation = SCNVector4Make(90,0,0,1)
