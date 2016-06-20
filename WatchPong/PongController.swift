@@ -81,7 +81,7 @@ extension PongController {
         let randomY = 0.6
         let zExtra = abs((ballPosition.z / 5.5))
         let randomZ =  zExtra + 0.8
-        print("random x \(randomX)")
+//        print("random x \(randomX)") MUDEI ISTO
         applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
         self.myTurn = false
     }
@@ -94,8 +94,8 @@ extension PongController {
 
     func applyForce(node: SCNNode, force: SCNVector3) {
 
-        print("Force: \(force)")
-        print("Position: \(node.presentationNode.position)")
+//        print("Force: \(force)") MUDEI ISTO
+//        print("Position: \(node.presentationNode.position)") MUDEI ISTO
         node.physicsBody?.affectedByGravity = true
         node.physicsBody?.applyForce(force, impulse: true)
         playRacketSound()
@@ -198,7 +198,7 @@ extension PongController: SCNPhysicsContactDelegate {
 
     func physicsWorld(world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact) {
         
-        print(NSThread.currentThread())
+//        print(NSThread.currentThread()) MUDEI ISTO
 
         let oldLastSide = lastSideContact
         if contact.nodeB == pongScene.mySide || contact.nodeB == pongScene.otherSide {
@@ -260,5 +260,6 @@ extension PongController: SCNPhysicsContactDelegate {
 extension PongController {
     func updatePointsText() {
         pongScene.textPoints.string = "\(myPoints) - \(otherPoints)"
+        print(pongScene.textPoints.string) //MUDEI ISTO
     }
 }

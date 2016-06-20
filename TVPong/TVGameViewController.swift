@@ -30,8 +30,9 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
     
     var previousMovement = GCAcceleration(x: 0, y: 0, z: 0)
     
-    let minimumAcceleration = 0.7
+    let minimumAcceleration = 0.3
     let forceConstant = 0.2
+    let necessaryStrnght = 0.5
 
     //MARK: ESCREVI "MUDEI ISTO" EM TUDO O Q MUDEI FORA DESTA CLASSE
     
@@ -51,19 +52,17 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             lastRemoteMovementTime = NSDate()
         }
         if NSDate().timeIntervalSinceDate(lastRemoteMovementTime!) > 0.05{
-            currentDataFromGamepad = []
-        }
+            clearDataFromGamePad()}
 
         else if motion.userAcceleration.z>minimumAcceleration{
 //            NSLog("destro batendo do lado esquerdo // zAcc: \(motion.userAcceleration.z) // xAcc: \(motion.userAcceleration.x) // yAcc: \(motion.userAcceleration.y) // zGrav: \(motion.gravity.z) // yGrav: \(motion.gravity.y) // xGrav: \(motion.gravity.z) // TIME: \(NSDate().timeIntervalSinceDate(lastRemoteMovementTime!))") // canhoteiro batendo do lado direito
 
             if flow == flowMovement.right{
                 flow = .left
-                NSLog("\(currentDataFromGamepad)")
-                currentDataFromGamepad = []
+                clearDataFromGamePad()
             }
             if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z{
-            currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: motion.userAcceleration, gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
+                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x: -motion.userAcceleration.x, y:motion.userAcceleration.y, z: -motion.userAcceleration.z), gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
             }
 
         }
@@ -72,8 +71,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
 
             if flow == flowMovement.left{
                 flow = .right
-                NSLog("\(currentDataFromGamepad)")
-                currentDataFromGamepad = []
+                clearDataFromGamePad()
             }
             if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z{
                 currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: motion.userAcceleration, gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
@@ -84,8 +82,22 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
         lastRemoteMovementTime = NSDate()
 
         if let first = currentDataFromGamepad.first{
-            if pongController.myTurn && first.acceleration.z * first.gravity.z > 1{
-                averageForce(currentDataFromGamepad)
+            if flow == .right{
+                if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ > necessaryStrnght{
+                    averageForce(currentDataFromGamepad)
+                }
+                else if pongController.myTurn{
+                    print("too weak")
+                }
+            }
+            else{
+                if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ < -necessaryStrnght/2{
+                    averageForce(currentDataFromGamepad)
+                }
+                else if pongController.myTurn{
+                    print("too weak")
+
+                }
             }
         }
     }
@@ -93,14 +105,27 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
     
     func applyForceFromAcceleration (gravity: GCAcceleration, userAcceleration:GCAcceleration){
         //MARK: enquanto maior o gravity.x maior a força aplicada em x, enquanto maior o gravity.z maior a força aplicada em z
-//        let force = SCNVector3Make(Float(gravity["x"]! * forceModule), Float(gravity["y"]! * forceModule), Float(gravity["z"]! * forceModule))
         //MARK: Z aplica a força para a frente, Y aplica a força para cima, X aplica a força para a direita
-        let force = SCNVector3Make(Float(forceConstant*userAcceleration.x*(1-gravity.x)), Float(-forceConstant*userAcceleration.y*(1-gravity.y)), Float(forceConstant*userAcceleration.z*(1-gravity.z)))
+        var strenght = forceConstant
+        if flow == .right{
+            let necessaryStrenght = -0.9
+            if strenght*userAcceleration.z > necessaryStrenght{
+                strenght = necessaryStrenght/userAcceleration.z
+            }
+        }
+        else{
+            let necessaryStrenght = 0.9
+            if -strenght*userAcceleration.z < necessaryStrenght{
+                strenght = -necessaryStrenght/userAcceleration.z
+            }
+        }
+        
+        let force = SCNVector3Make(Float(strenght*userAcceleration.x*(1-gravity.x)), Float(-strenght*userAcceleration.y*(1-gravity.y)), Float(strenght*userAcceleration.z*(1-gravity.z)))
         if pongController.myTurn{
             pongController.applyBallFoce(force)
-            currentDataFromGamepad = []
+            clearDataFromGamePad()
+            print(force)
         }
-        print(force)
         
         //MARK: controle corre de ré Z positivo, de frente Z negativo
         
@@ -118,19 +143,24 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
         }
         if let previousData = savingData[currentGroupsCount-1]!.last?.yAcceleration{
             var variation : Double = previousData-currentData.yAcceleration
-            if variation < 0{
-                variation = -variation
-            }
-            if variation < currentData.yAcceleration/10{
-                savingData[currentGroupsCount-1]!.append(currentData)
-            }
-            else{
-                savingData[currentGroupsCount] = [currentData]
+            if variation != 0{
+                if variation < 0{
+                    variation = -variation
+                }
+                if variation < 0.2/*currentData.yAcceleration/10*/{
+                    savingData[currentGroupsCount-1]!.append(currentData)
+                }
+                else{
+                    savingData[currentGroupsCount] = [currentData]
+                }
             }
         }
         
         if savingData.keys.count == 1{
             return savingData[0]!
+        }
+        if let data = savingData[indexOfTheCorrectForce()]{
+            return data
         }
         return savingData[savingData.keys.count-2]!
     }
@@ -138,6 +168,40 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
+    }
+    
+    func indexOfTheCorrectForce()->Int {
+
+        
+        var maxYAcceleration = 0.0
+        var groupAcceleration = 0.0
+        var indexOfMaxAcceleration = 0
+        if flow == .right{
+            for key: Int in Array(savingData.keys) {
+                if let data = savingData[key]
+                {
+                    if let currentAcc = data[0].yAcceleration as? Double where currentAcc > maxYAcceleration{ //data.1[0].yAcceleration as? Double where maxAcceleration > maxYAcceleration{
+                        groupAcceleration = maxYAcceleration
+                        maxYAcceleration = currentAcc
+                        indexOfMaxAcceleration = key
+                    }
+                }
+            }
+        }
+        
+        if flow == .left{
+            for key: Int in Array(savingData.keys) {
+                if let data = savingData[key]
+                {
+                    if let currentAcc = data[0].yAcceleration as? Double where currentAcc < maxYAcceleration{ //data.1[0].yAcceleration as? Double where maxAcceleration > maxYAcceleration{
+                        groupAcceleration = maxYAcceleration
+                        maxYAcceleration = currentAcc
+                        indexOfMaxAcceleration = key
+                    }
+                }
+            }
+        }
+        return indexOfMaxAcceleration-1
     }
 
     func averageForce(arrayOfForces: [dataFromGamePad]){
@@ -152,12 +216,17 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             acceleration = GCAcceleration(x: acceleration.x/Double(arrayOfForces.count),y: acceleration.y/Double(arrayOfForces.count), z: acceleration.z/Double(arrayOfForces.count))
             
             gravity = GCAcceleration(x: gravity.x/Double(arrayOfForces.count),y: gravity.y/Double(arrayOfForces.count), z: gravity.z/Double(arrayOfForces.count))
-        
+            NSLog(#function)
             applyForceFromAcceleration(gravity, userAcceleration: acceleration)
         }
     }
     
-    
+    func clearDataFromGamePad (){
+//        NSLog("\(savingData)")
+
+        savingData = [:]
+        currentDataFromGamepad = []
+    }
 }
 
 
