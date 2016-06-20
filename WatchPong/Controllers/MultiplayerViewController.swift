@@ -7,34 +7,50 @@
 //
 
 import UIKit
+import CoreMotion
 
 class MultiplayerViewController: UIViewController {
 
     let gameController = GameController()
+    let pongController = PongController()
+
+    var motionManager = CMMotionManager()
     
-    
+    var lastDate = NSDate()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         gameController.autoConnect = true
         gameController.startBrowsing()
         // Do any additional setup after loading the view.
+
+        motionManager.accelerometerUpdateInterval = 1 / 60
+        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
+
+            let treashould : Double = 2
+            let x = data?.acceleration.x ?? 0
+            if x > treashould || x < -treashould{
+                print(data)
+                if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+                    if x > treashould {
+                        self.lastDate = NSDate()
+                        self.gameController.sendCommandToTV(CommandType.Right)
+                    }else if x < -treashould {
+                        self.lastDate = NSDate()
+                        self.gameController.sendCommandToTV(CommandType.Left)
+                    }
+                }
+                
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+

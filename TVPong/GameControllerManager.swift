@@ -139,7 +139,7 @@ class GameControllerManager: NSObject, GCDAsyncSocketDelegate, NSNetServiceDeleg
     }
 }
 
-public protocol GameControllerManagerDelegate: NSObjectProtocol {
+public protocol GameControllerManagerDelegate {
 
     func didReceiveData(fromPlayer player: Int, data: NSData)
     func didReceiveCommand(fromPlayer player: Int, command: CommandType)

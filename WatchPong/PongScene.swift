@@ -46,7 +46,7 @@ class PongScene : NSObject {
         self.points.append(sharedScene.childNode("point1"))
         self.points.append(sharedScene.childNode("point2"))
         // floor
-        self.floor = sharedScene.childNode("arena")
+        self.floor = sharedScene.childNode("floor")
         // textPoints
         self.textPoints = sharedScene.childNode("textPoints").geometry as! SCNText
 

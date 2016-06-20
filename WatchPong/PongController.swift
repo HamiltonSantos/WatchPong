@@ -20,6 +20,8 @@ class PongController: NSObject {
     let clapSound = SCNAudioSource(fileNamed: "art.scnassets/clapping.mp3")
 
     let winningScore = Configuration.sharedConfig.winningScore
+    
+    var twoPlayers = false
 
     // Scene
     var pongScene = PongScene.sharedInstance
@@ -141,8 +143,10 @@ extension PongController {
             changeBallPosition(pongScene.mySideInitialCenterPosition)
         } else {
             changeBallPosition(pongScene.otherSideInitialCenterPosition)
-            delay(1) {
-                self.applyOtherBallForce()
+            if !twoPlayers {
+                delay(1) {
+                    self.applyOtherBallForce()
+                }
             }
         }
     }
@@ -247,9 +251,12 @@ extension PongController: SCNPhysicsContactDelegate {
 //        print(contact)
 
         if contact.nodeB == pongScene.otherSide {
-            delay(0.25) {
-                self.applyOtherBallForce()
+            if !twoPlayers {
+                delay(0.25) {
+                    self.applyOtherBallForce()
+                }
             }
+            
         }
     }
 

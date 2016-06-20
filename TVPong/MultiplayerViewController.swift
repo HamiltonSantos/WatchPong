@@ -15,10 +15,15 @@ class MultiplayerViewController: UIViewController, ReactToMotionEvents {
     let gameControllerManager = GameControllerManager()
 
     let pongController = PongController()
+    
+    var lastDate = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pongController.twoPlayers = true
+        
+        gameControllerManager.delegate = self
         // Do any additional setup after loading the view.
 
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -47,11 +52,43 @@ class MultiplayerViewController: UIViewController, ReactToMotionEvents {
             print("z: \(totalZ)")
             print(" ---- ")
         }
-        if totalX > 3 {
-            pongController.processRightAction()
-        } else if totalX < -3 {
-            pongController.processLeftAction()
+        
+        if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+            if totalX > 3 {
+                lastDate = NSDate()
+                pongController.processLeftAction()
+            } else if totalX < -3 {
+                lastDate = NSDate()
+                pongController.processRightAction()
+            }
         }
     }
 
+}
+
+extension MultiplayerViewController : GameControllerManagerDelegate {
+    
+    func didReceiveData(fromPlayer player: Int, data: NSData){
+        
+    }
+    
+    func didReceiveCommand(fromPlayer player: Int, command: CommandType){
+        switch command {
+        case .Left:
+            pongController.applyOtherBallForce()
+            break
+        case .Right:
+            pongController.applyOtherBallForce()
+            break
+        default: break
+        }
+    }
+    
+    func playerDidConnect(player: Int){
+        
+    }
+    
+    func playerDidDisconnect(player: Int){
+        
+    }
 }

@@ -223,6 +223,49 @@
             </objects>
             <point key="canvasLocation" x="274" y="1719"/>
         </scene>
+        <!--Finalized Game View Controller-->
+        <scene sceneID="QNq-F2-ZBr">
+            <objects>
+                <viewController storyboardIdentifier="finalizedVC" id="ccz-aR-t2h" customClass="FinalizedGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i0A-Tf-h41"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLm-1B-7E8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rsS-Yf-MgH">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAp-CZ-BYb">
+                                <rect key="frame" x="1224" y="54" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZE-UB-YUq">
+                                <rect key="frame" x="1224" y="104" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-CB-WRk">
+                                <rect key="frame" x="1558" y="22" width="195" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTouchDone:" destination="ccz-aR-t2h" eventType="touchUpInside" id="3A3-VJ-8kr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="bZE-UB-YUq" id="V32-Lv-Vve"/>
+                        <outlet property="winnerLabel" destination="hAp-CZ-BYb" id="Z3H-mj-qis"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2L-lR-j2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="2955"/>
+        </scene>
     </scenes>
     <resources>
         <image name="3" width="1104" height="621"/>
