@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>BEPID</author>
+      <authoring_tool>OpenCOLLADA2016;  Version: 1.6;  Revision: 18</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=0;preserveSourceTree=0;copyTextures=0;exportTriangles=0;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPhysics=0;exportConvexMeshGeometries=1;exportPolygonMeshes=1;exportLights=1;
+			exportCameras=1;exportJoints=1;exportSkin=1;exportAnimations=1;exportOptimizedBezierAnimation=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///Users/BEPID/Desktop/modelos3D/Projeto_PingPong.mb</source_data>
+    </contributor>
+    <created>2016-06-10T12:41:44</created>
+    <modified>2016-06-10T12:41:44</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="bolinha" name="bolinha">
+      <instance_effect url="#bolinha-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="bolinha-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <wrapU sid="wrapU" type="bool">1</wrapU>
+                    <wrapV sid="wrapV" type="bool">1</wrapV>
+                    <mirrorU sid="mirrorU" type="bool">0</mirrorU>
+                    <mirrorV sid="mirrorV" type="bool">0</mirrorV>
+                    <coverageU sid="coverageU" type="float">1</coverageU>
+                    <coverageV sid="coverageV" type="float">1</coverageV>
+                    <translateFrameU sid="translateFrameU" type="float">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV" type="float">0</translateFrameV>
+                    <rotateFrame sid="rotateFrame" type="float">0</rotateFrame>
+                    <stagger sid="stagger" type="bool">0</stagger>
+                    <fast sid="fast" type="bool">0</fast>
+                    <repeatU sid="repeatU" type="float">1</repeatU>
+                    <repeatV sid="repeatV" type="float">1</repeatV>
+                    <offsetU sid="offsetU" type="float">0</offsetU>
+                    <offsetV sid="offsetV" type="float">0</offsetV>
+                    <rotateUV sid="rotateUV" type="float">0</rotateUV>
+                    <noiseU sid="noiseU" type="float">0</noiseU>
+                    <noiseV sid="noiseV" type="float">0</noiseV>
+                    <blend_mode sid="blend_mode" type="string">NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId" type="string">bolinha</originalMayaNodeId>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>file:///Users/BEPID/Desktop/Tennis-2/Bolinha.png</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId" type="string">file1</originalMayaNodeId>
+          <dgnode_type sid="dgnode_type" type="string">kFile</dgnode_type>
+          <image_sequence sid="image_sequence" type="bool">0</image_sequence>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="Bolinha_LowShape" name="Bolinha_LowShape">
+      <mesh>
+        <source id="Bolinha_LowShape-positions" name="Bolinha_LowShape-positions">
+          <float_array id="Bolinha_LowShape-positions-array" count="276">0.01844198 -0.070158 -0.01339912 0.007044017 -0.070158 -0.02167988 -0.007044017 -0.070158 -0.02167988 -0.01844198 -0.070158 -0.01339912 -0.02279598 -0.070158 0 -0.01844198 -0.070158 0.01339912 -0.007044017 -0.070158 0.02167988 0.007044017 -0.070158 0.02167988 0.01844198 -0.070158 0.01339912 0.02279598 -0.070158 0 0.035079 -0.05967999 -0.02548695 0.013399 -0.05967999 -0.04123783 -0.013399 -0.05967999 -0.04123783 -0.035079 -0.05967999 -0.02548695 -0.04335999 -0.05967999 0 -0.035079 -0.05967999 0.02548695 -0.013399 -0.05967999 0.04123783 0.013399 -0.05967999 0.04123783 0.035079 -0.05967999 0.02548695 0.04335999 -0.05967999 0 0.04828203 -0.04335999 -0.035079 0.01844198 -0.04335999 -0.05675888 -0.01844198 -0.04335999 -0.05675888 -0.04828203 -0.04335999 -0.035079 -0.05967999 -0.04335999 0 -0.04828203 -0.04335999 0.035079 -0.01844198 -0.04335999 0.05675888 0.01844198 -0.04335999 0.05675888 0.04828203 -0.04335999 0.035079 0.05967999 -0.04335999 0 0.056759 -0.02279592 -0.04123783 0.02168 -0.02279592 -0.06672478 -0.02168 -0.02279592 -0.06672478 -0.056759 -0.02279592 -0.04123783 -0.070158 -0.02279592 0 -0.056759 -0.02279592 0.04123783 -0.02168 -0.02279592 0.06672478 0.02168 -0.02279592 0.06672478 0.056759 -0.02279592 0.04123783 0.070158 -0.02279592 0 0.05967999 0 -0.04336023 0.02279598 0 -0.070158 -0.02279598 0 -0.070158 -0.05967999 0 -0.04336023 -0.07376903 0 0 -0.05967999 0 0.04336023 -0.02279598 0 0.070158 0.02279598 0 0.070158 0.05967999 0 0.04336023 0.07376903 0 0 0.056759 0.02279592 -0.04123783 0.02168 0.02279592 -0.06672478 -0.02168 0.02279592 -0.06672478 -0.056759 0.02279592 -0.04123783 -0.070158 0.02279592 0 -0.056759 0.02279592 0.04123783 -0.02168 0.02279592 0.06672478 0.02168 0.02279592 0.06672478 0.056759 0.02279592 0.04123783 0.070158 0.02279592 0 0.04828203 0.04335999 -0.035079 0.01844198 0.04335999 -0.05675888 -0.01844198 0.04335999 -0.05675888 -0.04828203 0.04335999 -0.035079 -0.05967999 0.04335999 0 -0.04828203 0.04335999 0.035079 -0.01844198 0.04335999 0.05675888 0.01844198 0.04335999 0.05675888 0.04828203 0.04335999 0.035079 0.05967999 0.04335999 0 0.035079 0.05967999 -0.02548695 0.013399 0.05967999 -0.04123783 -0.013399 0.05967999 -0.04123783 -0.035079 0.05967999 -0.02548695 -0.04335999 0.05967999 0 -0.035079 0.05967999 0.02548695 -0.013399 0.05967999 0.04123783 0.013399 0.05967999 0.04123783 0.035079 0.05967999 0.02548695 0.04335999 0.05967999 0 0.01844198 0.070158 -0.01339912 0.007044017 0.070158 -0.02167988 -0.007044017 0.070158 -0.02167988 -0.01844198 0.070158 -0.01339912 -0.02279598 0.070158 0 -0.01844198 0.070158 0.01339912 -0.007044017 0.070158 0.02167988 0.007044017 0.070158 0.02167988 0.01844198 0.070158 0.01339912 0.02279598 0.070158 0 0 -0.07376909 0 0 0.07376909 0</float_array>
+          <technique_common>
+            <accessor source="#Bolinha_LowShape-positions-array" count="92" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Bolinha_LowShape-normals" name="Bolinha_LowShape-normals">
+          <float_array id="Bolinha_LowShape-normals-array" count="276">0.3239571 -0.9163262 -0.2353681 0.12374 -0.9163262 -0.3808341 -0.123741 -0.9163261 -0.3808341 -0.3239571 -0.9163262 -0.2353681 -0.4004322 -0.9163264 0 -0.3239571 -0.9163262 0.2353681 -0.12374 -0.9163262 0.3808341 0.12374 -0.9163262 0.3808341 0.3239571 -0.9163262 0.2353681 0.4004322 -0.9163264 0 0.5127048 -0.7735477 -0.3725019 0.1958359 -0.7735476 -0.6027207 -0.1958359 -0.7735476 -0.6027207 -0.5127048 -0.7735477 -0.3725019 -0.6337378 -0.7735478 0 -0.5127048 -0.7735477 0.3725019 -0.1958359 -0.7735476 0.6027207 0.1958359 -0.7735476 0.6027207 0.5127048 -0.7735477 0.3725019 0.6337378 -0.7735478 0 0.6713762 -0.5579621 -0.4877831 0.2564429 -0.5579619 -0.7892499 -0.2564429 -0.5579619 -0.7892499 -0.6713762 -0.5579621 -0.4877831 -0.8298663 -0.5579622 0 -0.6713762 -0.5579621 0.4877831 -0.2564429 -0.5579619 0.7892499 0.2564429 -0.5579619 0.7892499 0.6713762 -0.5579621 0.4877831 0.8298663 -0.5579622 0 0.773776 -0.29193 -0.562181 0.2955561 -0.29193 -0.9096282 -0.2955561 -0.29193 -0.9096282 -0.773776 -0.29193 -0.562181 -0.9564397 -0.2919299 0 -0.773776 -0.29193 0.562181 -0.2955561 -0.29193 0.9096282 0.2955561 -0.29193 0.9096282 0.773776 -0.29193 0.562181 0.9564397 -0.2919299 0 0.8090171 0 -0.5877851 0.3090168 0 -0.9510565 -0.3090172 0 -0.9510565 -0.8090171 0 -0.5877851 -0.9999999 0 0 -0.8090171 0 0.5877851 -0.3090168 0 0.9510565 0.3090172 0 0.9510565 0.8090171 0 0.5877851 0.9999999 0 0 0.773776 0.29193 -0.562181 0.2955561 0.29193 -0.9096282 -0.2955561 0.29193 -0.9096282 -0.773776 0.29193 -0.562181 -0.9564397 0.2919299 0 -0.773776 0.29193 0.562181 -0.2955561 0.29193 0.9096282 0.2955561 0.29193 0.9096282 0.773776 0.29193 0.562181 0.9564397 0.2919299 0 0.6713762 0.5579621 -0.4877831 0.2564429 0.5579619 -0.7892499 -0.2564429 0.5579619 -0.7892499 -0.6713762 0.5579621 -0.4877831 -0.8298663 0.5579622 0 -0.6713762 0.5579621 0.4877831 -0.2564429 0.5579619 0.7892499 0.2564429 0.5579619 0.7892499 0.6713762 0.5579621 0.4877831 0.8298666 0.5579617 0 0.5127048 0.7735477 -0.3725019 0.1958359 0.7735476 -0.6027207 -0.1958359 0.7735476 -0.6027207 -0.5127048 0.7735477 -0.3725019 -0.6337378 0.7735478 0 -0.5127048 0.7735477 0.3725019 -0.1958359 0.7735476 0.6027207 0.1958359 0.7735476 0.6027207 0.5127048 0.7735477 0.3725019 0.6337378 0.7735478 0 0.3239571 0.9163262 -0.2353681 0.12374 0.9163262 -0.3808341 -0.12374 0.9163262 -0.3808341 -0.3239571 0.9163262 -0.2353681 -0.4004322 0.9163264 0 -0.3239571 0.9163262 0.2353681 -0.12374 0.9163262 0.3808341 0.12374 0.9163262 0.3808341 0.3239571 0.9163262 0.2353681 0.4004322 0.9163264 0 0 -0.9999999 0 0 0.9999999 0</float_array>
+          <technique_common>
+            <accessor source="#Bolinha_LowShape-normals-array" count="92" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Bolinha_LowShape-map1" name="Bolinha_LowShape-map1">
+          <float_array id="Bolinha_LowShape-map1-array" count="204">0.2834544 0.3539748 0.3177945 0.3465794 0.3475989 0.3955993 0.2787385 0.4111913 0.3412232 0.3203814 0.3941493 0.3425183 0.3447768 0.2854113 0.4006085 0.2722124 0.3270969 0.2550303 0.3645063 0.2115359 0.2949357 0.2408456 0.2996347 0.183668 0.2605807 0.2482741 0.2307747 0.1992544 0.237154 0.2744755 0.1842263 0.2523403 0.2336007 0.3094424 0.1777726 0.3226487 0.2512813 0.3398182 0.2138841 0.3833223 0.379056 0.4451416 0.2750673 0.4697595 0.4487166 0.3641084 0.4574439 0.257605 0.4019035 0.1663123 0.3033101 0.125101 0.1993231 0.1497123 0.1296619 0.2307454 0.1209356 0.3372499 0.1764772 0.4285413 0.4121892 0.49591 0.272029 0.5303043 0.5053625 0.3857048 0.5159646 0.2417818 0.4399484 0.1191146 0.3063491 0.06455527 0.1661948 0.0989422 0.07301938 0.2091418 0.06241269 0.3530646 0.1384258 0.4757358 0.9990234 0.7227566 0.950031 0.5457398 0.9346024 0.8947474 0.7814084 0.9960157 0.597956 0.9879064 0.4543052 0.8735256 0.4053101 0.6965594 0.4696836 0.5245813 0.6228501 0.4232754 0.8063281 0.4313443 0.9353893 0.7211551 0.8976126 0.5818567 0.8840665 0.8560431 0.7632683 0.9349993 0.6191397 0.927878 0.5067228 0.837407 0.4689465 0.6981391 0.5202401 0.5632602 0.6410221 0.4842816 0.7851691 0.4913787 0.8747876 0.7195768 0.8476627 0.6162086 0.835969 0.8191428 0.7460454 0.8768753 0.6393664 0.8707288 0.556675 0.8030559 0.5295504 0.6997035 0.5683528 0.600143 0.6582675 0.5423983 0.7649564 0.5485314 0.8161479 0.717319 0.7988985 0.6488551 0.7898583 0.7828469 0.7300766 0.8204072 0.6596355 0.8156556 0.6054407 0.7704099 0.5881918 0.7019526 0.6144742 0.6364274 0.6742517 0.5988617 0.7446971 0.6036074 0.7588713 0.714006 0.7506133 0.6798426 0.7454712 0.746498 0.7155316 0.7649095 0.6804882 0.7622074 0.6537272 0.7394229 0.6454696 0.705261 0.658868 0.6727697 0.6888062 0.654357 0.7238505 0.6570576 0.2891905 0.2974144 0.7021709 0.7096329 0.268898 0.593882 0.09851765 0.5253286 9.76562e-4 0.369727 0.01352187 0.1865139 0.1313612 0.04566381 0.3094794 9.76562e-4 0.47985 0.06951688 0.5773978 0.2251087 0.5648638 0.4083228 0.4470283 0.5491847</float_array>
+          <technique_common>
+            <accessor source="#Bolinha_LowShape-map1-array" count="102" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Bolinha_LowShape-vertices" name="Bolinha_LowShape-vertices">
+          <input semantic="POSITION" source="#Bolinha_LowShape-positions"/>
+          <input semantic="NORMAL" source="#Bolinha_LowShape-normals"/>
+        </vertices>
+        <polylist material="lambert1SG" count="100">
+          <input semantic="VERTEX" source="#Bolinha_LowShape-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#Bolinha_LowShape-map1" offset="1" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+          <p>0 0 1 1 11 2 10 3 1 1 2 4 12 5 11 2 2 4 3 6 13 7 12 5 3 6 4 8 14 9 13 7 4 8 5 10 15 11 14 9 5 10 6 12 16 13 15 11 6 12 7 14 17 15 16 13 7 14 8 16 18 17 17 15 8 16 9 18 19 19 18 17 9 18 0 0 10 3 19 19 10 3 11 2 21 20 20 21 11 2 12 5 22 22 21 20 12 5 13 7 23 23 22 22 13 7 14 9 24 24 23 23 14 9 15 11 25 25 24 24 15 11 16 13 26 26 25 25 16 13 17 15 27 27 26 26 17 15 18 17 28 28 27 27 18 17 19 19 29 29 28 28 19 19 10 3 20 21 29 29 20 21 21 20 31 30 30 31 21 20 22 22 32 32 31 30 22 22 23 23 33 33 32 32 23 23 24 24 34 34 33 33 24 24 25 25 35 35 34 34 25 25 26 26 36 36 35 35 26 26 27 27 37 37 36 36 27 27 28 28 38 38 37 37 28 28 29 29 39 39 38 38 29 29 20 21 30 31 39 39 30 31 31 30 41 101 40 92 31 30 32 32 42 100 41 101 32 32 33 33 43 99 42 100 33 33 34 34 44 98 43 99 34 34 35 35 45 97 44 98 35 35 36 36 46 96 45 97 36 36 37 37 47 95 46 96 37 37 38 38 48 94 47 95 38 38 39 39 49 93 48 94 39 39 30 31 40 92 49 93 40 41 41 40 51 50 50 51 41 40 42 42 52 52 51 50 42 42 43 43 53 53 52 52 43 43 44 44 54 54 53 53 44 44 45 45 55 55 54 54 45 45 46 46 56 56 55 55 46 46 47 47 57 57 56 56 47 47 48 48 58 58 57 57 48 48 49 49 59 59 58 58 49 49 40 41 50 51 59 59 50 51 51 50 61 60 60 61 51 50 52 52 62 62 61 60 52 52 53 53 63 63 62 62 53 53 54 54 64 64 63 63 54 54 55 55 65 65 64 64 55 55 56 56 66 66 65 65 56 56 57 57 67 67 66 66 57 57 58 58 68 68 67 67 58 58 59 59 69 69 68 68 59 59 50 51 60 61 69 69 60 61 61 60 71 70 70 71 61 60 62 62 72 72 71 70 62 62 63 63 73 73 72 72 63 63 64 64 74 74 73 73 64 64 65 65 75 75 74 74 65 65 66 66 76 76 75 75 66 66 67 67 77 77 76 76 67 67 68 68 78 78 77 77 68 68 69 69 79 79 78 78 69 69 60 61 70 71 79 79 70 71 71 70 81 80 80 81 71 70 72 72 82 82 81 80 72 72 73 73 83 83 82 82 73 73 74 74 84 84 83 83 74 74 75 75 85 85 84 84 75 75 76 76 86 86 85 85 76 76 77 77 87 87 86 86 77 77 78 78 88 88 87 87 78 78 79 79 89 89 88 88 79 79 70 71 80 81 89 89 1 1 0 0 90 90 2 4 1 1 90 90 3 6 2 4 90 90 4 8 3 6 90 90 5 10 4 8 90 90 6 12 5 10 90 90 7 14 6 12 90 90 8 16 7 14 90 90 9 18 8 16 90 90 0 0 9 18 90 90 80 81 81 80 91 91 81 80 82 82 91 91 82 82 83 83 91 91 83 83 84 84 91 91 84 84 85 85 91 91 85 85 86 86 91 91 86 86 87 87 91 91 87 87 88 88 91 91 88 88 89 89 91 91 89 89 80 81 91 91</p>
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId sid="originalMayaNodeId">Bolinha_LowShape</originalMayaNodeId>
+          <double_sided sid="double_sided">1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="Projeto_PingPong">
+      <node id="_Tennis_02_All_Bolinha_Low" name="Bolinha_Low" type="NODE">
+        <translate sid="translate">1.997101 4.578399 5.866755</translate>
+        <rotate sid="rotateZ">0 0 1 35.80355</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 -39.06241</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#Bolinha_LowShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="lambert1SG" target="#bolinha">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId sid="originalMayaNodeId" type="string">Bolinha_Low</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

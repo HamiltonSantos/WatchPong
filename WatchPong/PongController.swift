@@ -60,10 +60,10 @@ class PongController: NSObject {
     override init() {
         super.init()
         pongScene.sharedScene.physicsWorld.contactDelegate = self
-        tableSound?.load()
-        racketSound?.load()
-        clapSound?.load()
-        endGameSound?.load()
+//        tableSound!.load()
+//        racketSound!.load()
+//        clapSound!.load()
+//        endGameSound!.load()
         resetGamePositions()
         updatePointsText()
     }
