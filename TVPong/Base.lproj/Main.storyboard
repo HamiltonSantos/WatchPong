@@ -45,6 +45,9 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" image="multiplayer"/>
                                 <state key="focused" image="multiplayerSelected"/>
+                                <connections>
+                                    <segue destination="49C-0W-uek" kind="show" id="l0h-St-msh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-eD-TIv">
                                 <rect key="frame" x="1010" y="730" width="394" height="220"/>
@@ -105,7 +108,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="czn-Ka-tBI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9B-KZ-okh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2040" y="1711"/>
+            <point key="canvasLocation" x="-1912" y="1719"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xip-bk-neF">
@@ -140,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqj-Cp-BKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2379" y="2880"/>
+            <point key="canvasLocation" x="-1912" y="2932"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -169,10 +172,56 @@
                             <constraint firstItem="HGe-Mq-Qya" firstAttribute="leading" secondItem="BxU-Oe-mI4" secondAttribute="leading" id="qsD-Nx-ENr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="HGe-Mq-Qya" id="7cy-Ph-d8K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="304"/>
+            <point key="canvasLocation" x="274" y="480"/>
+        </scene>
+        <!--Multiplayer View Controller-->
+        <scene sceneID="ynu-BS-dTp">
+            <objects>
+                <viewController id="49C-0W-uek" customClass="MultiplayerViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HUG-d8-tVm"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSJ-AQ-Qqn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mz6-JO-545">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-1x-MCa" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="960" height="1080"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                </userDefinedRuntimeAttributes>
+                            </sceneKitView>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3s-Ha-QOP" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
+                                <rect key="frame" x="960" y="0.0" width="960" height="1080"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="player2CenterCamera"/>
+                                </userDefinedRuntimeAttributes>
+                            </sceneKitView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cSJ-AQ-Qqn" firstAttribute="top" secondItem="G1g-1x-MCa" secondAttribute="bottom" id="CLc-3g-fT5"/>
+                            <constraint firstItem="G1g-1x-MCa" firstAttribute="leading" secondItem="Mz6-JO-545" secondAttribute="leading" id="FqK-tt-oxp"/>
+                            <constraint firstItem="g3s-Ha-QOP" firstAttribute="leading" secondItem="G1g-1x-MCa" secondAttribute="trailing" id="Gg0-fi-Jp3"/>
+                            <constraint firstItem="G1g-1x-MCa" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" id="HNw-gR-YVk"/>
+                            <constraint firstItem="G1g-1x-MCa" firstAttribute="width" secondItem="Mz6-JO-545" secondAttribute="width" multiplier="1:2" id="Jo4-Jx-WbJ"/>
+                            <constraint firstItem="g3s-Ha-QOP" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" id="PUk-Gm-vvs"/>
+                            <constraint firstAttribute="trailing" secondItem="g3s-Ha-QOP" secondAttribute="trailing" id="Pnz-si-YWu"/>
+                            <constraint firstItem="cSJ-AQ-Qqn" firstAttribute="top" secondItem="g3s-Ha-QOP" secondAttribute="bottom" id="xxd-Un-iyX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYB-fx-kBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="1719"/>
         </scene>
     </scenes>
     <resources>

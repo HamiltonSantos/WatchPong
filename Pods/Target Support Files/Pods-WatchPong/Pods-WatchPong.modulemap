@@ -1,0 +1,6 @@
+framework module Pods_WatchPong {
+  umbrella header "Pods-WatchPong-umbrella.h"
+
+  export *
+  module * { export * }
+}

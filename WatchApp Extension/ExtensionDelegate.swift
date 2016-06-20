@@ -52,6 +52,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
                 // Se meu ultimo lancamento + 1 segundos for maior q o tempo atual
                 if self.isValidMoviment(data) {
+                    
                     if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
                         print("novo")
                         let sendMessage: (String) -> () = { side in
