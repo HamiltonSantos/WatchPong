@@ -34,7 +34,6 @@
 		3C2A24AD66848F110548C814 /* CMAccelerometerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A275A73827B44C05E69F3 /* CMAccelerometerExtensions.swift */; };
 		3C2A24AEFBCF50EEDC177259 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25B697E1E3282C2DFC11 /* ArrayExtensions.swift */; };
 		3C2A253A90313A9C6DAF5193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A28549054E57895DD3237 /* Main.storyboard */; };
-		3C2A266A6A25E87DA19474DA /* PongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A288CDF9C818C5625B76D /* PongSceneRendererDelegate.swift */; };
 		3C2A2761B4619DE70A5C84D4 /* TransparentBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A270D42BC1CCC0D5EFACE /* TransparentBarViewController.swift */; };
 		3C2A294B6449D07C9963A908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A2B0C9319C9AB4E38C33D /* LaunchScreen.storyboard */; };
 		3C2A296C27F03429902DBF18 /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */; };
@@ -64,6 +63,7 @@
 		89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
 		89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C47E591CBEE1C100E889B0 /* NoVRGameViewController.swift */; };
 		89F5AB7B1CC68350004A35D1 /* FinalizedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5AB7A1CC68350004A35D1 /* FinalizedGameViewController.swift */; };
+		EBE203FE1D1818440033B907 /* PongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A288CDF9C818C5625B76D /* PongSceneRendererDelegate.swift */; };
 		EBF3F2E21CFDC93900787156 /* TVGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3F2E11CFDC93900787156 /* TVGameViewController.swift */; };
 		EBF3F2E41CFDC9BC00787156 /* PongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2519C2E2505A6A2167CD /* PongController.swift */; };
 		EBF3F2E51CFDC9BC00787156 /* PongScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2CCF3593A6699A0A7117 /* PongScene.swift */; };
@@ -688,6 +688,7 @@
 				89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */,
 				3C2A2408EB1D0EE98E40E7F8 /* AngleUtils.swift in Sources */,
 				3C2A239C67DCBEB6357582F9 /* PongSceneView.swift in Sources */,
+				EBE203FE1D1818440033B907 /* PongSceneRendererDelegate.swift in Sources */,
 				25D30CE41D14B19C0076340A /* TVPongSceneRendererDelegate.swift in Sources */,
 				3C2A2B00BBC5A064A4B3EE3B /* VRGameViewController.swift in Sources */,
 				257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */,
@@ -710,7 +711,6 @@
 				3C2A2CE29E0DAC9DEB0B87DC /* UIStoryboardExtensions.swift in Sources */,
 				3C2A226AF622A721FCD9A3A8 /* UIViewControllerAdditions.swift in Sources */,
 				3C2A23B240BD4146E5414CF5 /* PongWCSessionController.swift in Sources */,
-				3C2A266A6A25E87DA19474DA /* PongSceneRendererDelegate.swift in Sources */,
 				3C2A2F10CC498E076F8F7830 /* RandomHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
