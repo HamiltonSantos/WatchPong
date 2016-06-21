@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="-1912" y="2932"/>
         </scene>
-        <!--Game View Controller-->
+        <!--SimpleTV Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="SimpleTVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0MT-mn-i4x"/>
                         <viewControllerLayoutGuide type="bottom" id="zKz-Ah-VF4"/>
@@ -172,9 +172,6 @@
                             <constraint firstItem="HGe-Mq-Qya" firstAttribute="leading" secondItem="BxU-Oe-mI4" secondAttribute="leading" id="qsD-Nx-ENr"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="sceneView" destination="HGe-Mq-Qya" id="7cy-Ph-d8K"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,8 +203,21 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="player2CenterCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYe-Rw-kmS">
+                                <rect key="frame" x="996" y="24" width="50" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spv-xE-FFL">
+                                <rect key="frame" x="56" y="24" width="45" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Spv-xE-FFL" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" constant="24" id="3L4-5F-Hvx"/>
                             <constraint firstItem="cSJ-AQ-Qqn" firstAttribute="top" secondItem="G1g-1x-MCa" secondAttribute="bottom" id="CLc-3g-fT5"/>
                             <constraint firstItem="G1g-1x-MCa" firstAttribute="leading" secondItem="Mz6-JO-545" secondAttribute="leading" id="FqK-tt-oxp"/>
                             <constraint firstItem="g3s-Ha-QOP" firstAttribute="leading" secondItem="G1g-1x-MCa" secondAttribute="trailing" id="Gg0-fi-Jp3"/>
@@ -215,6 +225,9 @@
                             <constraint firstItem="G1g-1x-MCa" firstAttribute="width" secondItem="Mz6-JO-545" secondAttribute="width" multiplier="1:2" id="Jo4-Jx-WbJ"/>
                             <constraint firstItem="g3s-Ha-QOP" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" id="PUk-Gm-vvs"/>
                             <constraint firstAttribute="trailing" secondItem="g3s-Ha-QOP" secondAttribute="trailing" id="Pnz-si-YWu"/>
+                            <constraint firstItem="XYe-Rw-kmS" firstAttribute="leading" secondItem="G1g-1x-MCa" secondAttribute="trailing" constant="36" id="Y0U-Ag-3b4"/>
+                            <constraint firstItem="XYe-Rw-kmS" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" constant="24" id="swv-uj-b8f"/>
+                            <constraint firstItem="Spv-xE-FFL" firstAttribute="leading" secondItem="Mz6-JO-545" secondAttribute="leadingMargin" constant="36" id="xRr-eC-YXh"/>
                             <constraint firstItem="cSJ-AQ-Qqn" firstAttribute="top" secondItem="g3s-Ha-QOP" secondAttribute="bottom" id="xxd-Un-iyX"/>
                         </constraints>
                     </view>

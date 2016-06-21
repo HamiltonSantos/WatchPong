@@ -53,6 +53,7 @@
 		893472781D18271F000DECAB /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893472771D18271F000DECAB /* GameController.swift */; };
 		893472791D18282A000DECAB /* GameControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893472751D181EAF000DECAB /* GameControllerManager.swift */; };
 		8934727B1D182869000DECAB /* MultiplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8934727A1D182869000DECAB /* MultiplayerViewController.swift */; };
+		8936BE3E1D19676A00159F52 /* SimpleTVGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8936BE3D1D19676A00159F52 /* SimpleTVGameViewController.swift */; };
 		895C71DD1CC0649F001BDA8E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895C71DB1CC0649F001BDA8E /* Interface.storyboard */; };
 		895C71DF1CC0649F001BDA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 895C71DE1CC0649F001BDA8E /* Assets.xcassets */; };
 		895C71E61CC0649F001BDA8E /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 895C71E51CC0649F001BDA8E /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -161,6 +162,7 @@
 		893472751D181EAF000DECAB /* GameControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControllerManager.swift; sourceTree = "<group>"; };
 		893472771D18271F000DECAB /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8934727A1D182869000DECAB /* MultiplayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerViewController.swift; sourceTree = "<group>"; };
+		8936BE3D1D19676A00159F52 /* SimpleTVGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTVGameViewController.swift; sourceTree = "<group>"; };
 		895C71D91CC0649F001BDA8E /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		895C71DC1CC0649F001BDA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		895C71DE1CC0649F001BDA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */,
 				EBF3F2E11CFDC93900787156 /* TVGameViewController.swift */,
 				893472731D181989000DECAB /* MultiplayerViewController.swift */,
+				8936BE3D1D19676A00159F52 /* SimpleTVGameViewController.swift */,
 			);
 			path = TVPong;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				893472741D181989000DECAB /* MultiplayerViewController.swift in Sources */,
 				25CF02721CEF3FCB006A3505 /* SCNVector3Extensions.swift in Sources */,
 				2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */,
+				8936BE3E1D19676A00159F52 /* SimpleTVGameViewController.swift in Sources */,
 				EBF3F2E81CFDCA2000787156 /* InstantiateViewController.swift in Sources */,
 				EBF3F2E21CFDC93900787156 /* TVGameViewController.swift in Sources */,
 				EBF3F2E91CFDCA3100787156 /* UIViewControllerAdditions.swift in Sources */,
