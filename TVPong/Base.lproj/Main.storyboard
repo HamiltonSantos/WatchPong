@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="-1912" y="2932"/>
         </scene>
-        <!--SimpleTV Game View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="SimpleTVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0MT-mn-i4x"/>
                         <viewControllerLayoutGuide type="bottom" id="zKz-Ah-VF4"/>
@@ -172,6 +172,9 @@
                             <constraint firstItem="HGe-Mq-Qya" firstAttribute="leading" secondItem="BxU-Oe-mI4" secondAttribute="leading" id="qsD-Nx-ENr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="HGe-Mq-Qya" id="pdd-6D-PDZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,6 +281,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2L-lR-j2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="309" y="2955"/>
+        </scene>
+        <!--SimpleTV Game View Controller-->
+        <scene sceneID="s2f-Wq-7lU">
+            <objects>
+                <viewController id="tb9-EG-RYL" customClass="SimpleTVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mAx-ba-hrV"/>
+                        <viewControllerLayoutGuide type="bottom" id="n0X-Ds-tnb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mCg-LD-hgj">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76J-Lv-z3T" customClass="PongSceneView" customModule="TVPong">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCameraNode"/>
+                                </userDefinedRuntimeAttributes>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n0X-Ds-tnb" firstAttribute="top" secondItem="76J-Lv-z3T" secondAttribute="bottom" id="B0Y-Gj-HVn"/>
+                            <constraint firstItem="76J-Lv-z3T" firstAttribute="leading" secondItem="mCg-LD-hgj" secondAttribute="leading" id="DQi-H4-U5O"/>
+                            <constraint firstItem="76J-Lv-z3T" firstAttribute="top" secondItem="mAx-ba-hrV" secondAttribute="bottom" id="MKq-pY-SYV"/>
+                            <constraint firstAttribute="trailing" secondItem="76J-Lv-z3T" secondAttribute="trailing" id="kzo-Lr-FaU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOI-sM-qSF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="-994"/>
         </scene>
     </scenes>
     <resources>

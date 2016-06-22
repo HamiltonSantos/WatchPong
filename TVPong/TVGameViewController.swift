@@ -31,7 +31,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
 
     var previousMovement = GCAcceleration(x: 0, y: 0, z: 0)
 
-    let minimumAcceleration = 0.7
+    let minimumAcceleration = 0.3
     let forceConstant = 0.2
     
     @IBOutlet weak var sceneView: PongSceneView!
@@ -66,7 +66,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
                 clearDataFromGamePad()
             }
             if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z{
-                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x: -motion.userAcceleration.x, y:motion.userAcceleration.y, z: -motion.userAcceleration.z), gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
+                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x: -motion.userAcceleration.x, y:motion.userAcceleration.y, z: -motion.userAcceleration.z), gravity: GCAcceleration(x: motion.gravity.x*0.5,y:motion.gravity.y,z:motion.gravity.z), yAcceleration: motion.userAcceleration.y)))
             }
 
         } else if motion.userAcceleration.z < -minimumAcceleration {
@@ -77,7 +77,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
                 clearDataFromGamePad()
             }
             if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z {
-                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: motion.userAcceleration, gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
+                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x:10*motion.userAcceleration.x,y:motion.userAcceleration.y,z:motion.userAcceleration.z), gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
             }
 
             //MARK: batida do lado direito para destro o acc.z é negativo, inverte o lado e é positivo && batido do lado esquerdo para canhotos o acc.z é negativo
@@ -89,17 +89,10 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
                 if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ > necessaryStrnght{
                     averageForce(currentDataFromGamepad)
                 }
-                else if pongController.myTurn{
-                    print("too weak")
-                }
             }
             else{
                 if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ < -necessaryStrnght/2{
                     averageForce(currentDataFromGamepad)
-                }
-                else if pongController.myTurn{
-                    print("too weak")
-
                 }
             }
         }
@@ -115,19 +108,24 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             if strenght*userAcceleration.z > necessaryStrenght{
                 strenght = necessaryStrenght/userAcceleration.z
             }
+
         }
         else{
             let necessaryStrenght = 0.9
             if -strenght*userAcceleration.z < necessaryStrenght{
                 strenght = -necessaryStrenght/userAcceleration.z
             }
+
         }
-        
-        let force = SCNVector3Make(Float(strenght*userAcceleration.x*(1-gravity.x)), Float(-strenght*userAcceleration.y*(1-gravity.y)), Float(strenght*userAcceleration.z*(1-gravity.z)))
+        var side = -1.0
+        if flow == .left{
+            side = 1.0
+        }
+        let force = SCNVector3Make(Float(side*strenght*userAcceleration.x*(gravity.x)), Float(strenght*userAcceleration.y*(gravity.y)), Float(-strenght*userAcceleration.z*(gravity.z)))
         if pongController.myTurn{
             pongController.applyBallFoce(force)
             clearDataFromGamePad()
-            print(force)
+            print(force, gravity)
         }
         
         //MARK: controle corre de ré Z positivo, de frente Z negativo
