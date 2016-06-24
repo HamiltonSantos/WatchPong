@@ -10,6 +10,24 @@
 		250E7F131CEF3BCC00311532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E7F121CEF3BCC00311532 /* AppDelegate.swift */; };
 		250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F181CEF3BCC00311532 /* Main.storyboard */; };
 		250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E7F1B1CEF3BCC00311532 /* Assets.xcassets */; };
+		250E8D521D1D66610028DA94 /* VDS_Bold_Italic_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4A1D1D66610028DA94 /* VDS_Bold_Italic_New.ttf */; };
+		250E8D531D1D66610028DA94 /* VDS_Bold_Italic_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4A1D1D66610028DA94 /* VDS_Bold_Italic_New.ttf */; };
+		250E8D541D1D66610028DA94 /* VDS_Bold_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4B1D1D66610028DA94 /* VDS_Bold_New.ttf */; };
+		250E8D551D1D66610028DA94 /* VDS_Bold_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4B1D1D66610028DA94 /* VDS_Bold_New.ttf */; };
+		250E8D561D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4C1D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf */; };
+		250E8D571D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4C1D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf */; };
+		250E8D581D1D66610028DA94 /* VDS_Compensated_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4D1D1D66610028DA94 /* VDS_Compensated_Light.ttf */; };
+		250E8D591D1D66610028DA94 /* VDS_Compensated_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4D1D1D66610028DA94 /* VDS_Compensated_Light.ttf */; };
+		250E8D5A1D1D66610028DA94 /* VDS_Italic_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4E1D1D66610028DA94 /* VDS_Italic_New.ttf */; };
+		250E8D5B1D1D66610028DA94 /* VDS_Italic_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4E1D1D66610028DA94 /* VDS_Italic_New.ttf */; };
+		250E8D5C1D1D66610028DA94 /* VDS_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4F1D1D66610028DA94 /* VDS_New.ttf */; };
+		250E8D5D1D1D66610028DA94 /* VDS_New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D4F1D1D66610028DA94 /* VDS_New.ttf */; };
+		250E8D5E1D1D66610028DA94 /* VDS_Thin_Ita.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D501D1D66610028DA94 /* VDS_Thin_Ita.ttf */; };
+		250E8D5F1D1D66610028DA94 /* VDS_Thin_Ita.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D501D1D66610028DA94 /* VDS_Thin_Ita.ttf */; };
+		250E8D601D1D66610028DA94 /* VDS_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D511D1D66610028DA94 /* VDS_Thin.ttf */; };
+		250E8D611D1D66610028DA94 /* VDS_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 250E8D511D1D66610028DA94 /* VDS_Thin.ttf */; };
+		250E8D641D1D68BB0028DA94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */; };
+		250E8D651D1D68BB0028DA94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */; };
 		2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
 		252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
 		257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */; };
@@ -124,6 +142,15 @@
 		250E7F191CEF3BCC00311532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		250E7F1B1CEF3BCC00311532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		250E7F1D1CEF3BCC00311532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		250E8D4A1D1D66610028DA94 /* VDS_Bold_Italic_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Bold_Italic_New.ttf; sourceTree = "<group>"; };
+		250E8D4B1D1D66610028DA94 /* VDS_Bold_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Bold_New.ttf; sourceTree = "<group>"; };
+		250E8D4C1D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Compensated_Light_Italic.ttf; sourceTree = "<group>"; };
+		250E8D4D1D1D66610028DA94 /* VDS_Compensated_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Compensated_Light.ttf; sourceTree = "<group>"; };
+		250E8D4E1D1D66610028DA94 /* VDS_Italic_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Italic_New.ttf; sourceTree = "<group>"; };
+		250E8D4F1D1D66610028DA94 /* VDS_New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_New.ttf; sourceTree = "<group>"; };
+		250E8D501D1D66610028DA94 /* VDS_Thin_Ita.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Thin_Ita.ttf; sourceTree = "<group>"; };
+		250E8D511D1D66610028DA94 /* VDS_Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Thin.ttf; sourceTree = "<group>"; };
+		250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongSceneRendererDelegate.swift; sourceTree = "<group>"; };
 		257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -230,9 +257,25 @@
 			path = TVPong;
 			sourceTree = "<group>";
 		};
+		250E8D621D1D68A60028DA94 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		25DC0C0E1CABFB2600F0661F = {
 			isa = PBXGroup;
 			children = (
+				250E8D4A1D1D66610028DA94 /* VDS_Bold_Italic_New.ttf */,
+				250E8D4B1D1D66610028DA94 /* VDS_Bold_New.ttf */,
+				250E8D4C1D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf */,
+				250E8D4D1D1D66610028DA94 /* VDS_Compensated_Light.ttf */,
+				250E8D4E1D1D66610028DA94 /* VDS_Italic_New.ttf */,
+				250E8D4F1D1D66610028DA94 /* VDS_New.ttf */,
+				250E8D501D1D66610028DA94 /* VDS_Thin_Ita.ttf */,
+				250E8D511D1D66610028DA94 /* VDS_Thin.ttf */,
 				25DC0C191CABFB2600F0661F /* WatchPong */,
 				895C71DA1CC0649F001BDA8E /* WatchApp */,
 				895C71E91CC0649F001BDA8E /* WatchApp Extension */,
@@ -257,6 +300,7 @@
 		25DC0C191CABFB2600F0661F /* WatchPong */ = {
 			isa = PBXGroup;
 			children = (
+				250E8D621D1D68A60028DA94 /* Extensions */,
 				893472771D18271F000DECAB /* GameController.swift */,
 				25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */,
 				3C2A2519C2E2505A6A2167CD /* PongController.swift */,
@@ -484,19 +528,19 @@
 				TargetAttributes = {
 					250E7F0F1CEF3BCC00311532 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2S8FFYU59P;
+						DevelopmentTeam = 28CU5YV2B9;
 					};
 					25DC0C161CABFB2600F0661F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2S8FFYU59P;
+						DevelopmentTeam = 28CU5YV2B9;
 					};
 					895C71D81CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2S8FFYU59P;
+						DevelopmentTeam = 28CU5YV2B9;
 					};
 					895C71E41CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2S8FFYU59P;
+						DevelopmentTeam = 28CU5YV2B9;
 					};
 				};
 			};
@@ -526,10 +570,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250E8D551D1D66610028DA94 /* VDS_Bold_New.ttf in Resources */,
+				250E8D571D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf in Resources */,
 				25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */,
+				250E8D611D1D66610028DA94 /* VDS_Thin.ttf in Resources */,
+				250E8D5B1D1D66610028DA94 /* VDS_Italic_New.ttf in Resources */,
+				250E8D591D1D66610028DA94 /* VDS_Compensated_Light.ttf in Resources */,
 				250E7F1C1CEF3BCC00311532 /* Assets.xcassets in Resources */,
 				250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */,
 				25CF026B1CEF3D2B006A3505 /* Assets.xcassets in Resources */,
+				250E8D531D1D66610028DA94 /* VDS_Bold_Italic_New.ttf in Resources */,
+				250E8D5D1D1D66610028DA94 /* VDS_New.ttf in Resources */,
+				250E8D5F1D1D66610028DA94 /* VDS_Thin_Ita.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,10 +589,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250E8D541D1D66610028DA94 /* VDS_Bold_New.ttf in Resources */,
+				250E8D561D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf in Resources */,
 				3C2A294B6449D07C9963A908 /* LaunchScreen.storyboard in Resources */,
+				250E8D601D1D66610028DA94 /* VDS_Thin.ttf in Resources */,
+				250E8D5A1D1D66610028DA94 /* VDS_Italic_New.ttf in Resources */,
+				250E8D581D1D66610028DA94 /* VDS_Compensated_Light.ttf in Resources */,
 				89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */,
 				3C2A253A90313A9C6DAF5193 /* Main.storyboard in Resources */,
 				3C2A22711B92F16092C6A58E /* Assets.xcassets in Resources */,
+				250E8D521D1D66610028DA94 /* VDS_Bold_Italic_New.ttf in Resources */,
+				250E8D5C1D1D66610028DA94 /* VDS_New.ttf in Resources */,
+				250E8D5E1D1D66610028DA94 /* VDS_Thin_Ita.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +727,7 @@
 				2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */,
 				8936BE3E1D19676A00159F52 /* SimpleTVGameViewController.swift in Sources */,
 				EBF3F2E81CFDCA2000787156 /* InstantiateViewController.swift in Sources */,
+				250E8D651D1D68BB0028DA94 /* UIViewExtension.swift in Sources */,
 				EBF3F2E21CFDC93900787156 /* TVGameViewController.swift in Sources */,
 				EBF3F2E91CFDCA3100787156 /* UIViewControllerAdditions.swift in Sources */,
 				25CF02731CEF3FF4006A3505 /* DispatchHelpers.swift in Sources */,
@@ -691,6 +752,7 @@
 				25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */,
 				89C47E5A1CBEE1C100E889B0 /* NoVRGameViewController.swift in Sources */,
 				3C2A2408EB1D0EE98E40E7F8 /* AngleUtils.swift in Sources */,
+				250E8D641D1D68BB0028DA94 /* UIViewExtension.swift in Sources */,
 				3C2A239C67DCBEB6357582F9 /* PongSceneView.swift in Sources */,
 				EBE203FE1D1818440033B907 /* PongSceneRendererDelegate.swift in Sources */,
 				25D30CE41D14B19C0076340A /* TVPongSceneRendererDelegate.swift in Sources */,
