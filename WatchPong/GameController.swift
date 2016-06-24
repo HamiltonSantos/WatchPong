@@ -148,6 +148,7 @@ class GameController: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegat
                 
                 guard (try? socket.connectToAddress(address)) != nil else {
                     assert(false, "Unable to connect to address")
+                    break
                 }
                 isConnected = true
             }

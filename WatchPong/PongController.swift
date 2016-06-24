@@ -79,7 +79,7 @@ extension PongController {
     func applyOtherBallForce() {
 //        let force = SCNVector3Make(frandom2(6), frandom(4), frandom(4)) - pongScene.ball.presentationNode.position.normalized()
         let ballPosition = pongScene.ball.presentationNode.position
-        let randomX = frandom(1) - 0.5
+        let randomX = frandom(1) - 0.7
         let randomY = 0.6
         let zExtra = abs((ballPosition.z / 5.5))
         let randomZ =  zExtra + 1

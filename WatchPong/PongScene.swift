@@ -56,7 +56,6 @@ class PongScene : NSObject {
         self.floor.physicsBody!.contactTestBitMask = 1
 
         // racket
-        let racketScene = SCNScene(named: "art.scnassets/racket.scn")
         self.racket = sharedScene.childNode("Racket")
         sharedScene.rootNode.addChildNode(racket)
         self.racket.position = SCNVector3Make(0,5,-6)
