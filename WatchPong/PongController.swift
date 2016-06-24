@@ -7,7 +7,7 @@ import Foundation
 import SceneKit
 
 // Constants
-let force = Float(5.5)
+let force = Float(7)
 let defaultForceVector = SCNVector3Make(0, 1, -1)
 
 class PongController: NSObject {
@@ -82,7 +82,7 @@ extension PongController {
         let randomX = frandom(1) - 0.5
         let randomY = 0.6
         let zExtra = abs((ballPosition.z / 5.5))
-        let randomZ =  zExtra + 0.8
+        let randomZ =  zExtra + 1
 //        print("random x \(randomX)") MUDEI ISTO
         applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
         self.myTurn = false
@@ -90,7 +90,7 @@ extension PongController {
 
     func applyBallFoce(vectorForce: SCNVector3) {
         resetVelocity(pongScene.ball)
-        applyForce(pongScene.ball, force: vectorForce * force)
+        applyForce(pongScene.ball, force: (vectorForce * force))
         myTurn = false
     }
 

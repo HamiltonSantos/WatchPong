@@ -160,7 +160,7 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGe-Mq-Qya" customClass="PongSceneView" customModule="TVPong">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCameraNode"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
                         </subviews>
@@ -196,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3s-Ha-QOP" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
@@ -321,7 +321,7 @@
         <image name="hotToPlay" width="314" height="180"/>
         <image name="howToPlaySelected" width="319" height="194"/>
         <image name="logoTV" width="305" height="428"/>
-        <image name="mask" width="667" height="375"/>
+        <image name="mask" width="1998" height="1125"/>
         <image name="multiplayer" width="314" height="180"/>
         <image name="multiplayerSelected" width="319" height="194"/>
         <image name="redMenuPortion" width="712" height="1080"/>
