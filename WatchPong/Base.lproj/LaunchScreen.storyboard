@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="214" height="182"/>
-        <image name="mask" width="667" height="375"/>
+        <image name="logo" width="157" height="179"/>
+        <image name="mask" width="1998" height="1125"/>
     </resources>
 </document>

@@ -12,6 +12,8 @@ import SceneKit
 
 class TVGameViewController: GCEventViewController, ReactToMotionEvents {
 
+     var lastDate = NSDate()
+    
     enum flowMovement {
         case right
         case left
@@ -52,50 +54,74 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
 
     func motionUpdate(motion: GCMotion) {
 
-        if lastRemoteMovementTime == nil {
-            lastRemoteMovementTime = NSDate()
+        let totalX = motion.gravity.x + motion.userAcceleration.x
+        let totalY = motion.gravity.y + motion.userAcceleration.y
+        let totalZ = motion.gravity.z + motion.userAcceleration.z
+        
+        let treshould: Double = 3
+        if (totalX > treshould || totalX < -treshould) {
+            print(" ---- ")
+            print("x: \(totalX)")
+            print("y: \(totalY)")
+            print("z: \(totalZ)")
+            print(" ---- ")
         }
-        if NSDate().timeIntervalSinceDate(lastRemoteMovementTime!) > 0.05{
-            clearDataFromGamePad()}
-
-        else if motion.userAcceleration.z>minimumAcceleration{
-//            NSLog("destro batendo do lado esquerdo // zAcc: \(motion.userAcceleration.z) // xAcc: \(motion.userAcceleration.x) // yAcc: \(motion.userAcceleration.y) // zGrav: \(motion.gravity.z) // yGrav: \(motion.gravity.y) // xGrav: \(motion.gravity.z) // TIME: \(NSDate().timeIntervalSinceDate(lastRemoteMovementTime!))") // canhoteiro batendo do lado direito
-
-            if flow == flowMovement.right {
-                flow = .left
-                clearDataFromGamePad()
-            }
-            if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z{
-                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x: -motion.userAcceleration.x, y:motion.userAcceleration.y, z: -motion.userAcceleration.z), gravity: GCAcceleration(x: motion.gravity.x*0.5,y:motion.gravity.y,z:motion.gravity.z), yAcceleration: motion.userAcceleration.y)))
-            }
-
-        } else if motion.userAcceleration.z < -minimumAcceleration {
-//            NSLog("destro batendo do lado direito // zAcc: \(motion.userAcceleration.z) // xAcc: \(motion.userAcceleration.x) // yAcc: \(motion.userAcceleration.y) // zGrav: \(motion.gravity.z) // yGrav: \(motion.gravity.y) // xGrav: \(motion.gravity.z) // TIME: \(NSDate().timeIntervalSinceDate(lastRemoteMovementTime!))") // canhoteiro batendo do lado esquerdo
-
-            if flow == flowMovement.left {
-                flow = .right
-                clearDataFromGamePad()
-            }
-            if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z {
-                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x:10*motion.userAcceleration.x,y:motion.userAcceleration.y,z:motion.userAcceleration.z), gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
-            }
-
-            //MARK: batida do lado direito para destro o acc.z é negativo, inverte o lado e é positivo && batido do lado esquerdo para canhotos o acc.z é negativo
-        }
-        lastRemoteMovementTime = NSDate()
-
-        if let first = currentDataFromGamepad.first{
-            if flow == .right{
-                if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ > necessaryStrnght{
-                    averageForce(currentDataFromGamepad)
-                }
-            }
-            else{
-                if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ < -necessaryStrnght/2{
-                    averageForce(currentDataFromGamepad)
-                }
+        
+        if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+            if totalX > 3 {
+                lastDate = NSDate()
+                pongController.processLeftAction()
+            } else if totalX < -3 {
+                lastDate = NSDate()
+                pongController.processRightAction()
             }
         }
+        
+        
+//        if lastRemoteMovementTime == nil {
+//            lastRemoteMovementTime = NSDate()
+//        }
+//        if NSDate().timeIntervalSinceDate(lastRemoteMovementTime!) > 0.05{
+//            clearDataFromGamePad()}
+//
+//        else if motion.userAcceleration.z>minimumAcceleration{
+////            NSLog("destro batendo do lado esquerdo // zAcc: \(motion.userAcceleration.z) // xAcc: \(motion.userAcceleration.x) // yAcc: \(motion.userAcceleration.y) // zGrav: \(motion.gravity.z) // yGrav: \(motion.gravity.y) // xGrav: \(motion.gravity.z) // TIME: \(NSDate().timeIntervalSinceDate(lastRemoteMovementTime!))") // canhoteiro batendo do lado direito
+//
+//            if flow == flowMovement.right {
+//                flow = .left
+//                clearDataFromGamePad()
+//            }
+//            if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z{
+//                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x: -motion.userAcceleration.x, y:motion.userAcceleration.y, z: -motion.userAcceleration.z), gravity: GCAcceleration(x: motion.gravity.x*0.5,y:motion.gravity.y,z:motion.gravity.z), yAcceleration: motion.userAcceleration.y)))
+//            }
+//
+//        } else if motion.userAcceleration.z < -minimumAcceleration {
+////            NSLog("destro batendo do lado direito // zAcc: \(motion.userAcceleration.z) // xAcc: \(motion.userAcceleration.x) // yAcc: \(motion.userAcceleration.y) // zGrav: \(motion.gravity.z) // yGrav: \(motion.gravity.y) // xGrav: \(motion.gravity.z) // TIME: \(NSDate().timeIntervalSinceDate(lastRemoteMovementTime!))") // canhoteiro batendo do lado esquerdo
+//
+//            if flow == flowMovement.left {
+//                flow = .right
+//                clearDataFromGamePad()
+//            }
+//            if previousMovement.x != motion.userAcceleration.x && previousMovement.y != motion.userAcceleration.y && previousMovement.z != motion.userAcceleration.z {
+//                currentDataFromGamepad = (filtrateData(dataFromGamePad(acceleration: GCAcceleration(x:10*motion.userAcceleration.x,y:motion.userAcceleration.y,z:motion.userAcceleration.z), gravity: motion.gravity, yAcceleration: motion.userAcceleration.y)))
+//            }
+//
+//            //MARK: batida do lado direito para destro o acc.z é negativo, inverte o lado e é positivo && batido do lado esquerdo para canhotos o acc.z é negativo
+//        }
+//        lastRemoteMovementTime = NSDate()
+//
+//        if let first = currentDataFromGamepad.first{
+//            if flow == .right{
+//                if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ > necessaryStrnght{
+//                    averageForce(currentDataFromGamepad)
+//                }
+//            }
+//            else{
+//                if pongController.myTurn && first.acceleration.z /** first.gravity.z*/ < -necessaryStrnght/2{
+//                    averageForce(currentDataFromGamepad)
+//                }
+//            }
+//        }
     }
 
 

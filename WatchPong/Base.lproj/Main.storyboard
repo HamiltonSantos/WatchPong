@@ -5,7 +5,31 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="VDS_Bold_New.ttf">
+            <string>VDS-Bold</string>
+            <string>VDS-Bold</string>
+        </mutableArray>
+        <mutableArray key="VDS_New.ttf">
+            <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
+        </mutableArray>
+        <mutableArray key="VDS_Thin.ttf">
+            <string>VDS-Thin</string>
+            <string>VDS-Thin</string>
+            <string>VDS-Thin</string>
+            <string>VDS-Thin</string>
+            <string>VDS-Thin</string>
+            <string>VDS-Thin</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="tSl-Sc-t76">
@@ -106,20 +130,20 @@
                                 <rect key="frame" x="114" y="266" width="373" height="148"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold the Apple Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-nb-0qi">
-                                <rect key="frame" x="132" y="20" width="337" height="38"/>
+                                <rect key="frame" x="141" y="20" width="319" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="TwL-Or-moV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now the watch is going to be your racket!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-xE-gq5">
-                                <rect key="frame" x="114" y="58" width="372" height="22"/>
+                                <rect key="frame" x="124" y="58" width="352" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="WII-rv-Ytw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -205,7 +229,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwf-LT-edQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="hRQ-8H-O27">
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="hRQ-8H-O27">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PY0-7j-YHq">
@@ -220,14 +244,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlQ-GD-EDS">
-                                        <rect key="frame" x="175" y="369" width="250" height="60"/>
+                                        <rect key="frame" x="175" y="472" width="250" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="FKe-vR-C1b"/>
-                                            <constraint firstAttribute="height" constant="60" id="bmb-5A-Kwo"/>
+                                            <constraint firstAttribute="height" constant="50" id="bmb-5A-Kwo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="22"/>
                                         <state key="normal" title="Start Game"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="didPressStart:" destination="jTU-QP-uRW" eventType="touchUpInside" id="ILD-2y-Fab"/>
                                         </connections>
@@ -244,14 +273,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYS-j2-AcA">
-                                        <rect key="frame" x="175" y="437" width="250" height="60"/>
+                                        <rect key="frame" x="175" y="530" width="250" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="IW3-FX-9uk"/>
+                                            <constraint firstAttribute="height" constant="50" id="IW3-FX-9uk"/>
                                             <constraint firstAttribute="width" constant="250" id="sZH-cR-qvB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="22"/>
                                         <state key="normal" title="Multiplayer"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="cMG-C4-wrQ" kind="show" id="O74-2v-gsn"/>
                                         </connections>
@@ -264,6 +298,7 @@
                                     <constraint firstItem="PY0-7j-YHq" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" constant="20" id="Foh-4T-x9Z"/>
                                     <constraint firstItem="OlQ-GD-EDS" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="NgK-mP-pyd"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="T2D-Dw-LiA"/>
+                                    <constraint firstAttribute="bottom" secondItem="jYS-j2-AcA" secondAttribute="bottom" constant="20" id="cOo-Ea-VR4"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerY" secondItem="rwf-LT-edQ" secondAttribute="centerY" id="cun-a7-Bak"/>
                                     <constraint firstItem="jYS-j2-AcA" firstAttribute="centerX" secondItem="OlQ-GD-EDS" secondAttribute="centerX" id="qDx-9g-zxv"/>
                                     <constraint firstItem="jYS-j2-AcA" firstAttribute="top" secondItem="OlQ-GD-EDS" secondAttribute="bottom" constant="8" id="u2m-dK-QqQ"/>
@@ -272,19 +307,19 @@
                                     <constraint firstAttribute="trailing" secondItem="PY0-7j-YHq" secondAttribute="trailing" constant="20" id="yhb-gW-rjO"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-oM-ak8">
-                                <rect key="frame" x="193" y="179" width="214" height="182"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-oM-ak8">
+                                <rect key="frame" x="222" y="40" width="157" height="424"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c2u-oM-ak8" firstAttribute="centerX" secondItem="YKU-Ix-NJ3" secondAttribute="centerX" id="2YQ-eN-rF6"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="width" secondItem="YKU-Ix-NJ3" secondAttribute="width" id="E04-LC-jn3"/>
+                            <constraint firstItem="c2u-oM-ak8" firstAttribute="top" secondItem="e7C-jX-ceG" secondAttribute="bottom" constant="20" id="F1K-9R-Mm3"/>
                             <constraint firstItem="OlQ-GD-EDS" firstAttribute="top" secondItem="c2u-oM-ak8" secondAttribute="bottom" constant="8" id="IUK-mv-lhA"/>
                             <constraint firstItem="rwf-LT-edQ" firstAttribute="height" secondItem="YKU-Ix-NJ3" secondAttribute="height" id="KmW-sZ-ces"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="centerX" secondItem="YKU-Ix-NJ3" secondAttribute="centerX" id="VdK-u3-yWK"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="height" secondItem="YKU-Ix-NJ3" secondAttribute="height" id="egP-Xf-9UA"/>
-                            <constraint firstItem="c2u-oM-ak8" firstAttribute="centerY" secondItem="YKU-Ix-NJ3" secondAttribute="centerY" constant="-30" id="f7D-Wp-MI6"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="centerY" secondItem="YKU-Ix-NJ3" secondAttribute="centerY" id="iNJ-Dn-UX1"/>
                             <constraint firstItem="rwf-LT-edQ" firstAttribute="centerY" secondItem="YKU-Ix-NJ3" secondAttribute="centerY" id="jrs-Bd-HIB"/>
                             <constraint firstItem="rwf-LT-edQ" firstAttribute="centerX" secondItem="YKU-Ix-NJ3" secondAttribute="centerX" id="rYx-tq-dnb"/>
@@ -319,20 +354,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="GqV-oz-Dqd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-ks-VX5">
-                                <rect key="frame" x="146" y="154" width="308" height="114"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-ks-VX5">
+                                <rect key="frame" x="154" y="244" width="292" height="112"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-Zd-4gz">
-                                        <rect key="frame" x="0.0" y="0.0" width="308" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-Zd-4gz">
+                                        <rect key="frame" x="0.0" y="0.0" width="292" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Winning Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL9-Xo-VhJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="168" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL9-Xo-VhJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
+                                                <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-QB-QTk">
-                                                <rect key="frame" x="188" y="0.0" width="120" height="32"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-QB-QTk">
+                                                <rect key="frame" x="172" y="0.0" width="120" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="Wey-0S-39C"/>
                                                 </constraints>
@@ -341,31 +376,31 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-Py-6XY">
-                                        <rect key="frame" x="0.0" y="42" width="308" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-Py-6XY">
+                                        <rect key="frame" x="0.0" y="40" width="292" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Apple Watch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-p3-5Ys">
-                                                <rect key="frame" x="0.0" y="0.0" width="259" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="243" height="31"/>
+                                                <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDL-31-XiA">
-                                                <rect key="frame" x="259" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="243" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xx9-WA-pz9">
-                                        <rect key="frame" x="0.0" y="83" width="308" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xx9-WA-pz9">
+                                        <rect key="frame" x="0.0" y="81" width="292" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use VR gogles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIC-Se-ZxJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="259" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="243" height="31"/>
+                                                <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-bS-cKr">
-                                                <rect key="frame" x="259" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="243" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="didChangeVRConfig:" destination="WYo-fi-aIS" eventType="valueChanged" id="GXr-VG-vBN"/>
                                                 </connections>
@@ -465,7 +500,7 @@
                     <connections>
                         <outlet property="sceneViewLeft" destination="aRt-5u-ThW" id="PSs-bm-scR"/>
                         <outlet property="sceneViewRight" destination="5q0-oy-7BV" id="Qgs-yO-Odl"/>
-                        <segue destination="i3E-ru-KL4" kind="show" identifier="endGame" id="zbM-Mm-x9g"/>
+                        <segue destination="nT7-d2-mj7" kind="show" identifier="endGame" id="JwC-bU-0qA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taB-qm-Mru" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,21 +522,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="aIK-bh-Xwg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK9-Dq-asD">
-                                <rect key="frame" x="194" y="270" width="212" height="59"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK9-Dq-asD">
+                                <rect key="frame" x="193" y="275" width="215" height="50"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-mN-7i3">
-                                <rect key="frame" x="268" y="337" width="64" height="43"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-mN-7i3">
+                                <rect key="frame" x="269" y="333" width="64" height="37"/>
+                                <fontDescription key="fontDescription" name="VDS-Bold" family="VDS" pointSize="31"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVB-zg-EHU">
-                                <rect key="frame" x="208" y="181" width="184" height="69"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You Win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVB-zg-EHU">
+                                <rect key="frame" x="210" y="196" width="182" height="59"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -534,7 +569,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ml-Cj-5N3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="344"/>
+            <point key="canvasLocation" x="910" y="344"/>
+        </scene>
+        <!-- -->
+        <scene sceneID="oly-o4-IL4">
+            <objects>
+                <viewController storyboardIdentifier="finalizedVCVR" id="nT7-d2-mj7" customClass="FinalizedGameViewController" customModule="WatchPong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R33-U4-K4X"/>
+                        <viewControllerLayoutGuide type="bottom" id="NXk-l4-EMg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ECI-7g-4hg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="EKS-UT-xc2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LX-wP-ARA">
+                                <rect key="frame" x="51" y="277" width="199" height="47"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="43"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nY3-Rn-gs7">
+                                <rect key="frame" x="116" y="332" width="70" height="34"/>
+                                <fontDescription key="fontDescription" name="VDS-Bold" family="VDS" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQR-hL-nDk">
+                                <rect key="frame" x="64" y="202" width="173" height="55"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3LX-wP-ARA" firstAttribute="centerY" secondItem="ECI-7g-4hg" secondAttribute="centerY" id="4Oh-qJ-bkr"/>
+                            <constraint firstItem="EKS-UT-xc2" firstAttribute="height" secondItem="ECI-7g-4hg" secondAttribute="height" id="4Pt-0P-ZQi"/>
+                            <constraint firstItem="dQR-hL-nDk" firstAttribute="centerX" secondItem="ECI-7g-4hg" secondAttribute="centerX" multiplier="0.5" id="BIB-Ov-1qF"/>
+                            <constraint firstItem="EKS-UT-xc2" firstAttribute="width" secondItem="ECI-7g-4hg" secondAttribute="width" id="CGG-yO-6YT"/>
+                            <constraint firstItem="3LX-wP-ARA" firstAttribute="top" secondItem="dQR-hL-nDk" secondAttribute="bottom" constant="20" id="HHr-gd-Y1a"/>
+                            <constraint firstItem="nY3-Rn-gs7" firstAttribute="centerX" secondItem="3LX-wP-ARA" secondAttribute="centerX" id="KZt-ub-epD"/>
+                            <constraint firstItem="nY3-Rn-gs7" firstAttribute="top" secondItem="3LX-wP-ARA" secondAttribute="bottom" constant="8" id="Y0X-kg-Voq"/>
+                            <constraint firstItem="EKS-UT-xc2" firstAttribute="centerX" secondItem="ECI-7g-4hg" secondAttribute="centerX" id="ha1-9O-WS9"/>
+                            <constraint firstItem="EKS-UT-xc2" firstAttribute="centerY" secondItem="ECI-7g-4hg" secondAttribute="centerY" id="mjY-9o-RoA"/>
+                            <constraint firstItem="3LX-wP-ARA" firstAttribute="centerX" secondItem="ECI-7g-4hg" secondAttribute="centerX" multiplier="0.5" id="u4i-bv-ID1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title=" " id="42J-no-0Fb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="AlB-Ae-Pzv">
+                            <connections>
+                                <action selector="didTouchDone:" destination="nT7-d2-mj7" id="baq-g0-CpC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scoreLabel" destination="nY3-Rn-gs7" id="N8s-1D-iCO"/>
+                        <outlet property="winnerLabel" destination="dQR-hL-nDk" id="OCK-Ot-mSu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJy-A4-T0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="-326"/>
         </scene>
         <!--Detect Watch View Controller-->
         <scene sceneID="L9c-Cm-amh">
@@ -551,14 +650,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="lLI-yd-g1x">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open WatcPong on your Apple Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvy-ce-8I1">
-                                <rect key="frame" x="158" y="289" width="285" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="open Side Spin on your Apple Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvy-ce-8I1">
+                                <rect key="frame" x="161" y="291" width="280" height="20"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqX-Un-Irl">
-                                <rect key="frame" x="20" y="20" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqX-Un-Irl">
+                                <rect key="frame" x="20" y="20" width="35" height="30"/>
+                                <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="15"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -599,26 +699,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="eeW-dh-wf8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-le-YYD">
-                                <rect key="frame" x="193" y="209" width="214" height="182"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="P2" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-le-YYD">
+                                <rect key="frame" x="50" y="50" width="500" height="520"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mV-iO-Xab">
-                                <rect key="frame" x="279" y="180" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hAi-le-YYD" firstAttribute="centerX" secondItem="nrB-YS-8NI" secondAttribute="centerX" id="4MN-bN-UIR"/>
                             <constraint firstItem="eeW-dh-wf8" firstAttribute="top" secondItem="X8w-Pd-kWB" secondAttribute="bottom" id="5ZQ-Pi-8da"/>
-                            <constraint firstItem="hAi-le-YYD" firstAttribute="top" secondItem="4mV-iO-Xab" secondAttribute="bottom" constant="8" id="6ml-c7-WsH"/>
+                            <constraint firstItem="cmq-p6-qEf" firstAttribute="top" secondItem="hAi-le-YYD" secondAttribute="bottom" constant="30" id="7be-I2-dmD"/>
                             <constraint firstAttribute="trailing" secondItem="eeW-dh-wf8" secondAttribute="trailing" id="Avo-Vj-h1Z"/>
                             <constraint firstItem="cmq-p6-qEf" firstAttribute="top" secondItem="eeW-dh-wf8" secondAttribute="bottom" id="CPc-pf-TfI"/>
-                            <constraint firstItem="4mV-iO-Xab" firstAttribute="centerX" secondItem="hAi-le-YYD" secondAttribute="centerX" id="F9P-jX-LAa"/>
-                            <constraint firstItem="hAi-le-YYD" firstAttribute="centerY" secondItem="nrB-YS-8NI" secondAttribute="centerY" id="Fj4-Da-z1G"/>
+                            <constraint firstItem="hAi-le-YYD" firstAttribute="leading" secondItem="nrB-YS-8NI" secondAttribute="leadingMargin" constant="30" id="Jj3-U8-YsY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hAi-le-YYD" secondAttribute="trailing" constant="30" id="Zoz-m2-Hgk"/>
                             <constraint firstItem="eeW-dh-wf8" firstAttribute="leading" secondItem="nrB-YS-8NI" secondAttribute="leading" id="iRZ-d5-osH"/>
+                            <constraint firstItem="hAi-le-YYD" firstAttribute="top" secondItem="X8w-Pd-kWB" secondAttribute="bottom" constant="30" id="jUH-Ga-diI"/>
                             <constraint firstItem="eeW-dh-wf8" firstAttribute="top" secondItem="nrB-YS-8NI" secondAttribute="topMargin" id="sIh-hA-X3v"/>
                         </constraints>
                         <variation key="default">
@@ -712,16 +806,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="P2" width="248" height="307"/>
         <image name="back" width="30" height="24"/>
         <image name="ball" width="6" height="6"/>
         <image name="btn_config" width="31" height="31"/>
         <image name="hand" width="96" height="177"/>
         <image name="help" width="518" height="592"/>
-        <image name="logo" width="214" height="182"/>
-        <image name="mask" width="667" height="375"/>
+        <image name="logo" width="157" height="179"/>
+        <image name="mask" width="1998" height="1125"/>
         <image name="table" width="373" height="148"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zbM-Mm-x9g"/>
-    </inferredMetricsTieBreakers>
 </document>
