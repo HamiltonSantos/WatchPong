@@ -79,10 +79,13 @@ extension PongController {
     func applyOtherBallForce() {
 //        let force = SCNVector3Make(frandom2(6), frandom(4), frandom(4)) - pongScene.ball.presentationNode.position.normalized()
         let ballPosition = pongScene.ball.presentationNode.position
-        let randomX = frandom(1) - 0.5
+        var randomX = frandom(1) - 0.2
+        if arc4random_uniform(2) == 0 {
+            randomX = randomX*(-1)
+        }
         let randomY = 0.6
         let zExtra = abs((ballPosition.z / 5.5))
-        let randomZ =  zExtra + 0.8
+        let randomZ =  zExtra + 1
 //        print("random x \(randomX)") MUDEI ISTO
         applyBallFoce(SCNVector3Make(Float(randomX), Float(randomY), Float(randomZ)))
         self.myTurn = false

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -20,10 +21,11 @@
             <string>VDS</string>
             <string>VDS</string>
             <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
+            <string>VDS</string>
         </mutableArray>
         <mutableArray key="VDS_Thin.ttf">
-            <string>VDS-Thin</string>
-            <string>VDS-Thin</string>
             <string>VDS-Thin</string>
             <string>VDS-Thin</string>
             <string>VDS-Thin</string>
@@ -223,7 +225,7 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="" translatesAutoresizingMaskIntoConstraints="NO" id="9Ps-t2-76X" customClass="PongSceneView" customModule="WatchPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="centerCamera"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwf-LT-edQ">
@@ -243,80 +245,115 @@
                                             <segue destination="WYo-fi-aIS" kind="show" id="O0Y-4L-CQB"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBack" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-oM-ak8">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlQ-GD-EDS">
-                                        <rect key="frame" x="175" y="472" width="250" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="315" y="300" width="150" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="FKe-vR-C1b"/>
-                                            <constraint firstAttribute="height" constant="50" id="bmb-5A-Kwo"/>
+                                            <constraint firstAttribute="height" constant="30" id="8QN-SW-c10"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="22"/>
-                                        <state key="normal" title="Start Game"/>
+                                        <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="20"/>
+                                        <state key="normal" title="Start Game">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="didPressStart:" destination="jTU-QP-uRW" eventType="touchUpInside" id="ILD-2y-Fab"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da7-Sc-b6G">
-                                        <rect key="frame" x="25" y="25" width="35" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="IFi-pz-JJk"/>
-                                            <constraint firstAttribute="width" constant="35" id="uk9-qz-CNE"/>
-                                        </constraints>
-                                        <state key="normal" image="help"/>
-                                        <connections>
-                                            <segue destination="RXa-ZG-YDj" kind="presentation" identifier="tutorialSegue" id="JfK-Jx-vU3"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYS-j2-AcA">
-                                        <rect key="frame" x="175" y="530" width="250" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="325" y="338" width="150" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="IW3-FX-9uk"/>
-                                            <constraint firstAttribute="width" constant="250" id="sZH-cR-qvB"/>
+                                            <constraint firstAttribute="height" constant="30" id="6Qg-4m-ZKp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="22"/>
-                                        <state key="normal" title="Multiplayer"/>
+                                        <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="20"/>
+                                        <state key="normal" title="Multiplayer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="cMG-C4-wrQ" kind="show" id="O74-2v-gsn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da7-Sc-b6G">
+                                        <rect key="frame" x="335" y="376" width="150" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="lbS-uN-Aeg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="20"/>
+                                        <state key="normal" title="How to Play"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="RXa-ZG-YDj" kind="presentation" identifier="tutorialSegue" id="JfK-Jx-vU3"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTilted" translatesAutoresizingMaskIntoConstraints="NO" id="VLD-bU-qeX">
+                                        <rect key="frame" x="128" y="45" width="142" height="270"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.25" id="5nf-xf-yiM"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" id="9SU-C8-fKC"/>
-                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="leading" secondItem="rwf-LT-edQ" secondAttribute="leading" constant="25" id="BvT-IU-ple"/>
+                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="1.3" constant="20" id="9h1-qc-azj"/>
+                                    <constraint firstAttribute="bottom" secondItem="c2u-oM-ak8" secondAttribute="bottom" id="Bep-Rf-9Hj"/>
+                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="top" secondItem="jYS-j2-AcA" secondAttribute="bottom" constant="8" id="Ccz-8q-hrf"/>
+                                    <constraint firstItem="c2u-oM-ak8" firstAttribute="leading" secondItem="rwf-LT-edQ" secondAttribute="leading" id="FHV-5K-W9P"/>
                                     <constraint firstItem="PY0-7j-YHq" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" constant="20" id="Foh-4T-x9Z"/>
-                                    <constraint firstItem="OlQ-GD-EDS" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="NgK-mP-pyd"/>
+                                    <constraint firstAttribute="trailing" secondItem="c2u-oM-ak8" secondAttribute="trailing" id="IXD-Uq-5Eg"/>
+                                    <constraint firstItem="VLD-bU-qeX" firstAttribute="trailing" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="0.9" id="J5V-zK-KmI"/>
+                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="top" secondItem="OlQ-GD-EDS" secondAttribute="bottom" constant="8" id="LBV-XY-2lV"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="T2D-Dw-LiA"/>
-                                    <constraint firstAttribute="bottom" secondItem="jYS-j2-AcA" secondAttribute="bottom" constant="20" id="cOo-Ea-VR4"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerY" secondItem="rwf-LT-edQ" secondAttribute="centerY" id="cun-a7-Bak"/>
-                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="centerX" secondItem="OlQ-GD-EDS" secondAttribute="centerX" id="qDx-9g-zxv"/>
-                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="top" secondItem="OlQ-GD-EDS" secondAttribute="bottom" constant="8" id="u2m-dK-QqQ"/>
+                                    <constraint firstItem="c2u-oM-ak8" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" id="daW-vM-MhP"/>
+                                    <constraint firstItem="OlQ-GD-EDS" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.25" id="hNF-8x-2v5"/>
+                                    <constraint firstItem="VLD-bU-qeX" firstAttribute="bottom" secondItem="rwf-LT-edQ" secondAttribute="centerY" multiplier="1.05" id="jXU-6Z-Tg8"/>
+                                    <constraint firstItem="OlQ-GD-EDS" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="centerY" id="nJi-bZ-RgT"/>
+                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="1.3" constant="10" id="oI1-Mx-w6a"/>
+                                    <constraint firstItem="OlQ-GD-EDS" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="1.3" id="pwo-nm-Z6w"/>
+                                    <constraint firstItem="VLD-bU-qeX" firstAttribute="height" secondItem="rwf-LT-edQ" secondAttribute="height" multiplier="0.45" id="sup-Yj-6TY"/>
+                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.25" id="twx-Ey-JTW"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="height" secondItem="rwf-LT-edQ" secondAttribute="height" id="w42-FK-qOr"/>
-                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" constant="25" id="xuO-VS-Yf7"/>
                                     <constraint firstAttribute="trailing" secondItem="PY0-7j-YHq" secondAttribute="trailing" constant="20" id="yhb-gW-rjO"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-oM-ak8">
-                                <rect key="frame" x="222" y="40" width="157" height="424"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c2u-oM-ak8" firstAttribute="centerX" secondItem="YKU-Ix-NJ3" secondAttribute="centerX" id="2YQ-eN-rF6"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="width" secondItem="YKU-Ix-NJ3" secondAttribute="width" id="E04-LC-jn3"/>
-                            <constraint firstItem="c2u-oM-ak8" firstAttribute="top" secondItem="e7C-jX-ceG" secondAttribute="bottom" constant="20" id="F1K-9R-Mm3"/>
-                            <constraint firstItem="OlQ-GD-EDS" firstAttribute="top" secondItem="c2u-oM-ak8" secondAttribute="bottom" constant="8" id="IUK-mv-lhA"/>
                             <constraint firstItem="rwf-LT-edQ" firstAttribute="height" secondItem="YKU-Ix-NJ3" secondAttribute="height" id="KmW-sZ-ces"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="centerX" secondItem="YKU-Ix-NJ3" secondAttribute="centerX" id="VdK-u3-yWK"/>
                             <constraint firstItem="9Ps-t2-76X" firstAttribute="height" secondItem="YKU-Ix-NJ3" secondAttribute="height" id="egP-Xf-9UA"/>
@@ -811,9 +848,9 @@
         <image name="ball" width="6" height="6"/>
         <image name="btn_config" width="31" height="31"/>
         <image name="hand" width="96" height="177"/>
-        <image name="help" width="518" height="592"/>
-        <image name="logo" width="157" height="179"/>
+        <image name="logoTilted" width="142" height="193"/>
         <image name="mask" width="1998" height="1125"/>
+        <image name="menuBack" width="440" height="375"/>
         <image name="table" width="373" height="148"/>
     </resources>
 </document>
