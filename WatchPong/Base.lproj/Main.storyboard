@@ -234,25 +234,14 @@
                                     <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="hRQ-8H-O27">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PY0-7j-YHq">
-                                        <rect key="frame" x="526" y="20" width="54" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="5rJ-xr-kw8"/>
-                                            <constraint firstAttribute="height" constant="54" id="jNF-br-ktN"/>
-                                        </constraints>
-                                        <state key="normal" image="btn_config"/>
-                                        <connections>
-                                            <segue destination="WYo-fi-aIS" kind="show" id="O0Y-4L-CQB"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBack" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-oM-ak8">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlQ-GD-EDS">
-                                        <rect key="frame" x="315" y="300" width="150" height="30"/>
+                                        <rect key="frame" x="321" y="300" width="138" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="8QN-SW-c10"/>
+                                            <constraint firstAttribute="height" constant="36" id="8QN-SW-c10"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="20"/>
                                         <state key="normal" title="Start Game">
@@ -260,7 +249,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
+                                                <real key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="2"/>
@@ -274,10 +263,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYS-j2-AcA">
-                                        <rect key="frame" x="325" y="338" width="150" height="30"/>
+                                        <rect key="frame" x="331" y="344" width="138" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="6Qg-4m-ZKp"/>
+                                            <constraint firstAttribute="height" constant="36" id="6Qg-4m-ZKp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="20"/>
                                         <state key="normal" title="Multiplayer">
@@ -285,7 +274,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
+                                                <real key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="2"/>
@@ -299,15 +288,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da7-Sc-b6G">
-                                        <rect key="frame" x="335" y="376" width="150" height="30"/>
+                                        <rect key="frame" x="341" y="388" width="138" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="lbS-uN-Aeg"/>
+                                            <constraint firstAttribute="height" constant="36" id="lbS-uN-Aeg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="VDS" family="VDS" pointSize="20"/>
                                         <state key="normal" title="How to Play"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
+                                                <real key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="2"/>
@@ -323,10 +312,21 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTilted" translatesAutoresizingMaskIntoConstraints="NO" id="VLD-bU-qeX">
                                         <rect key="frame" x="128" y="45" width="142" height="270"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PY0-7j-YHq">
+                                        <rect key="frame" x="526" y="20" width="54" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="5rJ-xr-kw8"/>
+                                            <constraint firstAttribute="height" constant="54" id="jNF-br-ktN"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_config"/>
+                                        <connections>
+                                            <segue destination="WYo-fi-aIS" kind="show" id="O0Y-4L-CQB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.25" id="5nf-xf-yiM"/>
+                                    <constraint firstItem="da7-Sc-b6G" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.23" id="5nf-xf-yiM"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" id="9SU-C8-fKC"/>
                                     <constraint firstItem="da7-Sc-b6G" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="1.3" constant="20" id="9h1-qc-azj"/>
                                     <constraint firstAttribute="bottom" secondItem="c2u-oM-ak8" secondAttribute="bottom" id="Bep-Rf-9Hj"/>
@@ -339,13 +339,13 @@
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" id="T2D-Dw-LiA"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="centerY" secondItem="rwf-LT-edQ" secondAttribute="centerY" id="cun-a7-Bak"/>
                                     <constraint firstItem="c2u-oM-ak8" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="top" id="daW-vM-MhP"/>
-                                    <constraint firstItem="OlQ-GD-EDS" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.25" id="hNF-8x-2v5"/>
+                                    <constraint firstItem="OlQ-GD-EDS" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.23" id="hNF-8x-2v5"/>
                                     <constraint firstItem="VLD-bU-qeX" firstAttribute="bottom" secondItem="rwf-LT-edQ" secondAttribute="centerY" multiplier="1.05" id="jXU-6Z-Tg8"/>
                                     <constraint firstItem="OlQ-GD-EDS" firstAttribute="top" secondItem="rwf-LT-edQ" secondAttribute="centerY" id="nJi-bZ-RgT"/>
                                     <constraint firstItem="jYS-j2-AcA" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="1.3" constant="10" id="oI1-Mx-w6a"/>
                                     <constraint firstItem="OlQ-GD-EDS" firstAttribute="centerX" secondItem="rwf-LT-edQ" secondAttribute="centerX" multiplier="1.3" id="pwo-nm-Z6w"/>
                                     <constraint firstItem="VLD-bU-qeX" firstAttribute="height" secondItem="rwf-LT-edQ" secondAttribute="height" multiplier="0.45" id="sup-Yj-6TY"/>
-                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.25" id="twx-Ey-JTW"/>
+                                    <constraint firstItem="jYS-j2-AcA" firstAttribute="width" secondItem="rwf-LT-edQ" secondAttribute="width" multiplier="0.23" id="twx-Ey-JTW"/>
                                     <constraint firstItem="hRQ-8H-O27" firstAttribute="height" secondItem="rwf-LT-edQ" secondAttribute="height" id="w42-FK-qOr"/>
                                     <constraint firstAttribute="trailing" secondItem="PY0-7j-YHq" secondAttribute="trailing" constant="20" id="yhb-gW-rjO"/>
                                 </constraints>
@@ -391,19 +391,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="GqV-oz-Dqd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-ks-VX5">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-ks-VX5">
                                 <rect key="frame" x="154" y="244" width="292" height="112"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-Zd-4gz">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-Zd-4gz">
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL9-Xo-VhJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Winning Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL9-Xo-VhJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
                                                 <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-QB-QTk">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-QB-QTk">
                                                 <rect key="frame" x="172" y="0.0" width="120" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="Wey-0S-39C"/>
@@ -413,30 +413,30 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-Py-6XY">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-Py-6XY">
                                         <rect key="frame" x="0.0" y="40" width="292" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Apple Watch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-p3-5Ys">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use Apple Watch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-p3-5Ys">
                                                 <rect key="frame" x="0.0" y="0.0" width="243" height="31"/>
                                                 <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDL-31-XiA">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDL-31-XiA">
                                                 <rect key="frame" x="243" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xx9-WA-pz9">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xx9-WA-pz9">
                                         <rect key="frame" x="0.0" y="81" width="292" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use VR gogles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIC-Se-ZxJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use VR gogles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIC-Se-ZxJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="243" height="31"/>
                                                 <fontDescription key="fontDescription" name="VDS-Thin" family="VDS" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-bS-cKr">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-bS-cKr">
                                                 <rect key="frame" x="243" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="didChangeVRConfig:" destination="WYo-fi-aIS" eventType="valueChanged" id="GXr-VG-vBN"/>
