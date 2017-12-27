@@ -8,7 +8,7 @@ import SceneKit
 
 extension SCNScene {
 
-    func childNode(name : String) -> SCNNode {
-        return self.rootNode.childNodeWithName(name,recursively: true)!
+    func childNode(_ name : String) -> SCNNode {
+        return self.rootNode.childNode(withName: name,recursively: true)!
     }
 }

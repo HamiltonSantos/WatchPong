@@ -25,7 +25,7 @@ class FinalizedGameViewController: UIViewController,InstantiateViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         winnerLabel.text = userWinner ? "You Win \\o/" : "You Lost :/"
         scoreLabel.text = score
     }
@@ -35,11 +35,11 @@ class FinalizedGameViewController: UIViewController,InstantiateViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func didTouchDone(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func didTouchDone(_ sender: AnyObject) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         PongScene.sharedInstance.textPoints.string = "\(0) - \(0)"
     }

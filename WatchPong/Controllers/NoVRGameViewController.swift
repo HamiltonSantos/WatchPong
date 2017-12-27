@@ -22,28 +22,28 @@ class NoVRGameViewController: TransparenetBarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sceneView.scene!.paused = false
+        sceneView.scene!.isPaused = false
         gameController.viewControllerDelegate = self
 
         if Configuration.sharedConfig.useWatch {
-            buttonLeft.enabled = false
-            buttonRight.enabled = false
+            buttonLeft.isEnabled = false
+            buttonRight.isEnabled = false
             sessionController = PongWCSessionController(pongController: gameController)
         }
     }
 
 
-    @IBAction func leftPressed(sender: AnyObject) {
+    @IBAction func leftPressed(_ sender: AnyObject) {
         gameController.processLeftAction()
     }
     
-    @IBAction func rightPressed(sender: AnyObject) {
+    @IBAction func rightPressed(_ sender: AnyObject) {
         gameController.processRightAction()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        PongScene.sharedInstance.sharedScene.paused = true
+        PongScene.sharedInstance.sharedScene.isPaused = true
     }
 
 }

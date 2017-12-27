@@ -9,11 +9,11 @@
 import UIKit
 import CocoaAsyncSocket
 
-class GameController: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegate, GCDAsyncSocketDelegate {
+class GameController: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCDAsyncSocketDelegate {
  
     //MARK: Properties
-    private var socket: GCDAsyncSocket!
-    var serviceBrowser: NSNetServiceBrowser!
+    fileprivate var socket: GCDAsyncSocket!
+    var serviceBrowser: NetServiceBrowser!
     var services: NSMutableArray!
     var delegate: GameControllerDelegate?
     var autoConnect: Bool = true
@@ -43,9 +43,9 @@ class GameController: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegat
         } else {
             services = NSMutableArray()
         }
-        serviceBrowser = NSNetServiceBrowser()
+        serviceBrowser = NetServiceBrowser()
         serviceBrowser.delegate = self
-        serviceBrowser.searchForServicesOfType("\(serviceType).\(serviceProtocol)", inDomain: "local")
+        serviceBrowser.searchForServices(ofType: "\(serviceType).\(serviceProtocol)", inDomain: "local")
     }
     
     func stopBrowsing() {
@@ -56,76 +56,76 @@ class GameController: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegat
     
     //MARK: NSNetServiceBrowser delegates
     //TODO - fazer tentativas sucessivas de conexão
-    func netServiceBrowser(browser: NSNetServiceBrowser, didFindService service: NSNetService, moreComing: Bool) {
-        services.addObject(service)
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+        services.add(service)
         
         if !moreComing {
-            services.sortUsingDescriptors([NSSortDescriptor(key: "name", ascending: true)])
+            services.sort(using: [NSSortDescriptor(key: "name", ascending: true)])
             if !autoConnect { delegate?.didFindGames(services) }
             else {
                 if services.count != 0 {
-                    let game = services.firstObject as! NSNetService
+                    let game = services.firstObject as! NetService
                     game.delegate = self
-                    game.resolveWithTimeout(30)
+                    game.resolve(withTimeout: 30)
                 }
             }
         }
     }
     
-    func netServiceBrowser(browser: NSNetServiceBrowser, didRemoveService service: NSNetService, moreComing: Bool) {
-        self.services.removeObject(service)
+    func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
+        self.services.remove(service)
         
         if !moreComing { delegate?.didRemoveGame(service) }
     }
     
-    func netServiceBrowserDidStopSearch(browser: NSNetServiceBrowser) {
+    func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
         stopBrowsing()
     }
     
-    func netServiceBrowser(browser: NSNetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
+    func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
         stopBrowsing()
     }
     
     //MARK: Communication methods
     //Obs.: Tamanho do corpo da mensagem limitado à 6 bytes, e 2 para o cabeçalho.
-    func sendDataToTV(data: NSData) {
-        guard let skt = socket else {print("Socket doesn't exist"); return}
-        var playerID = self.ID
-        let dataChunk = data.subdataWithRange(NSRange(location: 0, length: sizeof(Int64)-sizeof(Int16)))
-        let packetData = NSMutableData(bytes: &playerID, length: sizeof(Int16))
-        packetData.appendData(dataChunk)
-        skt.writeData(packetData, withTimeout: -1, tag: 0)
+    func sendDataToTV(_ data: Data) {
+//        guard let skt = socket else {print("Socket doesn't exist"); return}
+//        var playerID = self.ID
+//        let dataChunk = data.subdata(in: NSRange(location: 0, length: sizeof(Int64)-sizeof(Int16)))
+//        let packetData = NSMutableData(bytes: &playerID, length: MemoryLayout<Int16>.size)
+//        packetData.append(dataChunk)
+//        skt.write(packetData as Data!, withTimeout: -1, tag: 0)
     }
     
-    func sendStringToTV(string: String, encoding: NSStringEncoding) {
-        let data = string.dataUsingEncoding(encoding)
+    func sendStringToTV(_ string: String, encoding: String.Encoding) {
+        let data = string.data(using: encoding)
         guard let dt = data else {print("Data doesn't exist"); return}
         sendDataToTV(dt)
     }
     
-    func sendCommandToTV(command: CommandType) {
-        var commandInt = command.hashValue
-        let data = NSData(bytes: &commandInt, length: sizeof(Int64))
-        sendDataToTV(data)
+    func sendCommandToTV(_ command: CommandType) {
+//        var commandInt = command.hashValue
+//        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
+//        sendDataToTV(data)
     }
     
     /* 
      Chama a função connectToGame se inicializar o GameController com autoConnect = false
      Dessa forma, deve-se obter o array de services/games e colocar em uma tableView. Quando selecionar a cell, chama esta função para realizar a conexão.
      */
-    func connectToGame(game: NSNetService) {
+    func connectToGame(_ game: NetService) {
         if autoConnect {return}
         game.delegate = self
-        game.resolveWithTimeout(30)
+        game.resolve(withTimeout: 30)
     }
     
     //MARK: NSNetService delegates
     
-    func netService(sender: NSNetService, didNotResolve errorDict: [String : NSNumber]) {
+    func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
         sender.delegate = nil
     }
     
-    func netServiceDidResolveAddress(sender: NSNetService) {
+    func netServiceDidResolveAddress(_ sender: NetService) {
         if connectWithServer(sender) {
             print("Did connect with server: domain:\(sender.domain) type:\(sender.type) name:\(sender.name) port:\(sender.port)")
         } else {
@@ -135,18 +135,18 @@ class GameController: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegat
     
     //MARK: Connect to server function
     
-    func connectWithServer(service: NSNetService) -> Bool {
+    func connectWithServer(_ service: NetService) -> Bool {
         
         var isConnected : Bool = false
         let addresses = service.addresses
         
         if socket == nil || !socket.isConnected {
-            socket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
+            socket = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
             
             while (!isConnected && (addresses?.count != 0)){
                 let address = addresses?.first
                 
-                guard (try? socket.connectToAddress(address)) != nil else {
+                guard (try? socket.connect(toAddress: address)) != nil else {
                     assert(false, "Unable to connect to address")
                     break
                 }
@@ -160,57 +160,57 @@ class GameController: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegat
     
     //MARK: Socket delegates
     
-    func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
+    func socket(_ sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         print("Socket did connect to host:\(host) port:\(port)")
-        sock.readDataToLength(UInt(sizeof(UInt64)), withTimeout: -1, tag: 0)
+        sock.readData(toLength: UInt(MemoryLayout<UInt64>.size), withTimeout: -1, tag: 0)
         guard let del = delegate?.didConnect else {print("didConnect doesn't exist on delegate"); return}
-        del(withTV: host)
+        del(host)
     }
     
-    func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
+    func socketDidDisconnect(_ sock: GCDAsyncSocket!, withError err: NSError!) {
         print("Socket did disconnect: host:\(sock.connectedHost) port:\(sock.connectedPort)")
         
         socket.delegate = nil
         socket = nil
     }
     
-    func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
-        guard let hostName = sock.connectedHost else {print("Host doesn't exist"); return}
-
-        if config {
-            var id : Int = 0
-            data.getBytes(&id, length: sizeof(Int))
-            print("My id is: \(id)")
-            socket.readDataToLength(UInt(sizeof(UInt64)), withTimeout: -1, tag: 0)
-            self.ID = id
-            config = false
-            guard let del = delegate?.didReceiveData else {print("didReceiveData isn't implemented"); return}
-            del(fromTV: hostName, data: data)
-            sock.readDataToLength(UInt(data.length), withTimeout: -1, tag: 0)
-        }
-        else {
-            var commandInt : Int = 0
-            data.getBytes(&commandInt, length: sizeof(Int))
-            print("Command Int from TV is: \(commandInt)")
-            if commandInt >= CommandType.Data.hashValue {
-                self.delegate?.didReceiveData(fromTV: hostName, data: data)
-            } else {
-                self.delegate?.didReceiveCommand(fromTV: hostName, command: CommandType(rawValue: commandInt)!)
-            }
-            sock.readDataToLength(UInt(data.length), withTimeout: -1, tag: 0)
-        }
+    func socket(_ sock: GCDAsyncSocket!, didRead data: Data!, withTag tag: Int) {
+//        guard let hostName = sock.connectedHost else {print("Host doesn't exist"); return}
+//
+//        if config {
+//            var id : Int = 0
+//            data.copyBytes(to: &UInt8(id), count: MemoryLayout<Int>.size)
+//            print("My id is: \(id)")
+//            socket.readData(toLength: UInt(MemoryLayout<UInt64>.size), withTimeout: -1, tag: 0)
+//            self.ID = id
+//            config = false
+//            guard let del = delegate?.didReceiveData else {print("didReceiveData isn't implemented"); return}
+//            del(hostName, data)
+//            sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
+//        }
+//        else {
+//            var commandInt : Int = 0
+//            data.copyBytes(to: &UInt8(commandInt), count: MemoryLayout<Int>.size)
+//            print("Command Int from TV is: \(commandInt)")
+//            if commandInt >= CommandType.data.hashValue {
+//                self.delegate?.didReceiveData(fromTV: hostName, data: data)
+//            } else {
+//                self.delegate?.didReceiveCommand(fromTV: hostName, command: CommandType(rawValue: commandInt)!)
+//            }
+//            sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
+//        }
     }
 }
 
 public protocol GameControllerDelegate: NSObjectProtocol {
 
-    func didFindGames(games: NSMutableArray!)
+    func didFindGames(_ games: NSMutableArray!)
     
-    func didRemoveGame(game: NSNetService)
+    func didRemoveGame(_ game: NetService)
     
     func didConnect(withTV TV: String)
     
-    func didReceiveData(fromTV TV: String, data: NSData)
+    func didReceiveData(fromTV TV: String, data: Data)
     
     func didReceiveCommand(fromTV TV: String, command: CommandType)
     

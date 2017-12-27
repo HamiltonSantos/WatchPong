@@ -24,15 +24,15 @@ class PongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
         // Respond to user head movement
 
         motionManager.deviceMotionUpdateInterval = 1.0 / 60
-        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrame.XArbitraryZVertical)
-        motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
+        motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryZVertical)
+        motionManager.startDeviceMotionUpdates(to: OperationQueue.main) {
             (motion: CMDeviceMotion?, error) in
 
             if let motion = motion {
                 let currentAttitude = motion.attitude
                 let cameraNode = self.pongScene.cameraNode
                 SCNTransaction.begin()
-                SCNTransaction.setAnimationDuration(0.05)
+                SCNTransaction.animationDuration = 0.05
 
                 cameraNode!.eulerAngles.x = Float(currentAttitude.roll - 90)
                 cameraNode!.eulerAngles.z = Float(currentAttitude.pitch)
@@ -44,32 +44,32 @@ class PongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
         }
     }
 
-    func renderer(aRenderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval) {
+    func renderer(_ aRenderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         let racket = pongScene.racket
         let ball = pongScene.ball
 
         SCNTransaction.begin()
-        SCNTransaction.setAnimationDuration(0)
+        SCNTransaction.animationDuration = 0
 
-        racket.position.x = ball.presentationNode.position.x
+        racket.position.x = ball.presentation.position.x
 
 
-        if (ball.presentationNode.position.z < 0) {
-            let newPositionZ = -6 - ball.presentationNode.position.z
-            if newPositionZ < ball.presentationNode.position.z {
+        if (ball.presentation.position.z < 0) {
+            let newPositionZ = -6 - ball.presentation.position.z
+            if newPositionZ < ball.presentation.position.z {
                 racket.position.z = newPositionZ
             }else{
-                racket.position.z = ball.presentationNode.position.z
+                racket.position.z = ball.presentation.position.z
             }
         }
 
-        if ball.presentationNode.position.y > 3{
+        if ball.presentation.position.y > 3{
             
         }
 
 
 
-        racket.rotation.z = ball.presentationNode.position.x * 45
+        racket.rotation.z = ball.presentation.position.x * 45
         SCNTransaction.commit()
     }
 

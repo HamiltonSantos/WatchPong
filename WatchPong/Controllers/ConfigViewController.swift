@@ -20,8 +20,8 @@ class ConfigViewController: UIViewController {
         
         super.viewDidLoad()
         
-        vrSwitch.on = config.isVR
-        watchSwitch.on = config.useWatch
+        vrSwitch.isOn = config.isVR
+        watchSwitch.isOn = config.useWatch
         scoreTextField.text = "\(config.winningScore)"
         
         // Do any additional setup after loading the view.
@@ -32,17 +32,17 @@ class ConfigViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPressDone(sender: AnyObject) {
-        config.updateConfig(vrSwitch.on, useWatch: watchSwitch.on, winningScore: Int(scoreTextField.text!) ?? 10)
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func didPressDone(_ sender: AnyObject) {
+        config.updateConfig(vrSwitch.isOn, useWatch: watchSwitch.isOn, winningScore: Int(scoreTextField.text!) ?? 10)
+        navigationController?.popViewController(animated: true)
     }
-    @IBAction func didChangeVRConfig(sender: UISwitch) {
+    @IBAction func didChangeVRConfig(_ sender: UISwitch) {
         
-        if vrSwitch.on {
+        if vrSwitch.isOn {
             watchSwitch.setOn(true, animated: true)
-            watchSwitch.enabled = false
+            watchSwitch.isEnabled = false
         } else {
-            watchSwitch.enabled = true
+            watchSwitch.isEnabled = true
         }
         
     }

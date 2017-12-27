@@ -11,8 +11,8 @@ class TransparenetBarViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.barTintColor = UIColor.clear
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 

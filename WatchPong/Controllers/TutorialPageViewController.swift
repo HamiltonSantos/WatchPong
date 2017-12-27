@@ -20,7 +20,7 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
         let viewcontrollers = [firstContent]
         delegate = self
         dataSource = self
-        setViewControllers(viewcontrollers, direction: .Forward, animated: true, completion: nil)
+        setViewControllers(viewcontrollers, direction: .forward, animated: true, completion: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -30,7 +30,7 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
         // Dispose of any resources that can be recreated.
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = (viewController as! TutorialContentViewController).index
         if ((index == 0) || (index == NSNotFound)) {
@@ -45,7 +45,7 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         var index = (viewController as! TutorialContentViewController).index
         
@@ -60,10 +60,10 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
         return viewcontrollerAtIndex(index)
     }
     
-    func viewcontrollerAtIndex(index: Int) -> TutorialContentViewController? {
+    func viewcontrollerAtIndex(_ index: Int) -> TutorialContentViewController? {
         if self.pageImageNames.count != 0 || index < self.pageImageNames.count {
             
-            if let contentVC = self.storyboard?.instantiateViewControllerWithIdentifier("tutorialContent") as? TutorialContentViewController {
+            if let contentVC = self.storyboard?.instantiateViewController(withIdentifier: "tutorialContent") as? TutorialContentViewController {
                 contentVC.imageName = pageImageNames[index]
                 contentVC.tutoTitle = pageTitles[index]
                 contentVC.tutoSubtitle = pageSubtitles[index]
@@ -74,13 +74,13 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
         return nil
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
         
         return pageImageNames.count
         
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
     

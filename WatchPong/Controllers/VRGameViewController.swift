@@ -21,14 +21,14 @@ class VRGameViewController: TransparenetBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        PongScene.sharedInstance.sharedScene.paused = false
+        PongScene.sharedInstance.sharedScene.isPaused = false
         
         gameController.viewControllerDelegate = self
 
         sessionController = PongWCSessionController(pongController: gameController)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
@@ -37,16 +37,16 @@ class VRGameViewController: TransparenetBarViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        PongScene.sharedInstance.sharedScene.paused = true
+        PongScene.sharedInstance.sharedScene.isPaused = true
     }
     
-    @IBAction func letPressed(sender: AnyObject) {
+    @IBAction func letPressed(_ sender: AnyObject) {
         gameController.processLeftAction()
     }
     
-    @IBAction func rightPressed(sender: AnyObject) {
+    @IBAction func rightPressed(_ sender: AnyObject) {
         gameController.processRightAction()
     }
 

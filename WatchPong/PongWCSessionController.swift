@@ -23,20 +23,28 @@ class PongWCSessionController: NSObject {
         noConnectionVC = UIViewController.instantiate(viewIdentifier: "openWatchVC")
 
         if WCSession.isSupported() {
-            self.session = WCSession.defaultSession()
+            self.session = WCSession.default()
         }
 
         guard let session = session else {
             return
         }
         session.delegate = self
-        session.activateSession()
+        session.activate()
     }
 }
 
 extension PongWCSessionController: WCSessionDelegate {
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
 
-    @available(iOS 9.0, *) func session(session: WCSession, didReceiveMessage message: [String:AnyObject]) {
+    @available(iOS 9.0, *) func session(_ session: WCSession, didReceiveMessage message: [String:Any]) {
         print(message)
 
         guard let side = message["side"] as? String else {
@@ -54,17 +62,17 @@ extension PongWCSessionController: WCSessionDelegate {
         }
     }
 
-    @available(iOS 9.3, *) func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+    @available(iOS 9.3, *) func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         updateActive()
         print(session)
     }
 
-    @available(iOS 9.0, *) func sessionReachabilityDidChange(session: WCSession) {
+    @available(iOS 9.0, *) func sessionReachabilityDidChange(_ session: WCSession) {
         updateActive()
         print(session)
     }
 
-    @available(iOS 9.0, *) func sessionWatchStateDidChange(session: WCSession) {
+    @available(iOS 9.0, *) func sessionWatchStateDidChange(_ session: WCSession) {
         updateActive()
         print(session)
     }
@@ -75,7 +83,7 @@ extension PongWCSessionController: WCSessionDelegate {
             return false
         }
 
-        guard session.activationState == .Activated && session.reachable == true else {
+        guard session.activationState == .activated && session.isReachable == true else {
             return false
         }
 
@@ -88,12 +96,12 @@ extension PongWCSessionController: WCSessionDelegate {
         }
         if sessionIsActive() {
             if vc.presentedViewController == noConnectionVC {
-                noConnectionVC!.dismissViewControllerAnimated(true, completion: nil)
+                noConnectionVC!.dismiss(animated: true, completion: nil)
             }
 
         } else {
             if vc.presentedViewController == nil {
-                vc.presentViewController(noConnectionVC!, animated: true, completion: nil)
+                vc.present(noConnectionVC!, animated: true, completion: nil)
             }
         }
     }

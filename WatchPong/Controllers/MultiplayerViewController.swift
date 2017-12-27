@@ -16,7 +16,7 @@ class MultiplayerViewController: UIViewController {
 
     var motionManager = CMMotionManager()
     
-    var lastDate = NSDate()
+    var lastDate = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +26,19 @@ class MultiplayerViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         motionManager.accelerometerUpdateInterval = 1 / 60
-        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
+        motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
 
             let treashould : Double = 2
             let x = data?.acceleration.x ?? 0
             if x > treashould || x < -treashould{
                 print(data)
-                if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+                if Date().timeIntervalSince1970 > self.lastDate.addingTimeInterval(1).timeIntervalSince1970 {
                     if x > treashould {
-                        self.lastDate = NSDate()
-                        self.gameController.sendCommandToTV(CommandType.Right)
+                        self.lastDate = Date()
+                        self.gameController.sendCommandToTV(CommandType.right)
                     }else if x < -treashould {
-                        self.lastDate = NSDate()
-                        self.gameController.sendCommandToTV(CommandType.Left)
+                        self.lastDate = Date()
+                        self.gameController.sendCommandToTV(CommandType.left)
                     }
                 }
                 

@@ -41,48 +41,48 @@ class TutorialContentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
     func animateLeft() {
-        UIView.animateWithDuration(1, animations: {
+        UIView.animate(withDuration: 1, animations: {
             self.handCenterConstraint.constant = -(self.view.frame.size.width/4)
             self.ballSizeConstraint.constant = 10
             self.ballVerticalCenterConstraint.constant = self.view.frame.size.height/4
             self.ballHorizontalCenterConstraint.constant = self.handCenterConstraint.constant
             self.view.layoutIfNeeded()
-        }) { (finished) in
-            UIView.animateWithDuration(1, animations: {
+        }, completion: { (finished) in
+            UIView.animate(withDuration: 1, animations: {
                 self.handCenterConstraint.constant = 0
                 self.ballSizeConstraint.constant = 5
                 self.ballVerticalCenterConstraint.constant = -(self.view.frame.size.height/4)
                 self.ballHorizontalCenterConstraint.constant = 0
                 self.view.layoutIfNeeded()
-            }) { (finished) in
+            }, completion: { (finished) in
                 self.animateRight()
-            }
-        }
+            }) 
+        }) 
     }
     
     func animateRight() {
-        UIView.animateWithDuration(1, animations: {
+        UIView.animate(withDuration: 1, animations: {
             self.handCenterConstraint.constant = self.view.frame.size.width/4
             self.ballSizeConstraint.constant = 10
             self.ballVerticalCenterConstraint.constant = self.view.frame.size.height/4
             self.ballHorizontalCenterConstraint.constant = self.handCenterConstraint.constant
             self.view.layoutIfNeeded()
-        }) { (finished) in
-            UIView.animateWithDuration(1, animations: {
+        }, completion: { (finished) in
+            UIView.animate(withDuration: 1, animations: {
                 self.handCenterConstraint.constant = 0
                 self.ballSizeConstraint.constant = 5
                 self.ballVerticalCenterConstraint.constant = -(self.view.frame.size.height/4)
                 self.ballHorizontalCenterConstraint.constant = 0
                 self.view.layoutIfNeeded()
-            }) { (finished) in
+            }, completion: { (finished) in
                 self.animateLeft()
-            }
-        }
+            }) 
+        }) 
     }
     
     override func didReceiveMemoryWarning() {
