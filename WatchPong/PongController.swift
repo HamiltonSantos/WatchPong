@@ -62,10 +62,10 @@ class PongController: NSObject {
     override init() {
         super.init()
         pongScene.sharedScene.physicsWorld.contactDelegate = self
-//        tableSound!.load()
-//        racketSound!.load()
-//        clapSound!.load()
-//        endGameSound!.load()
+        tableSound!.load()
+        racketSound!.load()
+        clapSound!.load()
+        endGameSound!.load()
         resetGamePositions()
         updatePointsText()
     }
@@ -103,7 +103,7 @@ extension PongController {
 //        print("Position: \(node.presentationNode.position)") MUDEI ISTO
         node.physicsBody?.isAffectedByGravity = true
         node.physicsBody?.applyForce(force, asImpulse: true)
-        playRacketSound()
+//        playRacketSound()
     }
 }
 
@@ -223,7 +223,7 @@ extension PongController: SCNPhysicsContactDelegate {
                 myPoints += 1
                 myTurn = true
             }
-            playClapSound()
+//            playClapSound()
             resetGamePositions()
 
             return
@@ -243,9 +243,9 @@ extension PongController: SCNPhysicsContactDelegate {
                 myTurn = true
                 resetGamePositions()
             }
-            playClapSound()
+//            playClapSound()
         }
-        playTableSound()
+//        playTableSound()
 
     }
 
