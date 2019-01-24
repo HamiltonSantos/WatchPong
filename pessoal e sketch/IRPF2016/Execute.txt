@@ -1,0 +1,21 @@
+               =================================               
+              IMPOSTO DE RENDA PESSOA FÍSICA 2016
+               =================================
+               
+Este texto oferece ao usuário do programa IRPF 2016 algumas               
+
+informações sobre como executar o programa.
+
+Descompacte o arquivo .zip no local de sua preferência. 
+
+Localize a pasta irpf2016, em que o arquivo foi descompactado, e siga as 
+
+instruções a seguir: 
+
+Para executar o IRPF 2016 em sistemas Linux ou Macintosh, execute 
+
+o arquivo exec.sh.
+
+Para executar o IRPF 2016 em sistemas Windows, execute o arquivo 
+
+IRPF2016.exe ou exec.bat.
