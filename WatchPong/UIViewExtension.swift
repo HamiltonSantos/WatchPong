@@ -110,7 +110,7 @@ extension UIView {
 
         subview.translatesAutoresizingMaskIntoConstraints = false
 
-        var horizontalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:|[subview]|",
+        let horizontalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:|[subview]|",
             options: .DirectionLeadingToTrailing,
             metrics: nil,
             views: ["subview": subview]
@@ -124,7 +124,7 @@ extension UIView {
 
         subview.translatesAutoresizingMaskIntoConstraints = false
 
-        var verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|[subview]|",
+        let verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|[subview]|",
             options: .DirectionLeadingToTrailing,
             metrics: nil,
             views: ["subview": subview]
@@ -138,7 +138,7 @@ extension UIView {
         
         UIGraphicsBeginImageContext(self.bounds.size)
         self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)
-        var image = UIGraphicsGetImageFromCurrentImageContext()
+        let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     
         return image
@@ -148,7 +148,7 @@ extension UIView {
         
         var image: UIImage
         UIGraphicsBeginImageContextWithOptions(self.frame.size, true, 2.0)
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         self.layer.renderInContext(context!);
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

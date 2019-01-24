@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Cm-Lm-2io">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Cm-Lm-2io">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -129,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-kT-vPQ">
-                                <rect key="frame" x="114" y="266" width="373" height="148"/>
+                                <rect key="frame" x="-196" y="96" width="993" height="488"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold the Apple Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-nb-0qi">
                                 <rect key="frame" x="141" y="20" width="319" height="38"/>
@@ -153,14 +153,14 @@
                                 <rect key="frame" x="252" y="483" width="96" height="177"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9A-rL-GPv">
-                                <rect key="frame" x="300" y="422" width="0.0" height="170"/>
+                                <rect key="frame" x="300" y="592" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="P4Y-dg-9GM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1o8-Mt-bDo">
-                                <rect key="frame" x="300" y="88" width="0.0" height="170"/>
+                                <rect key="frame" x="300" y="88" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="QQz-Sx-A0v"/>
@@ -851,6 +851,6 @@
         <image name="logoTilted" width="142" height="193"/>
         <image name="mask" width="1998" height="1125"/>
         <image name="menuBack" width="440" height="375"/>
-        <image name="table" width="373" height="148"/>
+        <image name="table" width="993" height="493"/>
     </resources>
 </document>

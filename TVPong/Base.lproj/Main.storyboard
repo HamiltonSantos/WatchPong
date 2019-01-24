@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="Npp-ba-AVI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Npp-ba-AVI">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-Ev-ti0">
@@ -49,10 +49,10 @@
                                     <segue destination="49C-0W-uek" kind="show" id="l0h-St-msh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-eD-TIv">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-eD-TIv">
                                 <rect key="frame" x="1010" y="730" width="394" height="220"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" image="hotToPlay"/>
+                                <state key="normal" image="howToPlay"/>
                                 <state key="focused" image="howToPlaySelected"/>
                                 <connections>
                                     <segue destination="czn-Ka-tBI" kind="show" id="idR-0Z-NRX"/>
@@ -317,9 +317,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3" width="1104" height="621"/>
+        <image name="background" width="1334" height="750"/>
         <image name="blueMenuPortion" width="733" height="1080"/>
-        <image name="hotToPlay" width="314" height="180"/>
+        <image name="howToPlay" width="314" height="180"/>
         <image name="howToPlaySelected" width="319" height="194"/>
         <image name="logoTV" width="305" height="428"/>
         <image name="mask" width="1998" height="1125"/>
@@ -328,6 +328,6 @@
         <image name="redMenuPortion" width="712" height="1080"/>
         <image name="startGame" width="314" height="180"/>
         <image name="startGameSelected" width="319" height="194"/>
-        <image name="table" width="373" height="148"/>
+        <image name="table" width="993" height="493"/>
     </resources>
 </document>
