@@ -48,13 +48,13 @@ extension UIView {
         
         get {
             
-            return UIColor(CGColor: layer.borderColor!)
+            return UIColor(cgColor: layer.borderColor!)
             
         }
         
         set {
             
-            layer.borderColor = newValue.CGColor
+            layer.borderColor = newValue.cgColor
             
         }
         
@@ -67,7 +67,7 @@ extension UIView {
     func startBlinking() {
         
         self.alpha = 1
-        UIView.animateWithDuration(1, delay: 0.0, options: .Repeat, animations: {
+        UIView.animate(withDuration: 1, delay: 0.0, options: .repeat, animations: {
             
             self.alpha = 0
             
@@ -81,7 +81,7 @@ extension UIView {
         
     }
     
-    func setupViewFromNibWithName(nibName: String) {
+    func setupViewFromNibWithName(_ nibName: String) {
 
         let view = loadViewFromNib(nibName)
         addSubview(view)
@@ -89,29 +89,29 @@ extension UIView {
 
     }
 
-    func loadViewFromNib(nibName: String) -> UIView {
+    func loadViewFromNib(_ nibName: String) -> UIView {
 
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil).first as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
 
         return view
         
     }
 
-    func fitSubview(subview: UIView) {
+    func fitSubview(_ subview: UIView) {
 
         fitSubviewHorizontally(subview)
         fitSubviewVertically(subview)
 
     }
 
-    func fitSubviewHorizontally(subview: UIView) {
+    func fitSubviewHorizontally(_ subview: UIView) {
 
         subview.translatesAutoresizingMaskIntoConstraints = false
 
-        let horizontalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:|[subview]|",
-            options: .DirectionLeadingToTrailing,
+        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[subview]|",
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: ["subview": subview]
         )
@@ -120,12 +120,12 @@ extension UIView {
 
     }
 
-    func fitSubviewVertically(subview: UIView) {
+    func fitSubviewVertically(_ subview: UIView) {
 
         subview.translatesAutoresizingMaskIntoConstraints = false
 
-        let verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|[subview]|",
-            options: .DirectionLeadingToTrailing,
+        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[subview]|",
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: ["subview": subview]
         )
@@ -137,11 +137,11 @@ extension UIView {
     func convertViewToImage() -> UIImage {
         
         UIGraphicsBeginImageContext(self.bounds.size)
-        self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     
-        return image
+        return image!
     }
     
     func toImage() -> UIImage {
@@ -149,8 +149,8 @@ extension UIView {
         var image: UIImage
         UIGraphicsBeginImageContextWithOptions(self.frame.size, true, 2.0)
         let context = UIGraphicsGetCurrentContext()
-        self.layer.renderInContext(context!);
-        image = UIGraphicsGetImageFromCurrentImageContext()
+        self.layer.render(in: context!);
+        image = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return image
         
@@ -158,18 +158,18 @@ extension UIView {
     
     func imageWithView() -> UIImage {
 
-        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, 0.0)
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0.0)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return img
+        return img!
         
         
     }
     
-    func fadeIn(duration: NSTimeInterval = 0.5, completion: (Void -> Void)? = .None) {
+    func fadeIn(_ duration: TimeInterval = 0.5, completion: ((Void) -> Void)? = .none) {
         
-        UIView.animateWithDuration(duration, animations: {
+        UIView.animate(withDuration: duration, animations: {
             
             self.alpha = 1
             
@@ -182,9 +182,9 @@ extension UIView {
         
     }
     
-    func fadeOut(duration: NSTimeInterval = 0.5, completion: (Void -> Void)? = .None) {
+    func fadeOut(_ duration: TimeInterval = 0.5, completion: ((Void) -> Void)? = .none) {
         
-        UIView.animateWithDuration(duration, animations: {
+        UIView.animate(withDuration: duration, animations: {
             
             self.alpha = 0
             

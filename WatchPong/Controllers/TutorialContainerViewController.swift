@@ -21,9 +21,9 @@ class TutorialContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismissTutorial(sender: AnyObject) {
+    @IBAction func dismissTutorial(_ sender: AnyObject) {
         Configuration.sharedConfig.seeTutorial()
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     

@@ -18,7 +18,7 @@ class MenuViewController: TransparenetBarViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 //        if !configuration.seenTutorial {
 //            performSegueWithIdentifier("tutorialSegue", sender: nil)
 //        }
@@ -29,15 +29,15 @@ class MenuViewController: TransparenetBarViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPressStart(sender: AnyObject) {
+    @IBAction func didPressStart(_ sender: AnyObject) {
     
         if configuration.isVR {
             
-            performSegueWithIdentifier("vrSegue", sender: self)
+            performSegue(withIdentifier: "vrSegue", sender: self)
         
         } else {
             
-            performSegueWithIdentifier("noVRSegue", sender: self)
+            performSegue(withIdentifier: "noVRSegue", sender: self)
         }
         
     }

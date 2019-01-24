@@ -14,37 +14,37 @@ class Configuration: NSObject {
     var winningScore: Int
     var useWatch: Bool
     var seenTutorial = false
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     
     static let sharedConfig = Configuration()
     
     override init() {
-        self.isVR = defaults.boolForKey("isVR")
-        self.useWatch = defaults.boolForKey("useWatch")
-        self.winningScore = defaults.integerForKey("winningScore")
+        self.isVR = defaults.bool(forKey: "isVR")
+        self.useWatch = defaults.bool(forKey: "useWatch")
+        self.winningScore = defaults.integer(forKey: "winningScore")
         if winningScore == 0 {
             winningScore = 7
-            defaults.setInteger(winningScore, forKey: "winningScore")
+            defaults.set(winningScore, forKey: "winningScore")
         }
-        self.seenTutorial = defaults.boolForKey("seenTutorial")
+        self.seenTutorial = defaults.bool(forKey: "seenTutorial")
     }
     
-    func updateConfig(isVR:Bool, useWatch:Bool, winningScore:Int) {
+    func updateConfig(_ isVR:Bool, useWatch:Bool, winningScore:Int) {
         
         self.isVR = isVR
         self.useWatch = useWatch
         self.winningScore = winningScore
-        defaults.setBool(isVR, forKey: "isVR")
-        defaults.setBool(useWatch, forKey: "useWatch")
-        defaults.setInteger(winningScore, forKey: "winningScore")
+        defaults.set(isVR, forKey: "isVR")
+        defaults.set(useWatch, forKey: "useWatch")
+        defaults.set(winningScore, forKey: "winningScore")
         
     }
     
     func seeTutorial() {
         
         seenTutorial = true
-        defaults.setBool(seenTutorial, forKey: "seenTutorial")
+        defaults.set(seenTutorial, forKey: "seenTutorial")
     }
 
 }

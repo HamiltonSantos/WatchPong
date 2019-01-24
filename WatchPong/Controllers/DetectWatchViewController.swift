@@ -21,11 +21,11 @@ class DetectWatchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backPressed(sender: AnyObject) {
+    @IBAction func backPressed(_ sender: AnyObject) {
         
         
-        self.dismissViewControllerAnimated(true) { 
-            self.presentedViewController?.navigationController?.popToRootViewControllerAnimated(true)
+        self.dismiss(animated: true) { 
+            self.presentedViewController?.navigationController?.popToRootViewController(animated: true)
         }
         
     }

@@ -17,14 +17,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     var mgr: CMMotionManager?
     var session: WCSession?
 
-    var lastDate = NSDate()
+    var lastDate = Date()
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
 
         // Init WCSession
         if WCSession.isSupported() {
-            self.session = WCSession.defaultSession()
+            self.session = WCSession.default()
         }
 
         guard let session = session else {
@@ -32,15 +32,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
         }
         session.delegate = self
-        session.activateSession()
+        session.activate()
 
         // Init CMMotionManager
         mgr = CMMotionManager()
 
-        if mgr?.accelerometerAvailable == true {
+        if mgr?.isAccelerometerAvailable == true {
             mgr?.accelerometerUpdateInterval = 1 / 30
 
-            mgr?.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: {
+            mgr?.startAccelerometerUpdates(to: OperationQueue.main, withHandler: {
                 (data, error) in
 
                 guard let data = data else{
@@ -53,16 +53,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // Se meu ultimo lancamento + 1 segundos for maior q o tempo atual
                 if self.isValidMoviment(data) {
                     
-                    if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+                    if Date().timeIntervalSince1970 > self.lastDate.addingTimeInterval(1).timeIntervalSince1970 {
                         print("novo")
                         let sendMessage: (String) -> () = { side in
                             let dict = ["x" : data.acceleration.x,
                                         "y" : data.acceleration.y ,
                                         "z" : data.acceleration.z,
-                                        "time" : NSDate().timeIntervalSince1970,
-                                        "side" : side]
+                                        "time" : Date().timeIntervalSince1970,
+                                        "side" : side] as [String : Any]
 
-                            session.sendMessage(dict as! [String : AnyObject],
+                            session.sendMessage(dict as [String : AnyObject],
                                     replyHandler:nil, errorHandler: { (error) in
                                 print(error)
                             })
@@ -73,13 +73,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                             print("esquerda")
                             print(data)
                             sendMessage("left")
-                            self.lastDate = NSDate()
+                            self.lastDate = Date()
 
                         }else if data.acceleration.x < -treshould {
                             print("direita")
                             print(data)
                             sendMessage("right")
-                            self.lastDate = NSDate()
+                            self.lastDate = Date()
                         }
                     }
                 }
@@ -100,7 +100,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Use this method to pause ongoing tasks, disable timers, etc.
     }
 
-    func isValidMoviment(data : CMAccelerometerData) -> Bool{
+    func isValidMoviment(_ data : CMAccelerometerData) -> Bool{
 
         if data.acceleration.x < -treshould || data.acceleration.y > treshould{
             return true
@@ -113,11 +113,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
 extension ExtensionDelegate: WCSessionDelegate {
     // MARK: - Delegate
-    @available(watchOS 2.2, *) func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+    @available(watchOS 2.2, *) func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print(activationState)
     }
 
-    @available(watchOS 2.0, *) func sessionReachabilityDidChange(session: WCSession) {
+    @available(watchOS 2.0, *) func sessionReachabilityDidChange(_ session: WCSession) {
         print(session)
     }
 }

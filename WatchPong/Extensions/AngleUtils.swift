@@ -9,10 +9,10 @@
 import Foundation
 
 
-func degreesToRadians(degrees: Float) -> Float {
+func degreesToRadians(_ degrees: Float) -> Float {
     return (degrees * Float(M_PI)) / 180.0
 }
 
-func radiansToDegrees(radians: Float) -> Float {
+func radiansToDegrees(_ radians: Float) -> Float {
     return (180.0/Float(M_PI)) * radians
 }

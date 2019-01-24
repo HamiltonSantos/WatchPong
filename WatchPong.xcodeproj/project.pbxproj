@@ -38,9 +38,9 @@
 		25CF02721CEF3FCB006A3505 /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A2DCF32B80F4BBD81E9CA /* SCNVector3Extensions.swift */; };
 		25CF02731CEF3FF4006A3505 /* DispatchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */; };
 		25D30CE41D14B19C0076340A /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
-		25D4959A1D50BDA400ACF99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
 		25DC0C1B1CABFB2600F0661F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */; };
 		25F5F7BF1D27DA0300C7A284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
+		25F5F7C01D27DA0500C7A284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A207638CA59CAC87FB683 /* Assets.xcassets */; };
 		25F8D1801CCE589200400427 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8D17F1CCE589200400427 /* TutorialPageViewController.swift */; };
 		25F8D1821CCE59ED00400427 /* TutorialContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8D1811CCE59ED00400427 /* TutorialContentViewController.swift */; };
 		3C2A20364C5F5382B75D393E /* DispatchHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A28D71D298A0B2E10D28E /* DispatchHelpers.swift */; };
@@ -244,7 +244,6 @@
 		250E7F111CEF3BCC00311532 /* TVPong */ = {
 			isa = PBXGroup;
 			children = (
-				25D4959B1D50BF2900ACF99F /* Tutorial */,
 				893472751D181EAF000DECAB /* GameControllerManager.swift */,
 				250E7F121CEF3BCC00311532 /* AppDelegate.swift */,
 				250E7F181CEF3BCC00311532 /* Main.storyboard */,
@@ -264,13 +263,6 @@
 				250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		25D4959B1D50BF2900ACF99F /* Tutorial */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tutorial;
 			sourceTree = "<group>";
 		};
 		25DC0C0E1CABFB2600F0661F = {
@@ -536,19 +528,22 @@
 				TargetAttributes = {
 					250E7F0F1CEF3BCC00311532 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = KY78GY9AFC;
 					};
 					25DC0C161CABFB2600F0661F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = KY78GY9AFC;
+						LastSwiftMigration = 0820;
 					};
 					895C71D81CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = KY78GY9AFC;
+						LastSwiftMigration = 0820;
 					};
 					895C71E41CC0649F001BDA8E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 28CU5YV2B9;
+						DevelopmentTeam = KY78GY9AFC;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -588,7 +583,7 @@
 				250E7F1A1CEF3BCC00311532 /* Main.storyboard in Resources */,
 				250E8D531D1D66610028DA94 /* VDS_Bold_Italic_New.ttf in Resources */,
 				250E8D5D1D1D66610028DA94 /* VDS_New.ttf in Resources */,
-				25D4959A1D50BDA400ACF99F /* Assets.xcassets in Resources */,
+				25F5F7C01D27DA0500C7A284 /* Assets.xcassets in Resources */,
 				250E8D5F1D1D66610028DA94 /* VDS_Thin_Ita.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -858,9 +853,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				INFOPLIST_FILE = TVPong/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.TVPong3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -877,9 +873,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				INFOPLIST_FILE = TVPong/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.TVPong3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -980,11 +977,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				INFOPLIST_FILE = WatchPong/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongHami3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -995,11 +994,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				INFOPLIST_FILE = WatchPong/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongHami3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1011,14 +1012,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongHami3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1031,14 +1034,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongHami3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1050,13 +1055,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongHami3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1067,13 +1074,15 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KY78GY9AFC;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPongHami3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
