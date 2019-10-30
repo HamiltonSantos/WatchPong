@@ -23,7 +23,7 @@ class PongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
     func initCamera() {
         // Respond to user head movement
 
-        motionManager.deviceMotionUpdateInterval = 1.0 / 60
+        motionManager.deviceMotionUpdateInterval = 1.0 / 30
         motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryZVertical)
         motionManager.startDeviceMotionUpdates(to: OperationQueue.main) {
             (motion: CMDeviceMotion?, error) in
