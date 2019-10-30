@@ -10,9 +10,13 @@ PODS:
 DEPENDENCIES:
   - CocoaAsyncSocket (~> 7.4)
 
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+
 SPEC CHECKSUMS:
   CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
 
 PODFILE CHECKSUM: 4bbb2f2f0b831b32cc37e4db377a188bd5f13475
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.8.4
