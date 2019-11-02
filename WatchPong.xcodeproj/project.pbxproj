@@ -268,14 +268,6 @@
 		25DC0C0E1CABFB2600F0661F = {
 			isa = PBXGroup;
 			children = (
-				250E8D4A1D1D66610028DA94 /* VDS_Bold_Italic_New.ttf */,
-				250E8D4B1D1D66610028DA94 /* VDS_Bold_New.ttf */,
-				250E8D4C1D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf */,
-				250E8D4D1D1D66610028DA94 /* VDS_Compensated_Light.ttf */,
-				250E8D4E1D1D66610028DA94 /* VDS_Italic_New.ttf */,
-				250E8D4F1D1D66610028DA94 /* VDS_New.ttf */,
-				250E8D501D1D66610028DA94 /* VDS_Thin_Ita.ttf */,
-				250E8D511D1D66610028DA94 /* VDS_Thin.ttf */,
 				25DC0C191CABFB2600F0661F /* WatchPong */,
 				895C71DA1CC0649F001BDA8E /* WatchApp */,
 				895C71E91CC0649F001BDA8E /* WatchApp Extension */,
@@ -317,6 +309,21 @@
 			path = WatchPong;
 			sourceTree = "<group>";
 		};
+		25EA9096236D2228004243CB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				250E8D4A1D1D66610028DA94 /* VDS_Bold_Italic_New.ttf */,
+				250E8D4B1D1D66610028DA94 /* VDS_Bold_New.ttf */,
+				250E8D4C1D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf */,
+				250E8D4D1D1D66610028DA94 /* VDS_Compensated_Light.ttf */,
+				250E8D4E1D1D66610028DA94 /* VDS_Italic_New.ttf */,
+				250E8D4F1D1D66610028DA94 /* VDS_New.ttf */,
+				250E8D501D1D66610028DA94 /* VDS_Thin_Ita.ttf */,
+				250E8D511D1D66610028DA94 /* VDS_Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3C2A20F3BBA9E48DEA4774B1 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +344,7 @@
 		3C2A21EF624B192363BAAE25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				25EA9096236D2228004243CB /* Fonts */,
 				89C47E571CBECC6B00E889B0 /* art.scnassets */,
 				3C2A2B0C9319C9AB4E38C33D /* LaunchScreen.storyboard */,
 				3C2A28549054E57895DD3237 /* Main.storyboard */,

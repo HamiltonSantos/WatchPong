@@ -37,6 +37,7 @@ class PongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
                 cameraNode!.eulerAngles.x = Float(currentAttitude.roll - 90)
                 cameraNode!.eulerAngles.z = Float(currentAttitude.pitch)
                 cameraNode!.eulerAngles.y = Float(currentAttitude.yaw)
+                print(cameraNode)
 
                 SCNTransaction.commit()
             }
