@@ -6,13 +6,14 @@
 import Foundation
 import UIKit
 
-class TransparenetBarViewController : UIViewController {
+class TransparentBarViewController : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.barTintColor = UIColor.clear
+        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 

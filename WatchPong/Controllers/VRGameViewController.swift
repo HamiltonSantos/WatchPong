@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity
 
-class VRGameViewController: TransparenetBarViewController {
+class VRGameViewController: TransparentBarViewController {
 
     let gameController = PongController()
 
