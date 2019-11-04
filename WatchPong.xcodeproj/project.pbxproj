@@ -30,6 +30,8 @@
 		250E8D651D1D68BB0028DA94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */; };
 		2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
 		252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
+		2575AE7A236FC66900AF71C3 /* barrel.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2575AE78236FC66900AF71C3 /* barrel.fsh */; };
+		2575AE7B236FC66900AF71C3 /* barrel.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2575AE79236FC66900AF71C3 /* barrel.vsh */; };
 		257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */; };
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
 		25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
@@ -152,6 +154,8 @@
 		250E8D511D1D66610028DA94 /* VDS_Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Thin.ttf; sourceTree = "<group>"; };
 		250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongSceneRendererDelegate.swift; sourceTree = "<group>"; };
+		2575AE78236FC66900AF71C3 /* barrel.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = barrel.fsh; sourceTree = "<group>"; };
+		2575AE79236FC66900AF71C3 /* barrel.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = barrel.vsh; sourceTree = "<group>"; };
 		257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,6 +348,8 @@
 		3C2A21EF624B192363BAAE25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2575AE78236FC66900AF71C3 /* barrel.fsh */,
+				2575AE79236FC66900AF71C3 /* barrel.vsh */,
 				25EA9096236D2228004243CB /* Fonts */,
 				89C47E571CBECC6B00E889B0 /* art.scnassets */,
 				3C2A2B0C9319C9AB4E38C33D /* LaunchScreen.storyboard */,
@@ -601,7 +607,9 @@
 				250E8D541D1D66610028DA94 /* VDS_Bold_New.ttf in Resources */,
 				250E8D561D1D66610028DA94 /* VDS_Compensated_Light_Italic.ttf in Resources */,
 				3C2A294B6449D07C9963A908 /* LaunchScreen.storyboard in Resources */,
+				2575AE7A236FC66900AF71C3 /* barrel.fsh in Resources */,
 				250E8D601D1D66610028DA94 /* VDS_Thin.ttf in Resources */,
+				2575AE7B236FC66900AF71C3 /* barrel.vsh in Resources */,
 				250E8D5A1D1D66610028DA94 /* VDS_Italic_New.ttf in Resources */,
 				250E8D581D1D66610028DA94 /* VDS_Compensated_Light.ttf in Resources */,
 				89C47E581CBECC6B00E889B0 /* art.scnassets in Resources */,
