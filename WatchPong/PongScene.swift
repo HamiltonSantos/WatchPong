@@ -73,13 +73,12 @@ class PongScene : NSObject {
         
         
         //barrel distortion for VR cameras
-        let url = Bundle.main.url(forResource: "art.scnassets/barrel", withExtension: "json")
+        let url = Bundle.main.url(forResource: "barrel_dist_mlsl", withExtension: "json")
         do {
             let jsonData = try Data(contentsOf: url!)
             let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
             let tecDic = json as? Dictionary<String, Any>
         let technique = SCNTechnique(dictionary: tecDic!)
-            technique?.setValue(0.5, forKey: "barrelPower")
             leftCamera?.technique = technique
             rightCamera?.technique = technique
         } catch {
