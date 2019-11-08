@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 
-class NoVRGameViewController: TransparenetBarViewController {
+class NoVRGameViewController: TransparentBarViewController {
     
     @IBOutlet weak var sceneView: PongSceneView!
 

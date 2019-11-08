@@ -30,15 +30,13 @@ class PongSceneRendererDelegate: NSObject, SCNSceneRendererDelegate {
 
             if let motion = motion {
                 let currentAttitude = motion.attitude
-                let cameraNode = self.pongScene.cameraNode
+                let cameraNode = self.pongScene.camerasMainNode
                 SCNTransaction.begin()
                 SCNTransaction.animationDuration = 0.05
 
                 cameraNode!.eulerAngles.x = Float(currentAttitude.roll - 90)
                 cameraNode!.eulerAngles.z = Float(currentAttitude.pitch)
                 cameraNode!.eulerAngles.y = Float(currentAttitude.yaw)
-                print(cameraNode)
-
                 SCNTransaction.commit()
             }
 

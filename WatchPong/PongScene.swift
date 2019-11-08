@@ -23,7 +23,9 @@ class PongScene : NSObject {
     let racket : SCNNode
 
     // Camera Node
-    var cameraNode: SCNNode?
+    var camerasMainNode: SCNNode?
+    var rightCamera: SCNCamera?
+    var leftCamera: SCNCamera?
 
     // Initial Posiitons
     let mySideInitialLeftPosition : SCNVector3
@@ -65,7 +67,24 @@ class PongScene : NSObject {
 //        self.racket.physicsBody!.contactTestBitMask = 1
 
         // camera
-        cameraNode = sharedScene.childNode("cameraNode")
+        camerasMainNode = sharedScene.childNode("cameraNode")
+        leftCamera = sharedScene.childNode("leftCamera").camera
+        rightCamera = sharedScene.childNode("rightCamera").camera
+        
+        
+        //barrel distortion for VR cameras
+        let url = Bundle.main.url(forResource: "barrel_dist_mlsl", withExtension: "json")
+        do {
+            let jsonData = try Data(contentsOf: url!)
+            let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+            let tecDic = json as? Dictionary<String, Any>
+        let technique = SCNTechnique(dictionary: tecDic!)
+            leftCamera?.technique = technique
+            rightCamera?.technique = technique
+        } catch {
+            print("error distorting")
+        }
+
 
         // Initial Positions
         self.mySideInitialLeftPosition = sharedScene.childNode("mySideStartPointLeft").position
