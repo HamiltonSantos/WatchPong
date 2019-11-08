@@ -30,6 +30,8 @@
 		250E8D651D1D68BB0028DA94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */; };
 		2527487F1CEF42BF0018324F /* PongSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A25CBCACD42C3FF8C5346 /* PongSceneView.swift */; };
 		252748811CEF43350018324F /* TVPongSceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */; };
+		25400B102373A44700445138 /* barrel_dist_mlsl.json in Resources */ = {isa = PBXBuildFile; fileRef = 25400B0E2373A44600445138 /* barrel_dist_mlsl.json */; };
+		25400B112373A44700445138 /* barrel_dist_mlsl.metal in Sources */ = {isa = PBXBuildFile; fileRef = 25400B0F2373A44700445138 /* barrel_dist_mlsl.metal */; };
 		257859431CD0F0EF0093863A /* TutorialContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */; };
 		258E7DAA1CBE6D3C00C2D50C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E7DA91CBE6D3C00C2D50C /* Configuration.swift */; };
 		25CF026A1CEF3D25006A3505 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C47E571CBECC6B00E889B0 /* art.scnassets */; };
@@ -152,6 +154,8 @@
 		250E8D511D1D66610028DA94 /* VDS_Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VDS_Thin.ttf; sourceTree = "<group>"; };
 		250E8D631D1D68BB0028DA94 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		252748801CEF43350018324F /* TVPongSceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVPongSceneRendererDelegate.swift; sourceTree = "<group>"; };
+		25400B0E2373A44600445138 /* barrel_dist_mlsl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barrel_dist_mlsl.json; sourceTree = "<group>"; };
+		25400B0F2373A44700445138 /* barrel_dist_mlsl.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = barrel_dist_mlsl.metal; sourceTree = "<group>"; };
 		257859421CD0F0EF0093863A /* TutorialContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialContainerViewController.swift; sourceTree = "<group>"; };
 		258E7DA91CBE6D3C00C2D50C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		25DC0C171CABFB2600F0661F /* WatchPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +269,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		25400B06237396A800445138 /* BarrelDistortion */ = {
+			isa = PBXGroup;
+			children = (
+				25400B0E2373A44600445138 /* barrel_dist_mlsl.json */,
+				25400B0F2373A44700445138 /* barrel_dist_mlsl.metal */,
+			);
+			path = BarrelDistortion;
+			sourceTree = "<group>";
+		};
 		25DC0C0E1CABFB2600F0661F = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +305,7 @@
 		25DC0C191CABFB2600F0661F /* WatchPong */ = {
 			isa = PBXGroup;
 			children = (
+				25400B06237396A800445138 /* BarrelDistortion */,
 				250E8D621D1D68A60028DA94 /* Extensions */,
 				893472771D18271F000DECAB /* GameController.swift */,
 				25DC0C1A1CABFB2600F0661F /* AppDelegate.swift */,
@@ -610,6 +624,7 @@
 				250E8D5C1D1D66610028DA94 /* VDS_New.ttf in Resources */,
 				25F5F7BF1D27DA0300C7A284 /* Assets.xcassets in Resources */,
 				250E8D5E1D1D66610028DA94 /* VDS_Thin_Ita.ttf in Resources */,
+				25400B102373A44700445138 /* barrel_dist_mlsl.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +781,7 @@
 				3C2A24AD66848F110548C814 /* CMAccelerometerExtensions.swift in Sources */,
 				3C2A2ED313C2E2AA402B72BA /* InstantiateViewController.swift in Sources */,
 				3C2A2CE29E0DAC9DEB0B87DC /* UIStoryboardExtensions.swift in Sources */,
+				25400B112373A44700445138 /* barrel_dist_mlsl.metal in Sources */,
 				3C2A226AF622A721FCD9A3A8 /* UIViewControllerAdditions.swift in Sources */,
 				3C2A23B240BD4146E5414CF5 /* PongWCSessionController.swift in Sources */,
 				3C2A2F10CC498E076F8F7830 /* RandomHelpers.swift in Sources */,
