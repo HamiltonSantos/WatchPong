@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kR2-yP-HnU">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,37 +9,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <!-- -->
+        <scene sceneID="Wb8-zJ-wVW">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="kR2-yP-HnU" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="22p-QE-z3I"/>
+                        <viewControllerLayoutGuide type="bottom" id="IDb-Tz-Hfa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                    <view key="view" contentMode="scaleToFill" id="mjt-bh-6Yp">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-gY-6qg">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMR-Lf-svt">
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="IXL-Eu-EAI">
+                                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBack" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-eF-mOs">
+                                        <rect key="frame" x="186" y="0.0" width="440" height="375"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rB5-eF-mOs" secondAttribute="height" multiplier="88:75" id="Ivo-S2-G3q"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTilted" translatesAutoresizingMaskIntoConstraints="NO" id="8qa-Xx-IFi">
+                                        <rect key="frame" x="223.33333333333337" y="28" width="142" height="169"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rB5-eF-mOs" firstAttribute="centerX" secondItem="NMR-Lf-svt" secondAttribute="centerX" id="1bg-UK-R0N"/>
+                                    <constraint firstItem="rB5-eF-mOs" firstAttribute="top" secondItem="NMR-Lf-svt" secondAttribute="top" id="3Gp-Ik-xLF"/>
+                                    <constraint firstItem="IXL-Eu-EAI" firstAttribute="height" secondItem="NMR-Lf-svt" secondAttribute="height" id="IlD-og-XyS"/>
+                                    <constraint firstItem="IXL-Eu-EAI" firstAttribute="width" secondItem="NMR-Lf-svt" secondAttribute="width" id="Pux-cw-iSV"/>
+                                    <constraint firstItem="8qa-Xx-IFi" firstAttribute="trailing" secondItem="NMR-Lf-svt" secondAttribute="centerX" multiplier="0.9" id="dPo-Z6-xIH"/>
+                                    <constraint firstAttribute="bottom" secondItem="rB5-eF-mOs" secondAttribute="bottom" id="dba-Bf-Apy"/>
+                                    <constraint firstItem="8qa-Xx-IFi" firstAttribute="height" secondItem="NMR-Lf-svt" secondAttribute="height" multiplier="0.45" id="hbt-6P-f8v"/>
+                                    <constraint firstItem="IXL-Eu-EAI" firstAttribute="centerX" secondItem="NMR-Lf-svt" secondAttribute="centerX" id="mdG-5J-vJs"/>
+                                    <constraint firstItem="IXL-Eu-EAI" firstAttribute="centerY" secondItem="NMR-Lf-svt" secondAttribute="centerY" id="thj-ky-1CO"/>
+                                    <constraint firstItem="8qa-Xx-IFi" firstAttribute="bottom" secondItem="NMR-Lf-svt" secondAttribute="centerY" multiplier="1.05" id="unF-76-RNn"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Qxb-gY-6qg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="T5L-CG-ArZ"/>
-                            <constraint firstAttribute="trailing" secondItem="Qxb-gY-6qg" secondAttribute="trailing" id="gUu-4o-Mj9"/>
-                            <constraint firstItem="Qxb-gY-6qg" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="jOS-TE-hA0"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Qxb-gY-6qg" secondAttribute="bottom" id="tfK-ZW-N0O"/>
+                            <constraint firstItem="NMR-Lf-svt" firstAttribute="centerX" secondItem="mjt-bh-6Yp" secondAttribute="centerX" id="LRA-kS-Wek"/>
+                            <constraint firstItem="NMR-Lf-svt" firstAttribute="width" secondItem="mjt-bh-6Yp" secondAttribute="width" id="fI8-kf-thJ"/>
+                            <constraint firstItem="NMR-Lf-svt" firstAttribute="height" secondItem="mjt-bh-6Yp" secondAttribute="height" id="xsg-DZ-VNp"/>
+                            <constraint firstItem="NMR-Lf-svt" firstAttribute="centerY" secondItem="mjt-bh-6Yp" secondAttribute="centerY" id="yOG-Ek-9Aa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title=" " id="C1K-9N-uyf">
+                        <barButtonItem key="backBarButtonItem" title=" " id="bEF-F3-91M"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XL-WW-onS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-591" y="343"/>
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="1334" height="750"/>
+        <image name="logoTilted" width="142" height="193"/>
+        <image name="mask" width="1998" height="1125"/>
+        <image name="menuBack" width="440" height="375"/>
     </resources>
 </document>
