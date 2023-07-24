@@ -111,7 +111,7 @@ extension UIView {
         subview.translatesAutoresizingMaskIntoConstraints = false
 
         let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[subview]|",
-            options: NSLayoutFormatOptions(),
+                                                                  options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["subview": subview]
         )
@@ -125,7 +125,7 @@ extension UIView {
         subview.translatesAutoresizingMaskIntoConstraints = false
 
         let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[subview]|",
-            options: NSLayoutFormatOptions(),
+                                                                options: NSLayoutConstraint.FormatOptions(),
             metrics: nil,
             views: ["subview": subview]
         )
@@ -166,36 +166,4 @@ extension UIView {
         
         
     }
-    
-    func fadeIn(_ duration: TimeInterval = 0.5, completion: ((Void) -> Void)? = .none) {
-        
-        UIView.animate(withDuration: duration, animations: {
-            
-            self.alpha = 1
-            
-            }, completion: { _ in
-                
-                completion?()
-                
-            }
-        )
-        
-    }
-    
-    func fadeOut(_ duration: TimeInterval = 0.5, completion: ((Void) -> Void)? = .none) {
-        
-        UIView.animate(withDuration: duration, animations: {
-            
-            self.alpha = 0
-            
-            }, completion: { _ in
-                
-                completion?()
-                
-            }
-        )
-        
-    }
-    
-
 }

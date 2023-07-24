@@ -23,7 +23,7 @@ class PongWCSessionController: NSObject {
         noConnectionVC = UIViewController.instantiate(viewIdentifier: "openWatchVC")
 
         if WCSession.isSupported() {
-            self.session = WCSession.default()
+            self.session = WCSession.default
         }
 
         guard let session = session else {
