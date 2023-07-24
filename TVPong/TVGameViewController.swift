@@ -43,12 +43,12 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sceneView.scene!.paused = false
+        sceneView.scene!.isPaused = false
         for controller in controllers {
             controller.microGamepad?.allowsRotation = false
         }
 
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.motionDelegate = self
     }
 
@@ -67,7 +67,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             print(" ---- ")
         }
         
-        if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+        if NSDate().timeIntervalSince1970 > self.lastDate.addingTimeInterval(1).timeIntervalSince1970 {
             if totalX > 3 {
                 lastDate = NSDate()
                 pongController.processLeftAction()
@@ -207,7 +207,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             for key: Int in Array(savingData.keys) {
                 if let data = savingData[key]
                 {
-                    if let currentAcc = data[0].yAcceleration as? Double where currentAcc > maxYAcceleration{ //data.1[0].yAcceleration as? Double where maxAcceleration > maxYAcceleration{
+                    if let currentAcc = data[0].yAcceleration as? Double, currentAcc > maxYAcceleration{ //data.1[0].yAcceleration as? Double where maxAcceleration > maxYAcceleration{
                         groupAcceleration = maxYAcceleration
                         maxYAcceleration = currentAcc
                         indexOfMaxAcceleration = key
@@ -220,7 +220,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             for key: Int in Array(savingData.keys) {
                 if let data = savingData[key]
                 {
-                    if let currentAcc = data[0].yAcceleration as? Double where currentAcc < maxYAcceleration{ //data.1[0].yAcceleration as? Double where maxAcceleration > maxYAcceleration{
+                    if let currentAcc = data[0].yAcceleration as? Double, currentAcc < maxYAcceleration{ //data.1[0].yAcceleration as? Double where maxAcceleration > maxYAcceleration{
                         groupAcceleration = maxYAcceleration
                         maxYAcceleration = currentAcc
                         indexOfMaxAcceleration = key
@@ -244,7 +244,7 @@ class TVGameViewController: GCEventViewController, ReactToMotionEvents {
             
             gravity = GCAcceleration(x: gravity.x/Double(arrayOfForces.count),y: gravity.y/Double(arrayOfForces.count), z: gravity.z/Double(arrayOfForces.count))
             NSLog(#function)
-            applyForceFromAcceleration(gravity, userAcceleration: acceleration)
+            applyForceFromAcceleration(gravity: gravity, userAcceleration: acceleration)
         }
     }
     
