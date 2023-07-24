@@ -26,9 +26,9 @@ class MultiplayerViewController: UIViewController, ReactToMotionEvents {
         gameControllerManager.delegate = self
         // Do any additional setup after loading the view.
 
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.motionDelegate = self
-        pongController.pongScene.sharedScene.paused = false
+        pongController.pongScene.sharedScene.isPaused = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +53,7 @@ class MultiplayerViewController: UIViewController, ReactToMotionEvents {
             print(" ---- ")
         }
         
-        if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+        if NSDate().timeIntervalSince1970 > self.lastDate.addingTimeInterval(1).timeIntervalSince1970 {
             if totalX > 3 {
                 lastDate = NSDate()
                 pongController.processLeftAction()
@@ -67,28 +67,27 @@ class MultiplayerViewController: UIViewController, ReactToMotionEvents {
 }
 
 extension MultiplayerViewController : GameControllerManagerDelegate {
-    
-    func didReceiveData(fromPlayer player: Int, data: NSData){
+    func didReceiveData(fromPlayer player: Int, data: Data) {
         
     }
     
     func didReceiveCommand(fromPlayer player: Int, command: CommandType){
         switch command {
-        case .Left:
+        case .left:
             pongController.applyOtherBallForce()
             break
-        case .Right:
+        case .right:
             pongController.applyOtherBallForce()
             break
         default: break
         }
     }
     
-    func playerDidConnect(player: Int){
+    func playerDidConnect(_ player: Int){
         
     }
     
-    func playerDidDisconnect(player: Int){
+    func playerDidDisconnect(_ player: Int){
         
     }
 }

@@ -72,6 +72,7 @@ class PongScene : NSObject {
         rightCamera = sharedScene.childNode("rightCamera").camera
         
         
+        #if os(iOS)
         //barrel distortion for VR cameras
         let url = Bundle.main.url(forResource: "barrel_dist_mlsl", withExtension: "json")
         do {
@@ -84,7 +85,7 @@ class PongScene : NSObject {
         } catch {
             print("error distorting")
         }
-
+        #endif
 
         // Initial Positions
         self.mySideInitialLeftPosition = sharedScene.childNode("mySideStartPointLeft").position

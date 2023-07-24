@@ -17,23 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        application.idleTimerDisabled = true
+        application.isIdleTimerDisabled = true
 
         // Override point for customization after application launch.
         
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: #selector(setupControllers), name: GCControllerDidConnectNotification, object: nil)
-        center.addObserver(self, selector: #selector(setupControllers), name: GCControllerDidDisconnectNotification, object: nil)
-        GCController.startWirelessControllerDiscoveryWithCompletionHandler { () -> Void in
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(setupControllers), name: NSNotification.Name.GCControllerDidConnect, object: nil)
+        center.addObserver(self, selector: #selector(setupControllers), name: NSNotification.Name.GCControllerDidDisconnect, object: nil)
+        GCController.startWirelessControllerDiscovery { () -> Void in
         }
         return true
     }
-    func setupControllers(notif: NSNotification) {
+    @objc func setupControllers(notif: NSNotification) {
         let controllers = GCController.controllers()
         for controller in controllers {
             controller.motion?.valueChangedHandler = { (motion: GCMotion)->() in
                 if let delegate = self.motionDelegate {
-                    delegate.motionUpdate(motion)
+                    delegate.motionUpdate(motion: motion)
                 }
             }
         }

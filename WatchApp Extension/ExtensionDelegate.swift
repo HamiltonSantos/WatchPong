@@ -24,7 +24,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
         // Init WCSession
         if WCSession.isSupported() {
-            self.session = WCSession.default()
+            self.session = WCSession.default
         }
 
         guard let session = session else {

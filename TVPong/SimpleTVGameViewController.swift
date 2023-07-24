@@ -21,9 +21,9 @@ class SimpleTVGameViewController: UIViewController, ReactToMotionEvents {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.motionDelegate = self
-        pongController.pongScene.sharedScene.paused = false
+        pongController.pongScene.sharedScene.isPaused = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +48,7 @@ class SimpleTVGameViewController: UIViewController, ReactToMotionEvents {
             print(" ---- ")
         }
         
-        if NSDate().timeIntervalSince1970 > self.lastDate.dateByAddingTimeInterval(1).timeIntervalSince1970 {
+        if NSDate().timeIntervalSince1970 > self.lastDate.addingTimeInterval(1).timeIntervalSince1970 {
             if totalX > 3 {
                 lastDate = NSDate()
                 pongController.processLeftAction()
