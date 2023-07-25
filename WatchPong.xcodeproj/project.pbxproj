@@ -139,7 +139,7 @@
 
 /* Begin PBXFileReference section */
 		1EC975BD4973902BC3E54BFF /* Pods_TVPong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVPong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		250E7F101CEF3BCC00311532 /* TVSideSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVSideSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		250E7F101CEF3BCC00311532 /* TVPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		250E7F121CEF3BCC00311532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		250E7F191CEF3BCC00311532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		250E7F1B1CEF3BCC00311532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 				25DC0C171CABFB2600F0661F /* WatchPong.app */,
 				895C71D91CC0649F001BDA8E /* WatchApp.app */,
 				895C71E51CC0649F001BDA8E /* WatchApp Extension.appex */,
-				250E7F101CEF3BCC00311532 /* TVSideSpin.app */,
+				250E7F101CEF3BCC00311532 /* TVPong.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 			);
 			name = TVPong;
 			productName = TVPong;
-			productReference = 250E7F101CEF3BCC00311532 /* TVSideSpin.app */;
+			productReference = 250E7F101CEF3BCC00311532 /* TVPong.app */;
 			productType = "com.apple.product-type.application";
 		};
 		25DC0C161CABFB2600F0661F /* WatchPong */ = {
@@ -863,7 +863,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports-games";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong;
-				PRODUCT_NAME = TVSideSpin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
@@ -885,7 +885,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports-games";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamiltonsantos.WatchPong;
-				PRODUCT_NAME = TVSideSpin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
