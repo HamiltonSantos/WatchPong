@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lM4-IE-06a">
-    <device id="appleTV" orientation="landscape">
-        <adaptation id="light"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="21701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lM4-IE-06a">
+    <device id="appleTV" appearance="light"/>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Npp-ba-AVI">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-Ev-ti0">
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-Ev-ti0">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="blueMenuPortion" translatesAutoresizingMaskIntoConstraints="NO" id="xyL-US-6Mf">
@@ -78,7 +76,7 @@
                             <constraint firstItem="oQ5-Jl-mfd" firstAttribute="leading" secondItem="xxo-7V-117" secondAttribute="centerXWithinMargins" id="RbS-Hb-6RM"/>
                             <constraint firstItem="oQ5-Jl-mfd" firstAttribute="trailing" secondItem="uPq-e7-2DX" secondAttribute="trailing" constant="-25" id="T5G-0C-jVu"/>
                             <constraint firstItem="oZ1-ap-eyH" firstAttribute="top" secondItem="Mdn-Ev-ti0" secondAttribute="top" id="fEW-4k-VFY"/>
-                            <constraint firstItem="Mdn-Ev-ti0" firstAttribute="top" secondItem="LnW-hs-Hdj" secondAttribute="bottom" id="fUU-uM-2yt"/>
+                            <constraint firstItem="Mdn-Ev-ti0" firstAttribute="top" secondItem="xxo-7V-117" secondAttribute="top" id="fUU-uM-2yt"/>
                             <constraint firstItem="Mdn-Ev-ti0" firstAttribute="leading" secondItem="xxo-7V-117" secondAttribute="leading" id="flg-Rm-G7I"/>
                             <constraint firstItem="oZ1-ap-eyH" firstAttribute="width" secondItem="Mdn-Ev-ti0" secondAttribute="width" multiplier="1/2" id="iDn-7c-aLj"/>
                             <constraint firstItem="uPq-e7-2DX" firstAttribute="leading" secondItem="iYN-eD-TIv" secondAttribute="leading" constant="-25" id="ijn-VI-6fw"/>
@@ -88,7 +86,7 @@
                             <constraint firstItem="t5z-Bo-TJZ" firstAttribute="top" secondItem="Npp-ba-AVI" secondAttribute="bottom" id="qNY-SN-hWG"/>
                             <constraint firstAttribute="trailing" secondItem="Npp-ba-AVI" secondAttribute="trailing" id="qau-rF-Sjr"/>
                             <constraint firstItem="oZ1-ap-eyH" firstAttribute="bottom" secondItem="Mdn-Ev-ti0" secondAttribute="bottom" id="s9k-4F-J7a"/>
-                            <constraint firstItem="t5z-Bo-TJZ" firstAttribute="top" secondItem="Mdn-Ev-ti0" secondAttribute="bottom" id="v66-R8-VYL"/>
+                            <constraint firstAttribute="bottom" secondItem="Mdn-Ev-ti0" secondAttribute="bottom" id="v66-R8-VYL"/>
                             <constraint firstItem="oQ5-Jl-mfd" firstAttribute="leading" secondItem="uPq-e7-2DX" secondAttribute="leading" constant="-25" id="vJG-Xr-RfE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oZ1-ap-eyH" secondAttribute="trailing" constant="126" id="vYr-P3-0Xm"/>
                             <constraint firstItem="iYN-eD-TIv" firstAttribute="top" secondItem="uPq-e7-2DX" secondAttribute="bottom" constant="-100" id="wXy-Gg-Sdj"/>
@@ -150,7 +148,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0MT-mn-i4x"/>
                         <viewControllerLayoutGuide type="bottom" id="zKz-Ah-VF4"/>
@@ -159,19 +157,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGe-Mq-Qya" customClass="PongSceneView" customModule="TVPong">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGe-Mq-Qya" customClass="PongSceneView" customModule="TVPong">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCamera"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="DFJ-8M-xbD"/>
+                                </connections>
                             </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HGe-Mq-Qya" secondAttribute="trailing" id="0W5-D2-gBH"/>
-                            <constraint firstItem="zKz-Ah-VF4" firstAttribute="top" secondItem="HGe-Mq-Qya" secondAttribute="bottom" id="Bib-Ky-V71"/>
-                            <constraint firstItem="HGe-Mq-Qya" firstAttribute="top" secondItem="0MT-mn-i4x" secondAttribute="bottom" id="kbT-Gp-T9L"/>
+                            <constraint firstAttribute="bottom" secondItem="HGe-Mq-Qya" secondAttribute="bottom" id="Bib-Ky-V71"/>
+                            <constraint firstItem="HGe-Mq-Qya" firstAttribute="top" secondItem="BxU-Oe-mI4" secondAttribute="top" id="kbT-Gp-T9L"/>
                             <constraint firstItem="HGe-Mq-Qya" firstAttribute="leading" secondItem="BxU-Oe-mI4" secondAttribute="leading" id="qsD-Nx-ENr"/>
                         </constraints>
                     </view>
@@ -186,7 +187,7 @@
         <!--Multiplayer View Controller-->
         <scene sceneID="ynu-BS-dTp">
             <objects>
-                <viewController id="49C-0W-uek" customClass="MultiplayerViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="49C-0W-uek" customClass="MultiplayerViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HUG-d8-tVm"/>
                         <viewControllerLayoutGuide type="bottom" id="cSJ-AQ-Qqn"/>
@@ -195,14 +196,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-1x-MCa" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-1x-MCa" customClass="PongSceneView" customModule="TVSideSpin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3s-Ha-QOP" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3s-Ha-QOP" customClass="PongSceneView" customModule="TVSideSpin" customModuleProvider="target">
                                 <rect key="frame" x="960" y="0.0" width="960" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="NO"/>
@@ -224,17 +225,17 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="Spv-xE-FFL" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" constant="24" id="3L4-5F-Hvx"/>
-                            <constraint firstItem="cSJ-AQ-Qqn" firstAttribute="top" secondItem="G1g-1x-MCa" secondAttribute="bottom" id="CLc-3g-fT5"/>
+                            <constraint firstAttribute="bottom" secondItem="G1g-1x-MCa" secondAttribute="bottom" id="CLc-3g-fT5"/>
                             <constraint firstItem="G1g-1x-MCa" firstAttribute="leading" secondItem="Mz6-JO-545" secondAttribute="leading" id="FqK-tt-oxp"/>
                             <constraint firstItem="g3s-Ha-QOP" firstAttribute="leading" secondItem="G1g-1x-MCa" secondAttribute="trailing" id="Gg0-fi-Jp3"/>
-                            <constraint firstItem="G1g-1x-MCa" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" id="HNw-gR-YVk"/>
+                            <constraint firstItem="G1g-1x-MCa" firstAttribute="top" secondItem="Mz6-JO-545" secondAttribute="top" id="HNw-gR-YVk"/>
                             <constraint firstItem="G1g-1x-MCa" firstAttribute="width" secondItem="Mz6-JO-545" secondAttribute="width" multiplier="1:2" id="Jo4-Jx-WbJ"/>
-                            <constraint firstItem="g3s-Ha-QOP" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" id="PUk-Gm-vvs"/>
+                            <constraint firstItem="g3s-Ha-QOP" firstAttribute="top" secondItem="Mz6-JO-545" secondAttribute="top" id="PUk-Gm-vvs"/>
                             <constraint firstAttribute="trailing" secondItem="g3s-Ha-QOP" secondAttribute="trailing" id="Pnz-si-YWu"/>
                             <constraint firstItem="XYe-Rw-kmS" firstAttribute="leading" secondItem="G1g-1x-MCa" secondAttribute="trailing" constant="36" id="Y0U-Ag-3b4"/>
                             <constraint firstItem="XYe-Rw-kmS" firstAttribute="top" secondItem="HUG-d8-tVm" secondAttribute="bottom" constant="24" id="swv-uj-b8f"/>
                             <constraint firstItem="Spv-xE-FFL" firstAttribute="leading" secondItem="Mz6-JO-545" secondAttribute="leadingMargin" constant="36" id="xRr-eC-YXh"/>
-                            <constraint firstItem="cSJ-AQ-Qqn" firstAttribute="top" secondItem="g3s-Ha-QOP" secondAttribute="bottom" id="xxd-Un-iyX"/>
+                            <constraint firstAttribute="bottom" secondItem="g3s-Ha-QOP" secondAttribute="bottom" id="xxd-Un-iyX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -245,7 +246,7 @@
         <!--Finalized Game View Controller-->
         <scene sceneID="QNq-F2-ZBr">
             <objects>
-                <viewController storyboardIdentifier="finalizedVC" id="ccz-aR-t2h" customClass="FinalizedGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finalizedVC" id="ccz-aR-t2h" customClass="FinalizedGameViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i0A-Tf-h41"/>
                         <viewControllerLayoutGuide type="bottom" id="nLm-1B-7E8"/>
@@ -268,7 +269,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-CB-WRk">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-CB-WRk">
                                 <rect key="frame" x="1558" y="22" width="195" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -291,7 +292,7 @@
         <!--SimpleTV Game View Controller-->
         <scene sceneID="s2f-Wq-7lU">
             <objects>
-                <viewController id="tb9-EG-RYL" customClass="SimpleTVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tb9-EG-RYL" customClass="SimpleTVGameViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mAx-ba-hrV"/>
                         <viewControllerLayoutGuide type="bottom" id="n0X-Ds-tnb"/>
@@ -300,7 +301,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76J-Lv-z3T" customClass="PongSceneView" customModule="TVPong">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76J-Lv-z3T" customClass="PongSceneView" customModule="TVPong">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCameraNode"/>
@@ -309,9 +310,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="n0X-Ds-tnb" firstAttribute="top" secondItem="76J-Lv-z3T" secondAttribute="bottom" id="B0Y-Gj-HVn"/>
+                            <constraint firstAttribute="bottom" secondItem="76J-Lv-z3T" secondAttribute="bottom" id="B0Y-Gj-HVn"/>
                             <constraint firstItem="76J-Lv-z3T" firstAttribute="leading" secondItem="mCg-LD-hgj" secondAttribute="leading" id="DQi-H4-U5O"/>
-                            <constraint firstItem="76J-Lv-z3T" firstAttribute="top" secondItem="mAx-ba-hrV" secondAttribute="bottom" id="MKq-pY-SYV"/>
+                            <constraint firstItem="76J-Lv-z3T" firstAttribute="top" secondItem="mCg-LD-hgj" secondAttribute="top" id="MKq-pY-SYV"/>
                             <constraint firstAttribute="trailing" secondItem="76J-Lv-z3T" secondAttribute="trailing" id="kzo-Lr-FaU"/>
                         </constraints>
                     </view>
