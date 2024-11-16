@@ -89,12 +89,12 @@ class GameController: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, G
     //MARK: Communication methods
     //Obs.: Tamanho do corpo da mensagem limitado à 6 bytes, e 2 para o cabeçalho.
     func sendDataToTV(_ data: Data) {
-//        guard let skt = socket else {print("Socket doesn't exist"); return}
-//        var playerID = self.ID
-//        let dataChunk = data.subdata(in: NSRange(location: 0, length: sizeof(Int64)-sizeof(Int16)))
-//        let packetData = NSMutableData(bytes: &playerID, length: MemoryLayout<Int16>.size)
-//        packetData.append(dataChunk)
-//        skt.write(packetData as Data!, withTimeout: -1, tag: 0)
+        guard let skt = socket else {print("Socket doesn't exist"); return}
+        var playerID = self.ID
+        let dataChunk = data.subdata(in: NSRange(location: 0, length: sizeof(Int64)-sizeof(Int16)))
+        let packetData = NSMutableData(bytes: &playerID, length: MemoryLayout<Int16>.size)
+        packetData.append(dataChunk)
+        skt.write(packetData as Data!, withTimeout: -1, tag: 0)
     }
     
     func sendStringToTV(_ string: String, encoding: String.Encoding) {
@@ -104,9 +104,9 @@ class GameController: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, G
     }
     
     func sendCommandToTV(_ command: CommandType) {
-//        var commandInt = command.hashValue
-//        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
-//        sendDataToTV(data)
+        var commandInt = command.hashValue
+        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
+        sendDataToTV(data)
     }
     
     /* 
@@ -175,30 +175,30 @@ class GameController: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, G
     }
     
     func socket(_ sock: GCDAsyncSocket!, didRead data: Data!, withTag tag: Int) {
-//        guard let hostName = sock.connectedHost else {print("Host doesn't exist"); return}
-//
-//        if config {
-//            var id : Int = 0
-//            data.copyBytes(to: &UInt8(id), count: MemoryLayout<Int>.size)
-//            print("My id is: \(id)")
-//            socket.readData(toLength: UInt(MemoryLayout<UInt64>.size), withTimeout: -1, tag: 0)
-//            self.ID = id
-//            config = false
-//            guard let del = delegate?.didReceiveData else {print("didReceiveData isn't implemented"); return}
-//            del(hostName, data)
-//            sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
-//        }
-//        else {
-//            var commandInt : Int = 0
-//            data.copyBytes(to: &UInt8(commandInt), count: MemoryLayout<Int>.size)
-//            print("Command Int from TV is: \(commandInt)")
-//            if commandInt >= CommandType.data.hashValue {
-//                self.delegate?.didReceiveData(fromTV: hostName, data: data)
-//            } else {
-//                self.delegate?.didReceiveCommand(fromTV: hostName, command: CommandType(rawValue: commandInt)!)
-//            }
-//            sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
-//        }
+        guard let hostName = sock.connectedHost else {print("Host doesn't exist"); return}
+
+        if config {
+            var id : Int = 0
+            data.copyBytes(to: &UInt8(id), count: MemoryLayout<Int>.size)
+            print("My id is: \(id)")
+            socket.readData(toLength: UInt(MemoryLayout<UInt64>.size), withTimeout: -1, tag: 0)
+            self.ID = id
+            config = false
+            guard let del = delegate?.didReceiveData else {print("didReceiveData isn't implemented"); return}
+            del(hostName, data)
+            sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
+        }
+        else {
+            var commandInt : Int = 0
+            data.copyBytes(to: &UInt8(commandInt), count: MemoryLayout<Int>.size)
+            print("Command Int from TV is: \(commandInt)")
+            if commandInt >= CommandType.data.hashValue {
+                self.delegate?.didReceiveData(fromTV: hostName, data: data)
+            } else {
+                self.delegate?.didReceiveCommand(fromTV: hostName, command: CommandType(rawValue: commandInt)!)
+            }
+            sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
+        }
     }
 }
 
@@ -214,7 +214,7 @@ public protocol GameControllerDelegate: NSObjectProtocol {
     
     func didReceiveCommand(fromTV TV: String, command: CommandType)
     
-//    func didSendData(toTV socket: String)
+    func didSendData(toTV socket: String)
     
-//    func didSendCommand(toTV command: CommandType)
+    func didSendCommand(toTV command: CommandType)
 }

@@ -49,7 +49,7 @@
                                     <segue destination="49C-0W-uek" kind="show" id="l0h-St-msh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-eD-TIv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-eD-TIv">
                                 <rect key="frame" x="1010" y="730" width="394" height="220"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" image="howToPlay"/>
@@ -102,18 +102,18 @@
             </objects>
             <point key="canvasLocation" x="-1912" y="480"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Tutorial Page View Controller-->
         <scene sceneID="FlK-RQ-tFJ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="czn-Ka-tBI" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="czn-Ka-tBI" customClass="TVTutorialPageViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9B-KZ-okh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1912" y="1719"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Content View Controller-->
         <scene sceneID="Xip-bk-neF">
             <objects>
-                <viewController id="4Mq-Kg-TGu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorialContent" id="4Mq-Kg-TGu" customClass="TutorialContentViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lwy-xO-nlk"/>
                         <viewControllerLayoutGuide type="bottom" id="UhI-R1-8HI"/>
@@ -148,7 +148,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="TVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0MT-mn-i4x"/>
                         <viewControllerLayoutGuide type="bottom" id="zKz-Ah-VF4"/>
@@ -187,7 +187,7 @@
         <!--Multiplayer View Controller-->
         <scene sceneID="ynu-BS-dTp">
             <objects>
-                <viewController id="49C-0W-uek" customClass="MultiplayerViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="49C-0W-uek" customClass="MultiplayerViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HUG-d8-tVm"/>
                         <viewControllerLayoutGuide type="bottom" id="cSJ-AQ-Qqn"/>
@@ -196,14 +196,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-1x-MCa" customClass="PongSceneView" customModule="TVSideSpin" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1g-1x-MCa" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cameraName" value="tvCamera"/>
                                 </userDefinedRuntimeAttributes>
                             </sceneKitView>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3s-Ha-QOP" customClass="PongSceneView" customModule="TVSideSpin" customModuleProvider="target">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3s-Ha-QOP" customClass="PongSceneView" customModule="TVPong" customModuleProvider="target">
                                 <rect key="frame" x="960" y="0.0" width="960" height="1080"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDelegate" value="NO"/>
@@ -246,7 +246,7 @@
         <!--Finalized Game View Controller-->
         <scene sceneID="QNq-F2-ZBr">
             <objects>
-                <viewController storyboardIdentifier="finalizedVC" id="ccz-aR-t2h" customClass="FinalizedGameViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finalizedVC" id="ccz-aR-t2h" customClass="FinalizedGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i0A-Tf-h41"/>
                         <viewControllerLayoutGuide type="bottom" id="nLm-1B-7E8"/>
@@ -292,7 +292,7 @@
         <!--SimpleTV Game View Controller-->
         <scene sceneID="s2f-Wq-7lU">
             <objects>
-                <viewController id="tb9-EG-RYL" customClass="SimpleTVGameViewController" customModule="TVSideSpin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tb9-EG-RYL" customClass="SimpleTVGameViewController" customModule="TVPong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mAx-ba-hrV"/>
                         <viewControllerLayoutGuide type="bottom" id="n0X-Ds-tnb"/>

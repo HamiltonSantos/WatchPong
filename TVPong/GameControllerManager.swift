@@ -59,16 +59,16 @@ class GameControllerManager: NSObject, GCDAsyncSocketDelegate, NetServiceDelegat
     //MARK: Socket Delegates
 
     func socket(_ sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
-//        print("Accepted new socket from \(newSocket.connectedHost) \(newSocket.connectedPort)")
-//        newSocket.delegate = self
-//        clientSockets.add(newSocket)
-//        newSocket.readData(toLength: UInt(MemoryLayout<UInt64>.size), withTimeout: -1, tag: 0)
-//
-//        //OBS.: talvez seja preciso mudar a id
-//        var id: Int = clientSockets.count-1
-//        let data = Data(bytes: UnsafeRawPointer(&id), count: sizeof(Int))
-//        newSocket.write(data, withTimeout: -1, tag: 0)
-//        delegate?.playerDidConnect(id)
+        print("Accepted new socket from \(newSocket.connectedHost) \(newSocket.connectedPort)")
+        newSocket.delegate = self
+        clientSockets.add(newSocket)
+        newSocket.readData(toLength: UInt(MemoryLayout<UInt64>.size), withTimeout: -1, tag: 0)
+
+        //OBS.: talvez seja preciso mudar a id
+        var id: Int = clientSockets.count-1
+        let data = Data(bytes: UnsafeRawPointer(&id), count: sizeof(Int))
+        newSocket.write(data, withTimeout: -1, tag: 0)
+        delegate?.playerDidConnect(id)
     }
 
     func socketDidDisconnect(_ sock: GCDAsyncSocket!, withError err: NSError!) {
@@ -88,25 +88,25 @@ class GameControllerManager: NSObject, GCDAsyncSocketDelegate, NetServiceDelegat
 
     func socket(_ sock: GCDAsyncSocket!, didRead data: Data!, withTag tag: Int) {
 
-//        //TODO - separar o didReceiveData e o didReceiveCommand
-//        let playerIdData = data.subdata(in: NSRange(location: 0, length: sizeof(Int16)))
-//        let playerData = data.subdata(in: NSRange(location: sizeof(Int16), length: data.count - sizeof(Int16)))
-//
-//        var id: Int = 0
-//        (playerIdData as NSData).getBytes(&id, length: sizeof(Int))
-//        var commandInt: Int = 0
-//        (playerData as NSData).getBytes(&commandInt, length: sizeof(Int))
-//        print("Player id is: \(id)")
-//        print("Player command Int is: \(commandInt)")
-//
-//        DispatchQueue.main.async {
-//            if commandInt >= CommandType.data.hashValue {
-//                self.delegate?.didReceiveData(fromPlayer: id, data: data)
-//            } else {
-//                self.delegate?.didReceiveCommand(fromPlayer: id, command: CommandType(rawValue: commandInt)!)
-//            }
-//        }
-//        sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
+        //TODO - separar o didReceiveData e o didReceiveCommand
+        let playerIdData = data.subdata(in: NSRange(location: 0, length: sizeof(Int16)))
+        let playerData = data.subdata(in: NSRange(location: sizeof(Int16), length: data.count - sizeof(Int16)))
+
+        var id: Int = 0
+        (playerIdData as NSData).getBytes(&id, length: sizeof(Int))
+        var commandInt: Int = 0
+        (playerData as NSData).getBytes(&commandInt, length: sizeof(Int))
+        print("Player id is: \(id)")
+        print("Player command Int is: \(commandInt)")
+
+        DispatchQueue.main.async {
+            if commandInt >= CommandType.data.hashValue {
+                self.delegate?.didReceiveData(fromPlayer: id, data: data)
+            } else {
+                self.delegate?.didReceiveCommand(fromPlayer: id, command: CommandType(rawValue: commandInt)!)
+            }
+        }
+        sock.readData(toLength: UInt(data.count), withTimeout: -1, tag: 0)
     }
 
     //MARK: Communication methods
@@ -127,15 +127,15 @@ class GameControllerManager: NSObject, GCDAsyncSocketDelegate, NetServiceDelegat
     }
 
     func sendCommandToPlayer(_ player: Int, command: CommandType) {
-//        var commandInt = command.hashValue
-//        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
-//        sendDataToPlayer(player, data: data)
+        var commandInt = command.hashValue
+        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
+        sendDataToPlayer(player, data: data)
     }
 
     func sendCommandToAllPlayers(_ command: CommandType) {
-//        var commandInt = command.hashValue
-//        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
-//        sendDataToAllPlayers(data)
+        var commandInt = command.hashValue
+        let data = Data(bytes: UnsafePointer<UInt8>(&commandInt), count: sizeof(Int64))
+        sendDataToAllPlayers(data)
     }
 }
 
@@ -145,8 +145,8 @@ public protocol GameControllerManagerDelegate {
     func didReceiveCommand(fromPlayer player: Int, command: CommandType)
     func playerDidConnect(_ player: Int)
     func playerDidDisconnect(_ player: Int)
-//    func didSendData(toPlayer player: GCDAsyncSocket)
-//    func didSendData(toAllPlayers players: NSMutableArray)
+    func didSendData(toPlayer player: GCDAsyncSocket)
+    func didSendData(toAllPlayers players: NSMutableArray)
 }
 
 public enum CommandType: Int {
